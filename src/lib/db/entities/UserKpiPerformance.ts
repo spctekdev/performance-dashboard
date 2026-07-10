@@ -10,8 +10,8 @@ import {
   Unique,
   UpdateDateColumn,
 } from "typeorm";
-import type { User } from "./User";
-import type { KpiDefinition } from "./KpiDefinition";
+import { User } from "./User";
+import { KpiDefinition } from "./KpiDefinition";
 
 @Entity("user_kpi_performance")
 @Unique(["userId", "kpiId", "period"])
@@ -19,9 +19,11 @@ import type { KpiDefinition } from "./KpiDefinition";
 export class UserKpiPerformance {
   @PrimaryGeneratedColumn("uuid") id!: string;
   @Column({ type: "uuid" }) userId!: string;
-  @ManyToOne("User", "performances", { onDelete: "CASCADE" }) @JoinColumn({ name: "userId" }) user!: Relation<User>;
+  @ManyToOne(() => User, (user) => user.performances, { onDelete: "CASCADE" })
+  @JoinColumn({ name: "userId" })
+  user!: Relation<User>;
   @Column({ type: "uuid" }) kpiId!: string;
-  @ManyToOne("KpiDefinition", "performances", { onDelete: "RESTRICT" })
+  @ManyToOne(() => KpiDefinition, (kpi) => kpi.performances, { onDelete: "RESTRICT" })
   @JoinColumn({ name: "kpiId" })
   kpi!: Relation<KpiDefinition>;
   @Column({ type: "date" }) period!: string;

@@ -9,10 +9,10 @@ import {
   type Relation,
   UpdateDateColumn,
 } from "typeorm";
-import type { Role } from "./Role";
-import type { UserKpiPerformance } from "./UserKpiPerformance";
-import type { Journal } from "./Journal";
-import type { Session } from "./Session";
+import { Role } from "./Role";
+import { UserKpiPerformance } from "./UserKpiPerformance";
+import { Journal } from "./Journal";
+import { Session } from "./Session";
 
 export enum UserStatus {
   ACTIVE = "active",
@@ -32,19 +32,20 @@ export class User {
   @Column({ type: "varchar", length: 100, select: false }) password!: string;
   @Column({ type: "boolean", default: false }) emailVerified!: boolean;
   @Column({ type: "uuid", nullable: true }) managerId!: string | null;
-  @ManyToOne("User", "directReports", { nullable: true, onDelete: "SET NULL" })
+  @ManyToOne(() => User, (user) => user.directReports, { nullable: true, onDelete: "SET NULL" })
   @JoinColumn({ name: "managerId" })
   manager!: Relation<User> | null;
-  @OneToMany("User", "manager") directReports!: Relation<User[]>;
+  @OneToMany(() => User, (user) => user.manager) directReports!: Relation<User[]>;
   @Column({ type: "uuid" }) roleId!: string;
-  @ManyToOne("Role", "users", { onDelete: "RESTRICT" })
+  @ManyToOne(() => Role, (role) => role.users, { onDelete: "RESTRICT" })
   @JoinColumn({ name: "roleId" })
   role!: Relation<Role>;
   @Column({ type: "enum", enum: UserStatus, default: UserStatus.ACTIVE }) status!: UserStatus;
   @Column({ type: "enum", enum: AccessLevel, default: AccessLevel.EMPLOYEE }) accessLevel!: AccessLevel;
   @CreateDateColumn({ type: "timestamptz" }) createdAt!: Date;
   @UpdateDateColumn({ type: "timestamptz" }) updatedAt!: Date;
-  @OneToMany("UserKpiPerformance", "user") performances!: Relation<UserKpiPerformance[]>;
-  @OneToMany("Journal", "user") journals!: Relation<Journal[]>;
-  @OneToMany("Session", "user") sessions!: Relation<Session[]>;
+  @OneToMany(() => UserKpiPerformance, (performance) => performance.user)
+  performances!: Relation<UserKpiPerformance[]>;
+  @OneToMany(() => Journal, (journal) => journal.user) journals!: Relation<Journal[]>;
+  @OneToMany(() => Session, (session) => session.user) sessions!: Relation<Session[]>;
 }

@@ -7,8 +7,8 @@ import {
   type Relation,
   UpdateDateColumn,
 } from "typeorm";
-import type { User } from "./User";
-import type { RoleKpiAssignment } from "./RoleKpiAssignment";
+import { User } from "./User";
+import { RoleKpiAssignment } from "./RoleKpiAssignment";
 
 @Entity("roles")
 export class Role {
@@ -16,6 +16,7 @@ export class Role {
   @Column({ type: "varchar", length: 120, unique: true }) title!: string;
   @CreateDateColumn({ type: "timestamptz" }) createdAt!: Date;
   @UpdateDateColumn({ type: "timestamptz" }) updatedAt!: Date;
-  @OneToMany("User", "role") users!: Relation<User[]>;
-  @OneToMany("RoleKpiAssignment", "role") kpiAssignments!: Relation<RoleKpiAssignment[]>;
+  @OneToMany(() => User, (user) => user.role) users!: Relation<User[]>;
+  @OneToMany(() => RoleKpiAssignment, (assignment) => assignment.role)
+  kpiAssignments!: Relation<RoleKpiAssignment[]>;
 }

@@ -14,13 +14,28 @@ import {
 } from "./entities";
 import { InitialSchema1760000000000 } from "./migrations/1760000000000-InitialSchema";
 
-const url = process.env.DATABASE_URL;
-if (!url) throw new Error("DATABASE_URL is required");
+const configuredUrl = process.env.DATABASE_URL;
+if (!configuredUrl) throw new Error("DATABASE_URL is required");
+
+function normalizeDatabaseUrl(value: string) {
+  const url = new URL(value);
+  const sslMode = url.searchParams.get("sslmode");
+  const usesLibpqCompatibility = url.searchParams.get("uselibpqcompat") === "true";
+
+  // pg currently treats these modes as verify-full, but that changes in pg v9.
+  // Keep the secure behavior explicit and avoid the compatibility warning.
+  if (!usesLibpqCompatibility && ["prefer", "require", "verify-ca"].includes(sslMode ?? "")) {
+    url.searchParams.set("sslmode", "verify-full");
+  }
+
+  return url.toString();
+}
+
+const url = normalizeDatabaseUrl(configuredUrl);
 
 export const AppDataSource = new DataSource({
   type: "postgres",
   url,
-  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
   synchronize: false,
   logging: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
   entities: [

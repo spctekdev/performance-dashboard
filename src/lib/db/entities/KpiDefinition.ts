@@ -7,8 +7,8 @@ import {
   type Relation,
   UpdateDateColumn,
 } from "typeorm";
-import type { RoleKpiAssignment } from "./RoleKpiAssignment";
-import type { UserKpiPerformance } from "./UserKpiPerformance";
+import { RoleKpiAssignment } from "./RoleKpiAssignment";
+import { UserKpiPerformance } from "./UserKpiPerformance";
 
 @Entity("kpi_definitions")
 export class KpiDefinition {
@@ -18,6 +18,8 @@ export class KpiDefinition {
   @Column({ type: "varchar", length: 40, nullable: true }) unit!: string | null;
   @CreateDateColumn({ type: "timestamptz" }) createdAt!: Date;
   @UpdateDateColumn({ type: "timestamptz" }) updatedAt!: Date;
-  @OneToMany("RoleKpiAssignment", "kpi") roleAssignments!: Relation<RoleKpiAssignment[]>;
-  @OneToMany("UserKpiPerformance", "kpi") performances!: Relation<UserKpiPerformance[]>;
+  @OneToMany(() => RoleKpiAssignment, (assignment) => assignment.kpi)
+  roleAssignments!: Relation<RoleKpiAssignment[]>;
+  @OneToMany(() => UserKpiPerformance, (performance) => performance.kpi)
+  performances!: Relation<UserKpiPerformance[]>;
 }
