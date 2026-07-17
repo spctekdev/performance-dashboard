@@ -1,0 +1,2727 @@
+[
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Content Marketing"
+    },
+    "SOP": [
+      {
+        "title": "Blog post publishing process",
+        "description": "5 steps · Content Team",
+        "steps": [
+          {
+            "step_title": "Draft in Google Docs using",
+            "step_description": "H1, H2s, intro, body, 5 FAQs, conclusion. Minimum 1,500 words. Original unpublished content only."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Assign to editor for review. Confirm article written in second person (you), active voice, title case headings, Oxford comma throughout."
+          },
+          {
+            "step_title": "Add SEO metadata",
+            "step_description": "title tag (under 60 chars), meta description (under 155 chars), primary keyword in H1, URL slug, and first paragraph."
+          },
+          {
+            "step_title": "Step 4",
+            "step_description": "Add internal links using descriptive anchor text. Do not use \"Click here\". All links must be unique and working."
+          },
+          {
+            "step_title": "Step 5",
+            "step_description": "Schedule in CMS for Tuesday or Thursday 9am. Notify social team for promotion after publishing."
+          }
+        ],
+        "tags": ["Content Marketing", "Content Team"]
+      },
+      {
+        "title": "Social media post approval",
+        "description": "3 steps · Social Team",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Submit copy + visual to manager via Slack #content-approvals. Image must be JPG format and high quality."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Allow 24-hour review window. Write in second person, active voice. No ampersands unless part of a brand name."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Schedule post in platform. Hyperlink relevant keywords — never write \"Click here\". Confirm all links are unique."
+          }
+        ],
+        "tags": ["Content Marketing", "Social Team"]
+      },
+      {
+        "title": "Guest blog post submission",
+        "description": "5 steps · Content Team",
+        "steps": [
+          {
+            "step_title": "Confirm",
+            "step_description": "minimum 1,500 words, 5 FAQs, second person, title case headings, original content never published elsewhere."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Verify primary keyword used 8 - 10 times, secondary keywords used at least 2 times each — no stuffing or clustering."
+          },
+          {
+            "step_title": "Check readability",
+            "step_description": "new paragraph every 60 - 80 words (max 150). Use H1, H2, H3. Use numbered lists for sequential steps."
+          },
+          {
+            "step_title": "Step 4",
+            "step_description": "Compile article + selected image into a single Google Doc. Share image separately as JPG file."
+          },
+          {
+            "step_title": "Step 5",
+            "step_description": "Attach author name, short bio, and one high-quality author photo at end of Google Doc before submission."
+          }
+        ],
+        "tags": ["Content Marketing", "Content Team"]
+      },
+      {
+        "title": "Landing page creation process",
+        "description": "5 steps · Web Team",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Define single conversion goal (lead form, purchase, demo). One offer per page — no multiple goals."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Write benefit-driven headline. Messaging must match the ad or link that brought the visitor to the page."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Place at least one CTA above the fold with contrasting colors and action language. Remove navigation menus and distracting links."
+          },
+          {
+            "step_title": "Add social proof",
+            "step_description": "testimonials, reviews, trust badges, SSL certificate. Keep lead forms to essential fields only."
+          },
+          {
+            "step_title": "Step 5",
+            "step_description": "QA on mobile and desktop. Test page load speed via Google PageSpeed Insights before going live."
+          }
+        ],
+        "tags": ["Content Marketing", "Web Team"]
+      },
+      {
+        "title": "Content performance review",
+        "description": "3 steps · SEO Team",
+        "steps": [
+          {
+            "step_title": "Every Monday",
+            "step_description": "review open rate, CTR, and engagement metrics in Google Analytics for last week's content."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Run Semrush Authority Score monthly. Use SEO Writing Assistant to assess quality, readability, and SEO of current drafts."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Audit older blogs quarterly — update statistics, refresh internal links, improve thin sections, use Topic Research to find content gaps."
+          }
+        ],
+        "tags": ["Content Marketing", "SEO Team"]
+      },
+      {
+        "title": "Claude AI content workflow",
+        "description": "5 prompts · Content Team",
+        "steps": [
+          {
+            "step_title": "Research & Key Points",
+            "step_description": "\"Act as a research assistant. Give me: 5 most important things to understand about [topic], 3 misconceptions, 2 surprising facts, and the single most useful takeaway. Don't write the article.\""
+          },
+          {
+            "step_title": "Blog Structure",
+            "step_description": "\"Research this topic fully, identify competitor gaps, define a unique EEAT angle. Write the structure only — no file. Word count: 1,600 - 1,800 words.\""
+          },
+          {
+            "step_title": "Rewrite for Persuasion",
+            "step_description": "\"Rewrite [copy] to be more persuasive without being pushy. Strengthen benefits, add social proof language, remove fluff, sharpen the CTA. Show before and after.\""
+          },
+          {
+            "step_title": "Humanize",
+            "step_description": "\"Rewrite to be conversational, direct, authentic. Mix short and long sentences. Remove all filler: delve, game-changing, in conclusion. Keep it real.\""
+          },
+          {
+            "step_title": "Internal Linking",
+            "step_description": "Provide the blog draft and ask Claude to find opportunities or add sentences to accommodate internal links for [list products/blogs]."
+          }
+        ],
+        "tags": ["Content Marketing", "Content Team"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Write for one persona per piece",
+        "description": "Pick a single ICP before writing. Content aimed at everyone converts no one. Define the reader — e-commerce seller, marketplace seller, or digital marketer — and write directly to them.",
+        "priority": "high"
+      },
+      {
+        "title": "Aim for 1,500 - 2,500 words for SEO blogs",
+        "description": "In-depth guides and pillar content should target 1,500 - 2,500 words. Some data suggests 2,450+ words for significantly higher search traffic. Quality over quantity — never add filler to hit a word count.",
+        "priority": "high"
+      },
+      {
+        "title": "Publish 2 - 3 times per week for traffic growth",
+        "description": "For traffic and SEO goals, 2 - 3 posts per week is the recommended cadence. Smaller teams should aim for 1 - 2 high-quality posts weekly. Consistency matters more than volume.",
+        "priority": "high"
+      },
+      {
+        "title": "Match content to search intent before writing",
+        "description": "Before writing, determine if the intent is informational, navigational, transactional, or commercial investigation. Tailor the content format and depth to match that intent exactly.",
+        "priority": "high"
+      },
+      {
+        "title": "Repurpose every long-form piece into 3 formats",
+        "description": "Blog → LinkedIn post → email snippet. Maximises reach per hour of work. Always repurpose before starting new content. Promote via social, email newsletters, and community channels.",
+        "priority": "high"
+      },
+      {
+        "title": "Optimise all images for SEO and speed",
+        "description": "Use descriptive keyword-rich filenames (not IMG_001.jpg). Write alt text for every image. Compress using TinyPNG or Smush. Use WebP or JPEG format. Place images near relevant text.",
+        "priority": "medium"
+      },
+      {
+        "title": "Always include author bios on every blog post",
+        "description": "Google EEAT requires transparency. Every blog must have the author's name, credentials, and short bio — especially critical for YMYL topics. Create a separate editorial standards page on the website.",
+        "priority": "high"
+      },
+      {
+        "title": "Cite credible sources with anchor-text hyperlinks",
+        "description": "Link to research papers, publications, and official sources. If statistics or marketplace policies are mentioned, always hyperlink the source with relevant anchor text — never leave a stat uncited.",
+        "priority": "high"
+      },
+      {
+        "title": "Build topical authority around a defined niche",
+        "description": "Establish core topics to build authority about. Create quality content consistently, link to official sites, and monitor off-page reputation. Handle any brand reputation issues professionally and promptly.",
+        "priority": "high"
+      },
+      {
+        "title": "Use Semrush tools to monitor content quality",
+        "description": "Semrush Authority Score: checks overall website content quality. Topic Research: finds niche content gaps. SEO Writing Assistant: assesses quality, readability, and SEO score of any draft before publishing.",
+        "priority": "medium"
+      },
+      {
+        "title": "Use Claude for keyword research with intent mapping",
+        "description": "Prompt: \"Give me 30 keywords for [industry] covering awareness, consideration, and decision stages. For each: keyword, search intent, best content format, and difficulty. Group by intent type.\" Then verify volumes in Semrush.",
+        "priority": "medium"
+      },
+      {
+        "title": "One landing page = one offer, always",
+        "description": "Dedicate each landing page to a single offer or buyer problem. Multiple goals on one page dilute focus and hurt conversions. Personalise content based on customer behaviour and intent.",
+        "priority": "high"
+      },
+      {
+        "title": "Place CTA above the fold on every page",
+        "description": "At least one CTA must be visible without scrolling. Use contrasting colors, bold fonts, and action language: \"Get Started\", \"Claim Your Offer Now\", \"Request a Demo\". Repeat on longer pages — all leading to the same goal.",
+        "priority": "high"
+      },
+      {
+        "title": "Add social proof and trust signals everywhere",
+        "description": "Include customer testimonials, reviews, ratings, case studies, social mentions. Display SSL certificate, security badges, guarantees, and contact info. These directly increase conversion rates on landing pages and website pages.",
+        "priority": "high"
+      },
+      {
+        "title": "Keep lead forms to essential fields only",
+        "description": "Every extra field decreases conversion rates. Request only what is absolutely needed. Consider multi-step forms to reduce friction. Use clear labels and helpful error messages.",
+        "priority": "high"
+      },
+      {
+        "title": "Design mobile-first on every page",
+        "description": "Mobile users are the majority. All pages must be fully responsive and load fast. Prioritise mobile before desktop. Test regularly with Google PageSpeed Insights. Essential for Google's mobile-first indexing.",
+        "priority": "high"
+      },
+      {
+        "title": "Implement technical SEO on all pages",
+        "description": "All pages must have: clean keyword-rich URLs, unique meta titles and descriptions, logical H1/H2/H3 structure, XML sitemap inclusion, Schema markup, and HTTPS SSL. These are non-negotiable for search rankings.",
+        "priority": "high"
+      },
+      {
+        "title": "A/B test headlines, CTAs, and visuals regularly",
+        "description": "Regularly test page elements — headlines, CTAs, imagery, copy, form layouts. Use heatmapping to understand user behaviour. Continuous improvement is the foundation of CRO.",
+        "priority": "medium"
+      },
+      {
+        "title": "Maintain consistent branding and tone across all content",
+        "description": "Use consistent colors, fonts, logos, and imagery across all pages. Language must align with SPCTEK brand tone: informative, engaging, direct, plain language. Any mention of SPCTEK must be formatted exactly as written.",
+        "priority": "medium"
+      },
+      {
+        "title": "Follow SPCTEK writing style rules on all content",
+        "description": "Always: second person (you), active voice, Oxford comma, 'e-commerce', title case headings. Never: \"Click here\", ampersands (&) unless brand name, obvious sales pitch. Paragraphs: max 150 words, new paragraph every 60 - 80 words.",
+        "priority": "high"
+      }
+    ],
+    "KPI": [
+      {
+        "title": "Organic Blog Sessions",
+        "description": "Total sessions arriving via organic search to blog content. Measures content reach and SEO effectiveness.",
+        "target_label": "+15% MoM",
+        "metadata": [
+          {
+            "tool": "Google Analytics 4"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Number of Blog Posts Published",
+        "description": "Total published blog posts per month. Ensures team maintains publishing cadence aligned with content strategy.",
+        "target_label": "8 - 12/month",
+        "metadata": [
+          {
+            "tool": "CMS / Notion"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Average Time on Page",
+        "description": "Average engaged session duration on blog content. Indicates content depth, quality, and reader engagement.",
+        "target_label": "≥ 3 min",
+        "metadata": [
+          {
+            "tool": "Google Analytics 4"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Keyword Rankings Gained",
+        "description": "Number of new keywords ranking on Page 1 of Google. Tracks SEO authority growth from content efforts.",
+        "target_label": "+10 keywords/month",
+        "metadata": [
+          {
+            "tool": "Semrush"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Content-Driven Leads",
+        "description": "Leads (form fills, demo requests) attributed to blog or content pages. Measures content's contribution to pipeline.",
+        "target_label": "5 - 10+ leads/month",
+        "metadata": [
+          {
+            "tool": "HubSpot / GA4"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Bounce Rate on Blog Pages",
+        "description": "Percentage of single-page sessions on blog content. High bounce rate signals weak CTA placement or poor relevance.",
+        "target_label": "≤ 55%",
+        "metadata": [
+          {
+            "tool": "Google Analytics 4"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Social Media"
+    },
+    "SOP": [
+      {
+        "title": "Research & strategy phase",
+        "description": "4 steps · Social Media Manager · 20 days before month",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Conduct market, competitor, and audience research. Analyse platform trends and algorithm changes for each channel."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Define or review brand tone and positioning based on current business objectives."
+          },
+          {
+            "step_title": "Identify campaign objectives",
+            "step_description": "Awareness / Engagement / Sales. Align with overall marketing strategy."
+          },
+          {
+            "step_title": "Review previous month",
+            "step_description": "analyse reach, engagement, clicks, and conversions. Identify winning content to replicate."
+          }
+        ],
+        "tags": ["Social Media", "Social Media Manager"]
+      },
+      {
+        "title": "Monthly content calendar creation",
+        "description": "3 steps · Social Media Manager · 18 days before month",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Create full monthly plan including content pillars, formats, platform-specific schedule, and campaign objectives."
+          },
+          {
+            "step_title": "Set KPI targets",
+            "step_description": "minimum +20% growth across reach, engagement, clicks, and conversions vs previous month."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Write all captions. Apply B2B strategy (LinkedIn, Twitter/X — authority, case studies, insights) or B2C strategy (Instagram, TikTok, Facebook — reels, product showcases, promotions) per platform."
+          }
+        ],
+        "tags": ["Social Media", "Social Media Manager"]
+      },
+      {
+        "title": "Internal client approval workflow",
+        "description": "9 milestones · All Roles",
+        "steps": [
+          {
+            "step_title": "Day  - 20",
+            "step_description": "Research complete."
+          },
+          {
+            "step_title": "Day  - 18",
+            "step_description": "Content writing complete."
+          },
+          {
+            "step_title": "Day  - 16",
+            "step_description": "Proofread by Social Media Manager + Review by Content Writer."
+          },
+          {
+            "step_title": "Day  - 15",
+            "step_description": "Manager review. Response required within 2 days."
+          },
+          {
+            "step_title": "Day  - 14",
+            "step_description": "Move to Design team."
+          },
+          {
+            "step_title": "Day  - 9",
+            "step_description": "Design completed."
+          },
+          {
+            "step_title": "Day  - 7",
+            "step_description": "Final review + PPT creation."
+          },
+          {
+            "step_title": "Day  - 5",
+            "step_description": "Final approval by Content Writer + Manager."
+          },
+          {
+            "step_title": "Day  - 4",
+            "step_description": "Scheduling complete before month starts."
+          }
+        ],
+        "tags": ["Social Media", "All Roles"]
+      },
+      {
+        "title": "External client approval workflow",
+        "description": "8 milestones · All Roles",
+        "steps": [
+          {
+            "step_title": "Day  - 20",
+            "step_description": "Research complete."
+          },
+          {
+            "step_title": "Day  - 18",
+            "step_description": "Content writing complete."
+          },
+          {
+            "step_title": "Day  - 17",
+            "step_description": "Proceed to Design."
+          },
+          {
+            "step_title": "Day  - 16",
+            "step_description": "Internal review by Social Media Manager."
+          },
+          {
+            "step_title": "Day  - 9",
+            "step_description": "PPT creation complete."
+          },
+          {
+            "step_title": "Day  - 8",
+            "step_description": "Internal review by Content Writer + Manager."
+          },
+          {
+            "step_title": "Day  - 7",
+            "step_description": "Share with client. Max 2 revision rounds, 24 - 48 hrs turnaround each. Consolidated feedback required."
+          },
+          {
+            "step_title": "Day  - 4",
+            "step_description": "Final scheduling complete. If no client response after 72hrs (3 follow-ups): proceed with best approved version and inform client."
+          }
+        ],
+        "tags": ["Social Media", "All Roles"]
+      },
+      {
+        "title": "Scheduling, monitoring & reporting",
+        "description": "3 steps · Social Media Manager",
+        "steps": [
+          {
+            "step_title": "Scheduling",
+            "step_description": "Schedule all content before the month starts via Buffer or Meta Business Suite. Verify all assets (PNG/MP4) are correct before scheduling."
+          },
+          {
+            "step_title": "Monitoring",
+            "step_description": "Perform daily checks on all platforms. Fix issues immediately. Monitor via Meta Insights, TikTok Analytics, LinkedIn Analytics, Twitter Analytics."
+          },
+          {
+            "step_title": "Reporting",
+            "step_description": "Track reach, engagement, clicks, and conversions monthly. Target minimum +20% improvement on all KPIs every month."
+          }
+        ],
+        "tags": ["Social Media", "Social Media Manager"]
+      },
+      {
+        "title": "Full end-to-end workflow",
+        "description": "Master process flow · All Roles",
+        "steps": [
+          {
+            "step_title": "Research",
+            "step_description": "— Market, competitor, audience, platform trends."
+          },
+          {
+            "step_title": "Strategy",
+            "step_description": "— Define objectives, B2B vs B2C approach, platform allocation."
+          },
+          {
+            "step_title": "Calendar",
+            "step_description": "— Build monthly content plan with pillars, formats, and KPI targets."
+          },
+          {
+            "step_title": "Review",
+            "step_description": "— Internal proofread, content writer review, manager approval."
+          },
+          {
+            "step_title": "Design",
+            "step_description": "— Creatives produced in Canva / Photoshop / CapCut / Creatify / VEO 3."
+          },
+          {
+            "step_title": "Step 6",
+            "step_description": "Approval → Scheduling → Monitoring → Reporting → Optimization."
+          }
+        ],
+        "tags": ["Social Media", "All Roles"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Hook in the first line of every caption",
+        "description": "The first line is what stops the scroll. Lead with a bold statement, question, or provocative insight. One message per post. End with a clear CTA. Never bury the hook in the middle of the caption.",
+        "priority": "high"
+      },
+      {
+        "title": "Use platform-specific hashtag counts",
+        "description": "Instagram: 3 - 5 hashtags. Facebook: 1 - 3. LinkedIn: 3 - 5. TikTok: 3 - 5. Twitter/X: 1 - 2. Never use the same hashtag set across all platforms. Research relevance per post.",
+        "priority": "high"
+      },
+      {
+        "title": "Design all visuals mobile-first with strong first frame",
+        "description": "Mobile-first design is mandatory. Clean layout, high readability, strong first frame that hooks within 1 - 2 seconds. For video: the first frame must grab attention immediately before the viewer scrolls past.",
+        "priority": "high"
+      },
+      {
+        "title": "Adapt content strategy to B2B vs B2C per platform",
+        "description": "B2B (LinkedIn, Twitter/X): focus on authority, trust, and leads. Use case studies, insights, problem-solving content. B2C (Instagram, TikTok, Facebook): focus on engagement, emotion, and conversions. Use reels, product showcases, and promotions.",
+        "priority": "high"
+      },
+      {
+        "title": "Target minimum +20% growth every month",
+        "description": "Every month must show a minimum of +20% improvement across all KPIs: reach, engagement, clicks, and conversions. Review the previous month's data to identify winning content and replicate successful formats.",
+        "priority": "high"
+      },
+      {
+        "title": "Max 2 revision rounds on client work",
+        "description": "Client feedback must be consolidated. Maximum 2 revision rounds per deliverable. Turnaround: 24 - 48 hours per round. If no client response after 3 follow-ups (24hr, 48hr, 72hr): proceed with best approved version, start scheduling, and inform the client.",
+        "priority": "high"
+      },
+      {
+        "title": "TikTok: hook-first content always",
+        "description": "TikTok content must lead with the hook in the first 1 - 3 seconds. Viewers decide immediately whether to stay or scroll. The hook defines the performance of the entire video — never bury it.",
+        "priority": "high"
+      },
+      {
+        "title": "Static posts: clean visuals, benefits-focused messaging",
+        "description": "Static product posts must use clean visuals with minimal text. Messaging must focus on benefits, not just features. Promotional posts require strong offer visibility and urgency-driven creatives.",
+        "priority": "medium"
+      },
+      {
+        "title": "Always access client accounts via VPN or VM",
+        "description": "No exceptions. All social media account access must be via Secure VPN or Authorized Virtual Machine only. No personal devices without VPN. No shared passwords outside secure environments. This protects client data and prevents account flags.",
+        "priority": "high"
+      },
+      {
+        "title": "Instagram: visual + reels-first approach",
+        "description": "Instagram prioritises visual quality and Reels for reach. Lead with Reels for discovery, use carousels for engagement, and static posts for brand consistency. Always optimise for mobile viewing with strong visual hierarchy.",
+        "priority": "high"
+      }
+    ],
+    "KPI": [
+      {
+        "title": "Follower Growth Rate",
+        "description": "Month-over-month percentage growth in followers across all platforms. Indicates audience expansion and brand reach.",
+        "target_label": "+5% MoM",
+        "metadata": [
+          {
+            "tool": "Meta Business Suite / Native Analytics"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Engagement Rate",
+        "description": "Total engagements (likes, comments, shares, saves) divided by reach. Benchmark: 1 - 3% average; 3%+ is strong performance.",
+        "target_label": "≥ 3%",
+        "metadata": [
+          {
+            "tool": "Meta / LinkedIn Analytics"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Posts Published Per Week",
+        "description": "Volume of content published per week per platform. Minimum 12 posts per month required. Ensures team maintains planned posting cadence and content consistency.",
+        "target_label": "3 - 4 posts/week · Min 12/month",
+        "metadata": [
+          {
+            "tool": "Content Calendar / Buffer"
+          },
+          {
+            "cadence": "Weekly"
+          }
+        ]
+      },
+      {
+        "title": "Content Calendar Submission to Designers",
+        "description": "Content calendar must be created and submitted to designers at least 15 days before the month starts. Full calendar shared with the team 30 days in advance to allow sufficient design, review, and scheduling time.",
+        "target_label": "Ready 15 days · Live 30 days in advance",
+        "metadata": [
+          {
+            "tool": "Content Calendar / Notion"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Video Views Growth",
+        "description": "Month-over-month increase in total video views across all platforms. Benchmarked against the prior month's total — consistent 10% growth indicates improving reach and content performance.",
+        "target_label": "+10% vs Previous Month",
+        "metadata": [
+          {
+            "tool": "Meta / TikTok / Platform Analytics"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Response Time to Comments & DMs",
+        "description": "Average time to respond to comments and DMs during working hours. Community responsiveness directly impacts brand reputation and trust.",
+        "target_label": "≤ 2 hours",
+        "metadata": [
+          {
+            "tool": "Meta Business Suite"
+          },
+          {
+            "cadence": "Weekly"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "SEO"
+    },
+    "SOP": [
+      {
+        "title": "Keyword selection process",
+        "description": "5 steps · SEO Team",
+        "steps": [
+          {
+            "step_title": "Define target audience & goals",
+            "step_description": "Clearly identify who the blog or landing page targets. Define specific goals — increasing traffic, generating leads, or boosting sales."
+          },
+          {
+            "step_title": "Keyword research",
+            "step_description": "Use Ubersuggest or Semrush to find relevant keywords. Focus on short-tail, long-tail, similar terms, intent, prompts, and \"People Also Ask\". Prioritise keywords with KD under 40."
+          },
+          {
+            "step_title": "Keyword mapping",
+            "step_description": "Assign primary, secondary, and tertiary keywords per piece. Aim for 1 - 2% keyword density for primary keyword (once or twice per 100 words). Avoid keyword stuffing."
+          },
+          {
+            "step_title": "Keyword optimisation",
+            "step_description": "Place primary keyword in title, meta description, H1, H2, H3, and image alt text. Distribute secondary and tertiary keywords throughout the content. Create internal links using keyword-rich anchor text."
+          },
+          {
+            "step_title": "Performance tracking",
+            "step_description": "Monitor keyword rankings using Semrush rank tracking. Analyse performance regularly and make data-driven adjustments to keyword strategy."
+          }
+        ],
+        "tags": ["SEO", "SEO Team"]
+      },
+      {
+        "title": "Website audit process",
+        "description": "5 steps · SEO Team · Monthly",
+        "steps": [
+          {
+            "step_title": "Project setup",
+            "step_description": "Create a new project in Semrush for the target website. Define project goals, scope, target keywords, competitors, and industry benchmarks."
+          },
+          {
+            "step_title": "Data collection",
+            "step_description": "Use Semrush to gather: organic search keywords, backlink profile, technical SEO issues, full site audit results, and competitor analysis."
+          },
+          {
+            "step_title": "Data analysis",
+            "step_description": "Prioritise issues by impact. Errors = address immediately. Warnings and notices = secondary priority. Aim for a Semrush site health score near 90."
+          },
+          {
+            "step_title": "Recommendations",
+            "step_description": "Develop actionable fixes for identified issues. Prioritise by potential impact and feasibility. Create a detailed implementation plan. Log in the Audit Report and Recommendations Report (Google Sheets/Doc links in file)."
+          },
+          {
+            "step_title": "Issue resolution",
+            "step_description": "Implement immediate fixes for critical issues affecting functionality, security, or UX. Reduce page load time and improve performance. Run quick check-ups monthly."
+          }
+        ],
+        "tags": ["SEO", "SEO Team"]
+      },
+      {
+        "title": "Initial SEO audit for a new website",
+        "description": "4 areas · SEO Team",
+        "steps": [
+          {
+            "step_title": "Technical analysis",
+            "step_description": "Check page speed index (mobile + desktop) via PageSpeed Insights. Check broken links via deadlinkchecker.com. Confirm schemas, XML sitemap, and robots.txt are present."
+          },
+          {
+            "step_title": "Marketing analytics check",
+            "step_description": "Use builtwith.com to confirm presence of: GA4 ID, Facebook Meta Pixel, Google Ads Conversion, Google Tag Manager, and Google Search Console."
+          },
+          {
+            "step_title": "Keyword optimisation",
+            "step_description": "Check keyword distribution by intent (navigational, informational, commercial, transactional) and ranking distribution (Top 1 - 3, 4 - 10, 11 - 20, Top 50) via Semrush."
+          },
+          {
+            "step_title": "Off-page optimisation",
+            "step_description": "Check social media presence, total backlinks and referring domains, top categories of referring domains, and backlinks by authority score — all via Semrush."
+          }
+        ],
+        "tags": ["SEO", "SEO Team"]
+      },
+      {
+        "title": "GSC & GA4 data extraction and analysis",
+        "description": "4 steps · SEO Team",
+        "steps": [
+          {
+            "step_title": "GSC manual export",
+            "step_description": "Log in to Google Search Console → navigate to desired report (Performance, Coverage, Mobile Usability, Core Web Vitals, etc.) → apply date/country/device filters → export as CSV or Excel."
+          },
+          {
+            "step_title": "GSC key metrics to extract",
+            "step_description": "Impressions, clicks, CTR, average position (Performance). Indexing status, crawl errors, blocked URLs (Coverage). Mobile-friendliness issues, Core Web Vitals, rich results opportunities."
+          },
+          {
+            "step_title": "GA4 user acquisition",
+            "step_description": "Analyse organic search traffic — sessions, users, conversion rates. Identify top traffic sources. Analyse user behaviour by acquisition channel."
+          },
+          {
+            "step_title": "GA4 engagement & conversions",
+            "step_description": "Review bounce rate, pages per session, session duration. Check goal completions, revenue, and conversion rate. Identify content gaps from landing page behaviour."
+          }
+        ],
+        "tags": ["SEO", "SEO Team"]
+      },
+      {
+        "title": "Video inclusion in blog posts",
+        "description": "5 steps · Content + SEO Team",
+        "steps": [
+          {
+            "step_title": "Video selection",
+            "step_description": "Identify videos relevant to the blog topic. Consider length, quality, and engagement metrics. Prioritise videos that align with the blog's key messages."
+          },
+          {
+            "step_title": "Video placement",
+            "step_description": "Strategically place the video to enhance readability. Consider beginning, middle, or end based on content flow. The video should support — not interrupt — the reader experience."
+          },
+          {
+            "step_title": "Video formatting",
+            "step_description": "Embed using the platform's embed code (YouTube, Vimeo). Ensure video is responsive across screen sizes. Add a clear and concise title to the video."
+          },
+          {
+            "step_title": "Captioning",
+            "step_description": "Provide closed captions or subtitles for accessibility and SEO benefits. Captions must be accurate and descriptive."
+          },
+          {
+            "step_title": "QC & measurement",
+            "step_description": "Review all posts with embedded videos for quality standards. Track video performance metrics (views, watch time, engagement). Analyse viewer behaviour to optimise video strategy over time."
+          }
+        ],
+        "tags": ["SEO", "Content + SEO Team"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Always prioritise keywords with KD under 40",
+        "description": "Focus keyword selection on terms with a Keyword Difficulty score under 40. These offer the best balance between search volume and competition — especially for newer or growing websites. Use Semrush or Ubersuggest to verify.",
+        "priority": "high"
+      },
+      {
+        "title": "Keep primary keyword density at 1 - 2%",
+        "description": "Use your primary keyword once or twice per 100 words — no more. Keyword stuffing triggers Google penalties and hurts readability. Distribute secondary and tertiary keywords naturally throughout the rest of the content.",
+        "priority": "high"
+      },
+      {
+        "title": "Blog posts: target long-tail, question-based keywords",
+        "description": "For blogs, focus on long-tail keywords with lower competition but higher conversion potential. Incorporate question-based keywords to attract informational queries. Optimise for featured snippets by answering questions directly and concisely in the content.",
+        "priority": "high"
+      },
+      {
+        "title": "Landing pages: use primary keyword in H1, body, and FAQs",
+        "description": "For landing pages, prioritise high-conversion keywords aligned with the page goal. Place the primary keyword in the H1, throughout body content, and within FAQs. Optimise URL structure with the keyword. Test different keyword variations to improve performance.",
+        "priority": "high"
+      },
+      {
+        "title": "Address errors first, warnings second in audits",
+        "description": "In every website audit, errors are Priority 1 — fix immediately. Warnings and notices are Priority 2. Never deprioritise errors in favour of easier fixes. Aim for a Semrush site health score near 90 as the ongoing target.",
+        "priority": "high"
+      },
+      {
+        "title": "Run website quick check-ups monthly",
+        "description": "Monthly audits catch regressions before they become serious issues. Include: page speed check (PageSpeed Insights), broken link scan (deadlinkchecker.com), Semrush site audit, and GSC crawl error review every month without exception.",
+        "priority": "high"
+      },
+      {
+        "title": "Confirm all 5 tracking codes on every new website",
+        "description": "Before any SEO work begins on a new website, verify presence of all 5 tracking codes via builtwith.com: GA4 ID, Facebook Meta Pixel, Google Ads Conversion, Google Tag Manager, and Google Search Console. Missing codes = missing data.",
+        "priority": "high"
+      },
+      {
+        "title": "Cover all 3 keyword intent types per content plan",
+        "description": "Every content plan must include a mix of: Informational (how to, what is, best), Navigational (brand/website specific), and Transactional (buy, order, sign up) keywords. This covers the full buyer journey and maximises organic reach across all funnel stages.",
+        "priority": "medium"
+      },
+      {
+        "title": "Analyse competitors before building any content strategy",
+        "description": "Before starting any new content strategy: identify primary and secondary competitors, analyse their top-ranking keywords, evaluate their on-page SEO, audit their backlink profiles, assess site speed and mobile-friendliness, and review their content quality, length, and frequency.",
+        "priority": "high"
+      },
+      {
+        "title": "Extract and act on GSC data regularly",
+        "description": "GSC data must be actively used — not just collected. Use Performance data to identify low-CTR high-impression pages (update titles/meta). Use Coverage to fix crawl errors. Use Core Web Vitals to address UX issues. Export as CSV and review at minimum monthly.",
+        "priority": "high"
+      },
+      {
+        "title": "Embed responsive, captioned videos in relevant blog posts",
+        "description": "Videos increase dwell time and improve SEO signals. Every embedded video must be responsive, have a clear title, and include closed captions for accessibility and SEO. Strategically place the video where it best supports the surrounding content — not arbitrarily.",
+        "priority": "medium"
+      },
+      {
+        "title": "Stay updated via trusted SEO resources weekly",
+        "description": "SEO changes constantly. Follow these sources weekly: Google Search Central Blog, Search Engine Journal, Moz Blog, Ahrefs Blog, Semrush Blog, Search Engine Land, and Backlinko. Algorithm updates can require immediate content or technical adjustments.",
+        "priority": "medium"
+      }
+    ],
+    "KPI": [
+      {
+        "title": "Organic Search Traffic",
+        "description": "Total sessions from organic search. The primary SEO health metric reflecting overall visibility in search engines.",
+        "target_label": "+10% MoM",
+        "metadata": [
+          {
+            "tool": "Google Analytics 4 + GSC"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Page 1 Keyword Rankings",
+        "description": "Number of target keywords ranking in positions 1 - 10 on Google. Primary indicator of SEO campaign effectiveness.",
+        "target_label": "+15 keywords/month",
+        "metadata": [
+          {
+            "tool": "Semrush / Ahrefs"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Domain Authority Score",
+        "description": "Semrush Authority Score reflecting overall domain strength. Improves with quality backlinks, technical SEO, and content authority.",
+        "target_label": "+2 pts/quarter",
+        "metadata": [
+          {
+            "tool": "Semrush"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Backlinks Acquired",
+        "description": "Number of new referring domains linking to the site. Quality over quantity — targets DR 40+ domains only.",
+        "target_label": "10+ quality links/month",
+        "metadata": [
+          {
+            "tool": "Ahrefs / Semrush"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Core Web Vitals Score",
+        "description": "LCP, INP, and CLS scores across all key pages. Google ranking factor — all pages must pass Core Web Vitals thresholds.",
+        "target_label": "All \"Good\"",
+        "metadata": [
+          {
+            "tool": "Google Search Console / PageSpeed"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "AI Authority Score",
+        "description": "Measures brand presence and citation frequency in AI-generated responses (ChatGPT, Gemini, Perplexity). Quarterly improvement of +4 points reflects growing topical authority and brand visibility in AI search.",
+        "target_label": "+4 pts/quarter",
+        "metadata": [
+          {
+            "tool": "Semrush AI Toolkit / Manual Audit"
+          },
+          {
+            "cadence": "Quarterly"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Video Production"
+    },
+    "SOP": [
+      {
+        "title": "Step 1 — Research of topics",
+        "description": "Expected time: 1 - 2 hours per week · Marketing Team",
+        "steps": [
+          {
+            "step_title": "Identify topics for video content based on priority and business objectives. Current priority",
+            "step_description": "ASIN reinstatement and account health."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Research keywords and search results to prepare video titles. Include specific terms used in emails sent by Amazon to sellers."
+          },
+          {
+            "step_title": "Output",
+            "step_description": "finalised titles of videos for the entire week. All titles must be ready before script writing begins."
+          }
+        ],
+        "tags": ["Video Production", "Marketing Team"]
+      },
+      {
+        "title": "Step 2 — Content (script) creation",
+        "description": "Expected time: 5 - 6 scripts in 2 - 3 days · Content Team",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Prepare script for each shortlisted topic in Q&A format — similar to the BidX interview format used previously."
+          },
+          {
+            "step_title": "Script word count",
+            "step_description": "400 - 500 words maximum per video. Do not exceed this limit."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Share completed script with the video speaker via JIRA. Script must be shared a minimum 2 days before the scheduled recording date."
+          }
+        ],
+        "tags": ["Video Production", "Content Team"]
+      },
+      {
+        "title": "Step 3 — Script review & feedback",
+        "description": "Expected time: 1 day max · Speaker + Marketing Team",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Share script on JIRA for review and feedback from the Speaker and Marketing team."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Incorporate all feedback and make required changes to the script."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Once all feedback is incorporated and script is finalised, move to the recording stage. Do not record without script sign-off."
+          }
+        ],
+        "tags": ["Video Production", "Speaker + Marketing"]
+      },
+      {
+        "title": "Step 4 — Video recording",
+        "description": "Expected time: 2 videos per day · Marketing + Speaker",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Schedule recording meeting with the speaker on GoTo. A marketing team member will ask the questions; the speaker answers. Questions will be removed during editing."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Attire must be formal and professional throughout the recording."
+          },
+          {
+            "step_title": "When recording without a green screen",
+            "step_description": "body above the waistline must appear in front of the camera."
+          },
+          {
+            "step_title": "Step 4",
+            "step_description": "Ensure consistent lighting in the recording area. Limit speaker movement — minimal hand gestures expected throughout."
+          }
+        ],
+        "tags": ["Video Production", "Marketing + Speaker"]
+      },
+      {
+        "title": "Step 5 — Recording review & feedback",
+        "description": "Expected time: 1 - 2 hours · Marketing Team",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Review the recording and communicate any required changes through JIRA for effective coordination."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Most changes will be accommodated during the editing stage rather than requiring a re-record."
+          }
+        ],
+        "tags": ["Video Production", "Marketing Team"]
+      },
+      {
+        "title": "Step 6 — Video editing",
+        "description": "Expected time: 1 - 2 days · Design/Graphic Team",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Provide the recording to the Graphic/Design team to begin editing."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Final cut must include subtitles or major keywords as used in previously prepared video reels."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Include relevant B-rolls wherever required to support the content. Remove the questions section from the final cut — speaker answers only."
+          }
+        ],
+        "tags": ["Video Production", "Design Team"]
+      },
+      {
+        "title": "Step 7 — Edited video feedback",
+        "description": "Expected time: 2 - 3 hours · All Relevant Teams",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Share the edited video in relevant groups and on JIRA for review."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Collect all feedback and incorporate it into the final cut before proceeding to publishing. No video moves forward without feedback sign-off."
+          }
+        ],
+        "tags": ["Video Production", "All Relevant Teams"]
+      },
+      {
+        "title": "Step 8 — Video publishing",
+        "description": "Expected time: 1 - 2 hours · Content + Marketing Team",
+        "steps": [
+          {
+            "step_title": "Once the final cut is approved, post the video on all social platforms",
+            "step_description": "Meta, X, LinkedIn, and YouTube."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Content Writer provides the alt description for the video post on each social media platform."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Content Writer provides relevant hashtags for each platform. Apply platform-specific hashtag counts (refer to Social Media SOP for limits per platform)."
+          }
+        ],
+        "tags": ["Video Production", "Content + Marketing"]
+      },
+      {
+        "title": "Step 9 — Final video review before upload",
+        "description": "Required · Design + 2 - 3 Team Members",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Before publishing, every reel and video must be reviewed for spelling, grammar, and punctuation — applied to subtitles, descriptions, titles, and hashtags."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Design team must complete their own review first before sharing with the group."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Share the prepared reel in the 'Reel Content Share' group. Must be reviewed and approved by 2 - 3 team members before being cleared for upload."
+          }
+        ],
+        "tags": ["Video Production", "Design + Team Review"]
+      },
+      {
+        "title": "Step 10 — YouTube video upload",
+        "description": "Mandatory review before upload · Content + Marketing Team",
+        "steps": [
+          {
+            "step_title": "Title",
+            "step_description": "Same as the interview topic with the episode number."
+          },
+          {
+            "step_title": "Description Para 1",
+            "step_description": "Introduction of the person and basic overview of the guest."
+          },
+          {
+            "step_title": "Description Para 2",
+            "step_description": "All areas/topics that will be discussed in the interview."
+          },
+          {
+            "step_title": "Description Para 3",
+            "step_description": "Timestamps for all sections of the video."
+          },
+          {
+            "step_title": "Final content",
+            "step_description": "Email and website URL of the partner and SPCTEK. Use TubeBuddy, VidIQ, and Google Ads Keyword Planner for description keyword optimisation. Title and description must be reviewed thoroughly before upload."
+          }
+        ],
+        "tags": ["Video Production", "Content + Marketing"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Scripts must be 400 - 500 words maximum",
+        "description": "Every video script has a hard cap of 400 - 500 words. Exceeding this results in videos that are too long and lose viewer attention. The Q&A format naturally keeps scripts concise — use it consistently for every topic.",
+        "priority": "high"
+      },
+      {
+        "title": "Share scripts 2 days before recording — no exceptions",
+        "description": "The speaker needs at least 2 days to review and prepare. Sharing scripts late causes rushed recordings, more re-takes, and delays downstream. This deadline is mandatory — plan content creation accordingly.",
+        "priority": "high"
+      },
+      {
+        "title": "Formal attire and consistent lighting are non-negotiable",
+        "description": "All recordings must maintain a professional look: formal attire, consistent lighting, and body above the waistline visible on camera (when no green screen). Poor lighting or unprofessional appearance will require a re-record.",
+        "priority": "high"
+      },
+      {
+        "title": "Minimal movement and hand gestures during recording",
+        "description": "The speaker should remain as still as possible during recording. Excessive movement and hand gestures are distracting on camera and complicate the editing process. Brief, natural gestures are acceptable — avoid constant movement.",
+        "priority": "medium"
+      },
+      {
+        "title": "All feedback and coordination must go through JIRA",
+        "description": "All review feedback — script, recording, and edited video — must be communicated through JIRA. Verbal or informal feedback creates confusion and gets lost. JIRA ensures accountability, traceability, and clear handoffs between teams.",
+        "priority": "high"
+      },
+      {
+        "title": "Final cut must include subtitles and relevant B-rolls",
+        "description": "Every final video must include subtitles or major keywords (consistent with previously published reels) and relevant B-rolls where appropriate. Subtitles improve accessibility, SEO, and viewer retention — especially for silent viewing on mobile.",
+        "priority": "high"
+      },
+      {
+        "title": "Design team reviews before sharing with the group",
+        "description": "It is the design team's responsibility to complete their own quality check before sharing the reel in the 'Reel Content Share' group. Do not share unreviewed work. Group review requires 2 - 3 approvals before any video is cleared for upload.",
+        "priority": "high"
+      },
+      {
+        "title": "Review spelling, grammar, and punctuation on every element",
+        "description": "Before any video goes live, check every text element: subtitles, video description, title, and hashtags. Typos in subtitles or titles damage credibility and affect search performance. This review is mandatory — no exceptions.",
+        "priority": "high"
+      },
+      {
+        "title": "YouTube description must follow the 4-paragraph structure",
+        "description": "Every YouTube upload must follow this structure: Para 1 — guest intro and overview. Para 2 — topics discussed. Para 3 — timestamps. Para 4 — partner and SPCTEK email and website URL. Never deviate from this structure — it ensures SEO consistency and a professional viewer experience.",
+        "priority": "high"
+      },
+      {
+        "title": "Use TubeBuddy, VidIQ, and Keyword Planner for YouTube SEO",
+        "description": "Never upload to YouTube without keyword-optimising the title and description. Use TubeBuddy and VidIQ Chrome extensions along with Google Ads Keyword Planner to identify the right keywords for the description. Optimised metadata significantly improves video discoverability.",
+        "priority": "high"
+      }
+    ],
+    "KPI": []
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Google Ads PPC"
+    },
+    "SOP": [
+      {
+        "title": "Ad copy creation (AIDA framework)",
+        "description": "4 steps · PPC Team · US market",
+        "steps": [
+          {
+            "step_title": "Attention",
+            "step_description": "Lead with a number or power word — e.g., \"Boost Amazon Sales by 30%\"."
+          },
+          {
+            "step_title": "Interest",
+            "step_description": "Highlight unique value — managed PPC, Amazon optimisation, data-driven results."
+          },
+          {
+            "step_title": "Desire",
+            "step_description": "Showcase outcomes — lower ACoS, higher ROAS, proven case studies."
+          },
+          {
+            "step_title": "Action CTA",
+            "step_description": "Use 'Get a Free Audit', 'Book a Free Consultation', or 'Start Growing Today'. Always create 3 ad variations: question-based, benefit-driven, and urgency-driven."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      },
+      {
+        "title": "RSA (Responsive Search Ads) setup",
+        "description": "4 steps · PPC Team",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Provide all 15 headlines and 4 descriptions for every RSA. Pin H1 to keyword-rich statement; pin Description 1 to core value proposition."
+          },
+          {
+            "step_title": "Headlines",
+            "step_description": "H1 = primary keyword, H2 = benefit statement, H3 = CTA or offer. Descriptions: 2 lines max — one value prop, one CTA."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Ensure at least 3 headlines address US buyer pain points. Use US English spelling (optimize, program — not optimise, programme)."
+          },
+          {
+            "step_title": "Include US social proof",
+            "step_description": "'5-Star Rated by US Brands', 'Trusted by 500+ American Sellers'. Use urgency: 'Limited Spots Available', 'No Long-Term Contracts'."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      },
+      {
+        "title": "Keyword identification & management",
+        "description": "4 steps · PPC Team · Updated every 2 weeks",
+        "steps": [
+          {
+            "step_title": "Selection targets",
+            "step_description": "Search volume >1,000/mo (US), CPC $2 - $25, KD medium to high, intent transactional/commercial, Quality Score 7+. Use Google Keyword Planner with USA geo filter."
+          },
+          {
+            "step_title": "Competitor analysis",
+            "step_description": "Run Google Ads Auction Insights weekly. Use Semrush/Ahrefs to extract competitor keywords (filter USA traffic). Build keyword gap list every 2 weeks."
+          },
+          {
+            "step_title": "Match types",
+            "step_description": "Exact match = high-intent bottom-funnel. Phrase match = primary type for most ad groups. Broad match = only with Smart Bidding (Target CPA/ROAS). Update negative keywords weekly."
+          },
+          {
+            "step_title": "Long-tail USA focus",
+            "step_description": "Target location + service combos ('amazon PPC management agency USA'). Use question-based keywords. Monitor seasonal trends: Q4 surge (Oct - Dec), Prime Day, Black Friday/Cyber Monday via Google Trends (USA filter)."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      },
+      {
+        "title": "Ad group structure & campaign setup",
+        "description": "3 steps · PPC Team",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Use 10 - 15 keywords per ad group. One primary keyword theme per group — never mix topics. Do not mix broad and exact match in the same ad group."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Minimum 3 RSAs per ad group. Pause lowest-performing RSA after 4 weeks. Apply Single Keyword Ad Groups (SKAGs) for top 5 converting keywords."
+          },
+          {
+            "step_title": "Campaign structure",
+            "step_description": "Google PPC Management, Amazon Sponsored Ads, Shopify PPC, Free PPC Audit, Competitor Conquest, and SPCTEK Branded Terms — each as separate ad groups with dedicated keyword themes."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      },
+      {
+        "title": "Google Merchant Center (GMC) setup & management",
+        "description": "5 steps · PPC Team · Daily feed refresh",
+        "steps": [
+          {
+            "step_title": "Account setup",
+            "step_description": "Create GMC at merchants.google.com. Set: Name = SPCTEK, Country = United States, URL = spctek.com. Verify via Google Search Console. Link to Google Ads and GA4."
+          },
+          {
+            "step_title": "Feed requirements",
+            "step_description": "Product title = primary keyword + brand + key attribute (keyword in first 70 chars). Price must match website in real-time (USD). Images: min 800x800px, no watermarks, HTTPS URL. Refresh feed daily minimum."
+          },
+          {
+            "step_title": "Feed optimisation",
+            "step_description": "Resolve all feed errors within 24 hours. Use supplemental feeds to A/B test title variations. Apply custom labels (0 - 4) for margin tier, season, performance, product type, and campaign priority."
+          },
+          {
+            "step_title": "Policy compliance",
+            "step_description": "Prices must match website exactly — discrepancies cause suspension. Landing pages must be mobile-friendly and load under 3 seconds. US buyers expect minimum 30-day return policy. Review GMC Diagnostics weekly. Respond to policy warnings within 24 hours."
+          },
+          {
+            "step_title": "Free listings",
+            "step_description": "Enable 'Surfaces across Google' for free product exposure across Search, Images, and Shopping tab. Optimise these the same way as paid listings."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      },
+      {
+        "title": "Shopify & Google Ads integration",
+        "description": "4 steps · PPC Team",
+        "steps": [
+          {
+            "step_title": "GMC connection",
+            "step_description": "Install official Google & YouTube app from Shopify App Store. Connect to client's GMC account (never share one GMC across multiple clients). Enable automatic product syncing. Verify prices, availability, and images sync correctly before launching campaigns."
+          },
+          {
+            "step_title": "Conversion tracking",
+            "step_description": "Use Google Ads Global Site Tag (gtag.js) OR Google Tag Manager — never both. For Shopify, embed GTM via theme.liquid. Enable enhanced conversions — pass hashed email from checkout. Verify with Google Tag Assistant before going live."
+          },
+          {
+            "step_title": "Product feed",
+            "step_description": "Shopify title format: [Brand] + [Product Name] + [Key Attribute]. Write unique keyword-rich descriptions (not manufacturer copy). Ensure main image + 3 additional images min 800x800px. Each variant must have a unique SKU."
+          },
+          {
+            "step_title": "Dynamic remarketing",
+            "step_description": "Target product page viewers, cart abandoners (bid 50 - 80% higher), and past purchasers. Refresh Shopify customer segments as custom audience lists monthly. Pro tip: use DataFeed Watch or Feedonomics supplemental feed alongside Shopify's Google channel for advanced title optimisation."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      },
+      {
+        "title": "YouTube Ads campaign setup (USA)",
+        "description": "4 steps · PPC Team",
+        "steps": [
+          {
+            "step_title": "Setup",
+            "step_description": "Link YouTube channel to Google Ads before creating campaigns. Upload videos as 'Unlisted' if not for organic discovery. Create separate campaigns per objective: awareness (CPV/CPM) vs. leads (CPA)."
+          },
+          {
+            "step_title": "Bidding targets",
+            "step_description": "Awareness = Target CPV (aim <$0.10/view USA). Leads = Target CPA (set at 2x desired lead cost). Frequency cap: 3 impressions/user/day, 10/user/week for awareness."
+          },
+          {
+            "step_title": "Targeting",
+            "step_description": "Custom Intent (competitor URLs + high-intent keywords), Customer Match (SPCTEK client email list), Lookalike audiences, Life Events (US users starting a business), Affinity (Business Professionals, Tech Enthusiasts)."
+          },
+          {
+            "step_title": "Creative rules (USA)",
+            "step_description": "Hook in first 5 seconds. State brand + value proposition within 5 seconds. Include captions — 85% of US viewers watch without sound. Clear CTA at 15 seconds AND end of video. Video length: 30 - 60 sec in-stream, 6 sec bumpers, 2 - 3 min in-feed. KPI target: View Rate >30%, CPV <$0.10, CTR >0.5%."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      },
+      {
+        "title": "A/B testing & experimentation",
+        "description": "4 steps · PPC Team · Min 4 weeks per test",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Run all A/B tests using Google Ads Experiments tool (Campaigns > Drafts & Experiments). Test only ONE variable at a time: headline, CTA, landing page, bidding strategy, or audience."
+          },
+          {
+            "step_title": "Minimum test duration",
+            "step_description": "4 weeks or 100 conversions — whichever comes first. Apply 50/50 traffic split. Require 95% statistical confidence before declaring a winner."
+          },
+          {
+            "step_title": "Test variables & success metrics",
+            "step_description": "Headline copy → CTR improvement >10%. CTA wording → Conv. rate >5% lift. Landing page → Bounce rate <50%. Bidding strategy → CPA reduction >15%. RLSA bids → ROAS >4x."
+          },
+          {
+            "step_title": "Step 4",
+            "step_description": "Document every test result in the SPCTEK testing log (Google Sheet). Never run two tests simultaneously on the same campaign — results will be inconclusive."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      },
+      {
+        "title": "Negative keywords, budget & reporting cadence",
+        "description": "3 steps · PPC Team · Weekly review",
+        "steps": [
+          {
+            "step_title": "Negative keywords (Monday review)",
+            "step_description": "Review Search Terms report every Monday. Add irrelevant terms at campaign or account level. Exclude: job seekers (jobs, careers, salary), free seekers (DIY, free tools), informational intent (what is, definition, wiki), and competitor brand names (unless conquest campaign)."
+          },
+          {
+            "step_title": "Budget allocation",
+            "step_description": "Search Campaigns 50%, Retargeting/RLSA 20%, New Keyword Testing 10%, Display/Demand Gen 10%, YouTube/Video 10%. Scale budget +20% when ROAS exceeds 3x for 2 consecutive weeks. Increase 30 - 50% in Q4 (Oct - Dec) for seasonal peaks."
+          },
+          {
+            "step_title": "Reporting cadence",
+            "step_description": "Daily = budget pacing + conversion drops (automated alerts). Weekly (Mon) = search terms, negatives, bid adjustments. Bi-weekly = full performance audit. Monthly = campaign strategy + landing page audit. Quarterly = keyword overhaul, audience refresh, seasonal budget planning."
+          }
+        ],
+        "tags": ["Google Ads PPC", "PPC Team"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Always create 3 ad variations per campaign",
+        "description": "Every campaign must have 3 ad variations: question-based, benefit-driven, and urgency-driven. This gives Google's algorithm enough variation to optimise and ensures you test different messaging angles from day one.",
+        "priority": "high"
+      },
+      {
+        "title": "Provide all 15 headlines and 4 descriptions for every RSA",
+        "description": "Never launch an RSA with incomplete assets. All 15 headlines and 4 descriptions are required to give Google's machine learning system maximum data to find the best combinations. Partial RSAs underperform significantly.",
+        "priority": "high"
+      },
+      {
+        "title": "Target keywords with KD medium - high and transactional intent",
+        "description": "Avoid informational-only keywords in paid campaigns — they drive traffic but not conversions. Focus on transactional and commercial intent. High competition is acceptable when the intent is high — that is where the conversions are.",
+        "priority": "high"
+      },
+      {
+        "title": "Review Quality Score weekly — pause below 5 immediately",
+        "description": "Quality Score below 7 triggers an immediate review and landing page audit. Quality Score below 5 = pause the keyword and fix the issue before re-spending budget. QS directly affects CPC and ad rank — a low QS is burning budget.",
+        "priority": "high"
+      },
+      {
+        "title": "Do not mix broad and exact match in the same ad group",
+        "description": "Mixing match types in a single ad group creates bid conflicts and muddy data. Keep exact match in dedicated ad groups for bottom-funnel high-intent terms. Use broad match only with Smart Bidding (Target CPA or ROAS) and monitor search terms weekly.",
+        "priority": "high"
+      },
+      {
+        "title": "Search campaigns: use Max Conversions first, then Target CPA",
+        "description": "Start new Search campaigns with Max Conversions bidding for the first 30 days. Only switch to Target CPA once you have 50+ conversions recorded. Switching too early starves the algorithm of data and results in unstable performance.",
+        "priority": "high"
+      },
+      {
+        "title": "Focus Search ads on Mon - Fri 8AM - 6PM EST",
+        "description": "US B2B buyers convert during business hours. Set ad schedule to prioritise Mon - Fri 8AM - 6PM EST. Reduce bids on weekends by 30%. Layer bid adjustments for top-revenue US states: CA, TX, NY, FL.",
+        "priority": "medium"
+      },
+      {
+        "title": "Never run PMax alongside Search without monitoring impression share",
+        "description": "PMax can cannibalize Search campaign traffic. Only launch PMax after Search campaigns have 50+ conversions. Monitor impression share splits weekly after PMax launch. If Search impression share drops, set a PMax budget cap or pause it immediately.",
+        "priority": "high"
+      },
+      {
+        "title": "Resolve GMC feed errors within 24 hours",
+        "description": "GMC feed errors cause product disapprovals which immediately stop Shopping ads from showing. Check the GMC Diagnostics tab daily. Respond to all policy warnings within 24 hours — a 'misrepresentation' strike in the US market can suspend the account within 48 hours.",
+        "priority": "high"
+      },
+      {
+        "title": "Never use both gtag.js and GTM on the same Shopify store",
+        "description": "Using Google Ads Global Site Tag AND Google Tag Manager simultaneously causes duplicate conversion tracking, inflated data, and unreliable reporting. Choose one method and implement it correctly. Verify with Google Tag Assistant before going live on any Shopify store.",
+        "priority": "high"
+      },
+      {
+        "title": "Bid 50 - 80% higher for cart abandoners in remarketing",
+        "description": "Cart abandoners have the highest purchase intent of any remarketing audience. Increase bids by 50 - 80% for this segment. Increase by 20 - 40% for visitors who viewed the pricing or contact page. Standard visitor bid increase: 20%. Refresh Shopify audience lists monthly.",
+        "priority": "high"
+      },
+      {
+        "title": "YouTube: hook in first 5 seconds — state brand immediately",
+        "description": "US viewers skip fast. The hook and brand name must appear within the first 5 seconds of every YouTube ad. Always include captions — 85% of US viewers watch without sound. Include a CTA at 15 seconds and again at the end. Target View Rate above 30% as the quality benchmark.",
+        "priority": "high"
+      },
+      {
+        "title": "Scale budget when ROAS exceeds 3x for 2 consecutive weeks",
+        "description": "Increase budget by 20% when ROAS exceeds 3x for 2 consecutive weeks. Increase 30 - 50% in Q4 (October - December) for seasonal peak. Reduce or pause budget if CPC rises 30% without conversion improvement, or if campaign bounce rate exceeds 70% for 2+ weeks.",
+        "priority": "medium"
+      },
+      {
+        "title": "Test only one variable at a time in A/B experiments",
+        "description": "Testing multiple variables simultaneously makes it impossible to know what caused the result. Always isolate one variable (headline, CTA, landing page, bidding, or audience). Run for minimum 4 weeks or 100 conversions. Require 95% statistical confidence before declaring a winner. Log all results in the SPCTEK testing log.",
+        "priority": "high"
+      }
+    ],
+    "KPI": [
+      {
+        "title": "Return on Ad Spend (ROAS)",
+        "description": "Revenue generated per dollar spent on ads. The primary PPC success metric — minimum 4x ROAS required for all active campaigns.",
+        "target_label": "≥ 4x",
+        "metadata": [
+          {
+            "tool": "Google Ads Dashboard"
+          },
+          {
+            "cadence": "Weekly"
+          }
+        ]
+      },
+      {
+        "title": "Cost Per Click (CPC)",
+        "description": "Average cost per click across all campaigns. Tracked against industry benchmarks to assess bid efficiency and ad relevance score.",
+        "target_label": "Within industry benchmark",
+        "metadata": [
+          {
+            "tool": "Google Ads"
+          },
+          {
+            "cadence": "Weekly"
+          }
+        ]
+      },
+      {
+        "title": "Click-Through Rate (CTR)",
+        "description": "Percentage of impressions resulting in clicks. Search CTR ≥5% indicates strong ad copy relevance and keyword targeting quality.",
+        "target_label": "≥ 5% (Search)",
+        "metadata": [
+          {
+            "tool": "Google Ads Dashboard"
+          },
+          {
+            "cadence": "Weekly"
+          }
+        ]
+      },
+      {
+        "title": "Conversion Rate",
+        "description": "Percentage of ad clicks that convert to a defined action (purchase, form fill, call). Reflects landing page and offer quality.",
+        "target_label": "≥ 3%",
+        "metadata": [
+          {
+            "tool": "Google Ads + GA4"
+          },
+          {
+            "cadence": "Weekly"
+          }
+        ]
+      },
+      {
+        "title": "Cost Per Acquisition (CPA)",
+        "description": "Average cost to acquire one customer or lead via paid ads. Must remain below agreed target to maintain campaign profitability.",
+        "target_label": "Per client agreement",
+        "metadata": [
+          {
+            "tool": "Google Ads"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Quality Score Average",
+        "description": "Google's Quality Score across active keywords. Score ≥7 reduces CPC and improves ad position. Low scores trigger immediate keyword review.",
+        "target_label": "≥ 7/10",
+        "metadata": [
+          {
+            "tool": "Google Ads Dashboard"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Partnership Program"
+    },
+    "SOP": [
+      {
+        "title": "Phase 1 — Initial contact & partnership agreement",
+        "description": "4 steps · Partnership Team",
+        "steps": [
+          {
+            "step_title": "Identify potential partners",
+            "step_description": "Research and identify partners aligned with SPCTEK's target audience and business goals — specifically SMBs and Marketplace Sellers."
+          },
+          {
+            "step_title": "Initial outreach",
+            "step_description": "Establish first contact with potential partners through email. Keep the outreach personalised and focused on mutual value."
+          },
+          {
+            "step_title": "Partnership proposal",
+            "step_description": "Develop a clear and compelling proposal outlining mutual benefits, scope of collaboration, deliverables, and timelines."
+          },
+          {
+            "step_title": "Negotiation & agreement",
+            "step_description": "Discuss and finalise partnership terms. Confirm scope, deliverables, and timelines before moving to onboarding."
+          }
+        ],
+        "tags": ["Partnership Program", "Partnership Team"]
+      },
+      {
+        "title": "Phase 2 — Onboarding & integration",
+        "description": "5 steps · Partnership + Marketing Team",
+        "steps": [
+          {
+            "step_title": "Partner information gathering",
+            "step_description": "Collect logo, website link, social media handles, and contact details from the partner."
+          },
+          {
+            "step_title": "Partner page creation",
+            "step_description": "Develop a dedicated partner page section on the SPCTEK website including the partner's logo, description, and link to their website."
+          },
+          {
+            "step_title": "Newsletter swap integration",
+            "step_description": "Coordinate with the partner's email marketing team to exchange newsletter details and schedule promotional and educational emails."
+          },
+          {
+            "step_title": "Social media integration",
+            "step_description": "Establish guidelines for social media shoutouts including content format and hashtags. Align with Social Media team on scheduling."
+          },
+          {
+            "step_title": "Podcast / interview scheduling",
+            "step_description": "Coordinate with the partner to schedule interviews or podcast appearances. Align with the Video Production team for recording and publishing."
+          }
+        ],
+        "tags": ["Partnership Program", "Partnership + Marketing"]
+      },
+      {
+        "title": "Phase 3 — Relationship building & expansion",
+        "description": "2 steps · Partnership Team",
+        "steps": [
+          {
+            "step_title": "Regular communication",
+            "step_description": "Maintain open and consistent communication with the partner through regular meetings or email updates. Keep partners informed of relevant SPCTEK news and opportunities."
+          },
+          {
+            "step_title": "Partnership expansion",
+            "step_description": "Continuously explore opportunities to grow the partnership — joint promotions, co-branded events, or new collaboration initiatives. Focus on long-term relationship value over short-term gains."
+          }
+        ],
+        "tags": ["Partnership Program", "Partnership Team"]
+      },
+      {
+        "title": "Finding new partners",
+        "description": "5 channels · Partnership Team",
+        "steps": [
+          {
+            "step_title": "Industry events & conferences",
+            "step_description": "Attend relevant industry events to network with potential partners in the SMB and marketplace seller space."
+          },
+          {
+            "step_title": "Online platforms",
+            "step_description": "Utilise online platforms and business directories to connect with relevant businesses aligned with SPCTEK's audience."
+          },
+          {
+            "step_title": "Social media",
+            "step_description": "Leverage social media platforms to identify potential partners and build relationships organically before outreach."
+          },
+          {
+            "step_title": "Partner referrals",
+            "step_description": "Encourage existing partners to refer new businesses. A warm referral significantly increases partnership conversion rate."
+          },
+          {
+            "step_title": "Competitor analysis",
+            "step_description": "Identify partners of competitor agencies and explore potential collaborations where there is audience alignment with SPCTEK."
+          }
+        ],
+        "tags": ["Partnership Program", "Partnership Team"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Only partner with businesses aligned to SMBs & Marketplace Sellers",
+        "description": "Every partner must serve or target SMBs and/or marketplace sellers (Amazon, Shopify, Walmart, eBay, Etsy). Partnerships outside this audience misalign marketing efforts and dilute brand focus. Qualify audience fit before investing time in proposal development.",
+        "priority": "high"
+      },
+      {
+        "title": "Confirm mutual benefit before finalising any partnership",
+        "description": "A partnership only works long-term when both parties gain clear value. Before signing off on any agreement, confirm that the partner receives tangible benefit from the collaboration — not just SPCTEK. One-sided partnerships deteriorate quickly.",
+        "priority": "high"
+      },
+      {
+        "title": "Collect all partner assets before creating the partner page",
+        "description": "Do not begin partner page creation without a complete set of assets: logo (high resolution), website URL, social media handles, and contact details. Missing assets cause delays and create inconsistent partner pages on the website.",
+        "priority": "high"
+      },
+      {
+        "title": "Coordinate podcast/interview scheduling with the Video team early",
+        "description": "Podcast and interview arrangements involve the Video Production team for recording and publishing. Flag these to the Video team as early as possible — at least 2 weeks before the intended recording date — to allow time for script preparation and scheduling.",
+        "priority": "medium"
+      },
+      {
+        "title": "Prioritise partner referrals as the highest-quality lead source",
+        "description": "Referrals from existing partners have the highest conversion rate of any outreach channel. Actively encourage current partners to introduce new businesses. A warm referral shortens the trust-building phase significantly compared to cold outreach.",
+        "priority": "high"
+      },
+      {
+        "title": "Focus on long-term relationship value over short-term wins",
+        "description": "Partnerships should be approached with a long-term perspective. Avoid pushing for immediate deliverables at the cost of relationship quality. Consistent communication, regular check-ins, and exploring expansion opportunities over time builds stronger and more valuable partnerships.",
+        "priority": "high"
+      }
+    ],
+    "KPI": [
+      {
+        "title": "New Partners Onboarded",
+        "description": "Number of new partners successfully onboarded per month. Tracks pipeline conversion from outreach to active partner status.",
+        "target_label": "7 - 10 partners/month",
+        "metadata": [
+          {
+            "tool": "CRM / Partner Dashboard"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Active Partner Retention Rate",
+        "description": "Percentage of partners who remain active month-over-month. High churn indicates weak partner value proposition or poor relationship management.",
+        "target_label": "≥ 85%",
+        "metadata": [
+          {
+            "tool": "Partner Dashboard"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Referral Leads Generated",
+        "description": "Total qualified leads generated through partner referral channels. Tracks program contribution to sales pipeline.",
+        "target_label": "5 leads/quarter",
+        "metadata": [
+          {
+            "tool": "CRM"
+          },
+          {
+            "cadence": "Quarterly"
+          }
+        ]
+      },
+      {
+        "title": "Partner Outreach Response Rate",
+        "description": "Percentage of outreach messages resulting in a positive response from prospective partners. Indicates outreach quality and targeting accuracy.",
+        "target_label": "≥ 25%",
+        "metadata": [
+          {
+            "tool": "CRM / Email Tracking"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Co-Marketing Campaigns Executed",
+        "description": "Number of joint campaigns run with partners per month (webinars, guest posts, co-branded content). All campaigns must target transactional intent audiences to drive direct conversions and measurable pipeline impact.",
+        "target_label": "3/month · Transactional Intent",
+        "metadata": [
+          {
+            "tool": "Project Management Tool"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Influencer Marketing"
+    },
+    "SOP": [
+      {
+        "title": "Step 1 — Define campaign objective & type",
+        "description": "2 steps · Marketing Team",
+        "steps": [
+          {
+            "step_title": "Campaign objective",
+            "step_description": "Define the primary goal before anything else — increase sales, increase brand awareness, increase social media engagement, or other specific targets. Every decision downstream must align to this objective."
+          },
+          {
+            "step_title": "Campaign type",
+            "step_description": "Select the collaboration model — Paid Collaboration, Affiliate Model, or UGC (User Generated Content). The type determines outreach approach, contract structure, and content requirements."
+          }
+        ],
+        "tags": ["Influencer Marketing", "Marketing Team"]
+      },
+      {
+        "title": "Step 2 — Influencer analysis & research",
+        "description": "5 steps · Marketing Team",
+        "steps": [
+          {
+            "step_title": "Product analysis",
+            "step_description": "Analyse the product or service category and identify influencers who are the best fit for that category. Category alignment is the most important filter."
+          },
+          {
+            "step_title": "Influencer type",
+            "step_description": "Select tier based on campaign goal — Nano (<10K), Micro (10K - 100K), Mid-Tier (100K - 500K), or Macro (500K+). Micro influencers often deliver 3 - 5% engagement vs. lower rates from Macro."
+          },
+          {
+            "step_title": "Demographic targeting",
+            "step_description": "Define and match audience demographics — age, gender, and location — between the influencer's audience and the target customer profile."
+          },
+          {
+            "step_title": "Instagram research",
+            "step_description": "Use Instagram hashtags and Instagram's suggestion feature to discover relevant influencers organically within the target niche."
+          },
+          {
+            "step_title": "Tools",
+            "step_description": "Use free tools like Collabstr for influencer discovery and vetting. Use Facebook Creator Tool for additional research and audience insight."
+          }
+        ],
+        "tags": ["Influencer Marketing", "Marketing Team"]
+      },
+      {
+        "title": "Step 3 — Influencer outreach",
+        "description": "4 steps · Marketing Team",
+        "steps": [
+          {
+            "step_title": "Channel",
+            "step_description": "Reach out via email or DMs depending on the influencer's preferred communication channel. Email for professional/business accounts; DMs for smaller creators."
+          },
+          {
+            "step_title": "First outreach",
+            "step_description": "Use prepared outreach prompts for first-time contact with influencers. Personalise each message — never send generic copy-paste outreach."
+          },
+          {
+            "step_title": "Rate card requirements",
+            "step_description": "Request the influencer's rate card during initial outreach to understand pricing before committing to further discussion."
+          },
+          {
+            "step_title": "Questions to ask",
+            "step_description": "Confirm audience demographics, engagement rates, past brand collaborations, content turnaround time, and revision policy before agreeing to a campaign."
+          }
+        ],
+        "tags": ["Influencer Marketing", "Marketing Team"]
+      },
+      {
+        "title": "Step 4 — Content requirements",
+        "description": "3 steps · Marketing + Content Team",
+        "steps": [
+          {
+            "step_title": "Product delivery",
+            "step_description": "Determine whether a physical visit is required or if the product needs to be shipped to the influencer. Arrange logistics before the content deadline."
+          },
+          {
+            "step_title": "Content deadline",
+            "step_description": "Define clearly how many days the influencer has to deliver the content. Confirm this deadline in writing at the time of agreement."
+          },
+          {
+            "step_title": "Script / idea creation",
+            "step_description": "Decide whether SPCTEK will provide a script or creative brief, or whether the influencer creates their own concept. Allow creative freedom where possible — authentic content performs better."
+          }
+        ],
+        "tags": ["Influencer Marketing", "Marketing + Content"]
+      },
+      {
+        "title": "Step 5 — Content delivery & posting",
+        "description": "3 steps · Marketing Team",
+        "steps": [
+          {
+            "step_title": "Content delivery",
+            "step_description": "Receive the edited content from the influencer on the agreed date. Do not proceed to posting without reviewing the final deliverable."
+          },
+          {
+            "step_title": "Review & revisions",
+            "step_description": "Review all content before it goes live. Request revisions if the content does not meet brand guidelines or campaign brief. Confirm revision turnaround time in the original agreement."
+          },
+          {
+            "step_title": "Posting & collaborator tracking",
+            "step_description": "Confirm the post goes live on the agreed date. Track collaborator invitations (Instagram collab tags, brand mentions) to ensure proper tagging and brand visibility."
+          }
+        ],
+        "tags": ["Influencer Marketing", "Marketing Team"]
+      },
+      {
+        "title": "Step 6 — Report analytics",
+        "description": "2 steps · Marketing Team",
+        "steps": [
+          {
+            "step_title": "Metrics to report",
+            "step_description": "Track and report the following after every campaign: likes, comments, shares, saves, watch time, reach, impressions, and engagement rate. Add conversion or sales data if the campaign type includes affiliate or paid collaboration."
+          },
+          {
+            "step_title": "Platform-specific metrics",
+            "step_description": "Focus on platform-relevant KPIs — e.g., for TikTok target campaigns, prioritise share count and video completion rate over follower count. Match the metric to the campaign objective defined in Step 1."
+          }
+        ],
+        "tags": ["Influencer Marketing", "Marketing Team"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Work with influencers for months, not just one post",
+        "description": "Instead of a single post, partner with influencers for 2 - 3+ months. This allows them to feature the product naturally in their everyday life, building stronger audience trust and making the brand feel more authentic over time.",
+        "priority": "high"
+      },
+      {
+        "title": "Let influencers create in their own style — avoid strict scripts",
+        "description": "Overly scripted content feels unnatural and damages trust with the influencer's audience. Give creative freedom within brand guidelines. When influencers are themselves, their audience trusts them more — which makes your brand more credible.",
+        "priority": "high"
+      },
+      {
+        "title": "Request diverse content types — not just standard posts",
+        "description": "Ask influencers to create varied content formats: how-to guides, behind-the-scenes, challenges, UGC campaigns, and in-depth YouTube reviews. Diverse content types reach more audience segments and extend campaign lifespan across platforms.",
+        "priority": "high"
+      },
+      {
+        "title": "Prioritise micro influencers for higher engagement rates",
+        "description": "Micro influencers (10K - 100K followers) typically deliver 3 - 5% engagement rates, significantly higher than macro influencers. Smaller, niche audiences tend to have stronger trust and loyalty. For building genuine connections, micro influencers often outperform larger accounts.",
+        "priority": "high"
+      },
+      {
+        "title": "Match metrics to the platform and campaign objective",
+        "description": "Different platforms require different success metrics. For TikTok campaigns targeting young audiences, prioritise share count and video completion rate — not follower count. Always align the metric being tracked back to the original campaign objective defined at the start.",
+        "priority": "high"
+      },
+      {
+        "title": "Use live streams for real-time engagement",
+        "description": "Live streams with real-time audience interaction (Q&As, product demonstrations) are underutilised but highly engaging. They create urgency, direct interaction, and authentic moments that pre-recorded content cannot replicate. Consider live formats for product launches or time-limited promotions.",
+        "priority": "medium"
+      },
+      {
+        "title": "Explore cross-cultural influencer campaigns for global reach",
+        "description": "Partnering with influencers from diverse cultural backgrounds creates more inclusive campaigns and helps tap into global markets. Cross-cultural campaigns require careful briefing to ensure the message resonates authentically across different audience demographics.",
+        "priority": "medium"
+      },
+      {
+        "title": "Launch gamified campaigns to unlock viral potential",
+        "description": "Create interactive challenges led by influencers — e.g., a \"30-Day Challenge\" with daily content tracked by a branded hashtag (e.g., #BrandFitChallenge). Use TikTok or Instagram Stories to host the challenge and offer rewards (discounts, exclusive products) for participants. Most brands miss this viral opportunity.",
+        "priority": "medium"
+      },
+      {
+        "title": "Use AI tools to personalise influencer content per audience segment",
+        "description": "Use AI tools like Persado or Smartly.io to generate personalised captions or visuals tailored to specific audience segments (e.g., Gen Z vs. Millennials). Few brands use AI personalisation in influencer campaigns — this is a significant competitive advantage and engagement opportunity.",
+        "priority": "medium"
+      },
+      {
+        "title": "Implement performance-based contracts for top influencers",
+        "description": "Consider dynamic pricing contracts where influencers earn bonuses for exceeding agreed KPIs (engagement rate, conversions, reach). Performance-based models align the influencer's incentive with campaign goals and are rare — making them attractive to high-performing creators who are confident in their results.",
+        "priority": "medium"
+      },
+      {
+        "title": "Always personalise outreach — never send generic copy-paste DMs",
+        "description": "Influencers receive hundreds of outreach messages daily. Generic, templated messages are ignored. Reference their specific content, niche, or recent posts in every outreach message. A personalised message significantly increases response rates and sets a professional tone for the relationship from day one.",
+        "priority": "high"
+      }
+    ],
+    "KPI": [
+      {
+        "title": "Influencer Campaigns Activated",
+        "description": "Total influencer campaigns live per month. Ensures consistent pipeline of content activations and brand exposure across platforms.",
+        "target_label": "4+ campaigns/month",
+        "metadata": [
+          {
+            "tool": "Campaign Tracker / Notion"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Earned Media Value (EMV)",
+        "description": "Estimated value of influencer content based on equivalent paid media cost. Measures the commercial value generated per campaign investment.",
+        "target_label": "3x campaign spend",
+        "metadata": [
+          {
+            "tool": "Influencer Platform / Manual Calc"
+          },
+          {
+            "cadence": "Per campaign"
+          }
+        ]
+      },
+      {
+        "title": "Average Influencer Engagement Rate",
+        "description": "Engagement rate benchmarks differ by influencer tier. Nano influencers (1K - 10K followers): 5% - 12%+. Micro influencers (10K - 100K followers): 3% - 7%. Posts falling below tier benchmark are flagged for creative brief review. Likes should represent 2% - 5% of total reach.",
+        "target_label": "Nano: 5 - 12%+ · Micro: 3 - 7%",
+        "metadata": [
+          {
+            "tool": "Platform Analytics"
+          },
+          {
+            "cadence": "Per campaign"
+          }
+        ]
+      },
+      {
+        "title": "Content Delivery Rate",
+        "description": "Percentage of influencer deliverables submitted on or before agreed deadline. Tracks contract compliance and influencer relationship quality.",
+        "target_label": "100% on time",
+        "metadata": [
+          {
+            "tool": "Campaign Tracker"
+          },
+          {
+            "cadence": "Per campaign"
+          }
+        ]
+      },
+      {
+        "title": "New Influencer Partners Sourced",
+        "description": "Number of new influencers vetted and approved for the roster monthly. Maintains a healthy pipeline of creators across niches and tiers.",
+        "target_label": "10+ vetted/month",
+        "metadata": [
+          {
+            "tool": "Influencer CRM"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Website Development"
+    },
+    "SOP": [
+      {
+        "title": "Phase 1 — Discovery & planning",
+        "description": "2 areas · Project Manager + Developer",
+        "steps": [
+          {
+            "step_title": "Client onboarding checklist",
+            "step_description": "SOW/contract signed. Project brief confirmed. Brand assets collected (logo SVG/AI, hex colours, fonts, imagery). Domain, hosting, and CMS credentials secured. Platform confirmed (Shopify plan tier or WordPress + hosting). Third-party integrations scoped. KPIs agreed. Legal requirements reviewed (privacy policy, cookie consent, WCAG 2.1 AA)."
+          },
+          {
+            "step_title": "Technical discovery",
+            "step_description": "Audit existing site — broken links, redirect map, page inventory, analytics data. Define URL structure and Information Architecture (IA). Identify SEO-critical URLs that must be preserved with redirects. Capture Lighthouse scores and Core Web Vitals as performance benchmarks. Run security audit if migrating from existing site."
+          }
+        ],
+        "tags": ["Website Development", "PM + Developer"]
+      },
+      {
+        "title": "Phase 2 — Design process",
+        "description": "3 steps · Designer + Developer",
+        "steps": [
+          {
+            "step_title": "Design standards",
+            "step_description": "All designs produced in Figma/PSD and shared via drive link. Must include 3 breakpoints: desktop (1440px), tablet (768px), mobile (480px). Design System required for projects over 5 pages. Colour contrast must meet WCAG 2.1 AA (4.5:1 body, 3:1 large text). All interactive states designed: hover, focus, active, disabled, error, loading."
+          },
+          {
+            "step_title": "Design review & approval",
+            "step_description": "Present wireframes to Lead Dev (structural feedback only). Revise and approve wireframes before high-fidelity begins. Internal developer review of high-fidelity designs. Client review — maximum 2 rounds of revisions per phase. Final designs signed off in writing before development starts."
+          },
+          {
+            "step_title": "Design handoff",
+            "step_description": "Figma file contains accurate auto-layout, spacing tokens, and colour styles. All assets exported at 1x, 2x, and SVG where applicable. Developer briefed on micro-interactions and animations. Image filenames follow kebab-case (e.g. hero-banner-desktop.jpg)."
+          }
+        ],
+        "tags": ["Website Development", "Designer + Developer"]
+      },
+      {
+        "title": "Phase 3 — Shopify development standards",
+        "description": "4 areas · Shopify Developer",
+        "steps": [
+          {
+            "step_title": "Liquid coding",
+            "step_description": "Use Dawn or a lean theme — never Debut (deprecated). Prefer JSON templates over Liquid for new sections (OS 2.0). All customer-facing strings must use translation filters {{ 'key' | t }}. No hardcoded copy in Liquid — all content editable via Schema settings. No jQuery — use vanilla JS for progressive enhancement only."
+          },
+          {
+            "step_title": "Performance targets",
+            "step_description": "Theme bundle JS must be <50 KB gzipped before app scripts. Critical CSS inlined or loaded above fold. All images use img_url Liquid filter with srcset for responsive images. Lazy-load all below-fold images. Target Lighthouse: 70+ mobile, 80+ desktop."
+          },
+          {
+            "step_title": "App integration",
+            "step_description": "Evaluate every app's impact on LCP and TBT before installing. Test all apps on a development store first. Document every installed app: name, purpose, monthly cost, permissions. Remove unused apps fully — check for leftover code post-removal. Prefer Shopify-native features over third-party apps wherever possible."
+          },
+          {
+            "step_title": "Pre-launch checklist",
+            "step_description": "Favicon + tab title set. Shipping zones and tax settings configured. Policies linked (Refund, Privacy, Terms, Shipping). GA4 + Meta Pixel connected via Shopify Customer Events (if marketing service acquired). Custom domain connected with active SSL. Product images in WebP, max 2048px, alt text on every image. Password protection removed at go-live."
+          }
+        ],
+        "tags": ["Website Development", "Shopify Developer"]
+      },
+      {
+        "title": "Phase 3 — WordPress development standards",
+        "description": "4 areas · WordPress Developer",
+        "steps": [
+          {
+            "step_title": "Theme architecture",
+            "step_description": "Use a starter theme (_s, Blockbase, or custom block theme). Always use a child theme when building on a premium parent — never modify parent directly. Enqueue all scripts and styles via wp_enqueue_scripts hook. No inline scripts in templates. Follow WordPress PHP, JS, and CSS coding standards."
+          },
+          {
+            "step_title": "Custom plugin development",
+            "step_description": "All custom functionality goes in a plugin — not functions.php. Use WordPress nonces for all form submissions and AJAX requests. Sanitise all inputs and escape all outputs. Use WP_Query — never write raw SQL. Use $wpdb->prepare() only if raw SQL is unavoidable."
+          },
+          {
+            "step_title": "Security requirements",
+            "step_description": "Change default 'admin' username. Enforce strong passwords and 2FA for all admin accounts. Install Wordfence or Sucuri with firewall and malware scan. Disable file editing: define('DISALLOW_FILE_EDIT', true). Limit login attempts. Apply security patches within 48 hours of release. Keep all themes, plugins, and WordPress core up-to-date."
+          },
+          {
+            "step_title": "Pre-launch checklist",
+            "step_description": "WP_DEBUG = false. Timezone, language, date format set. Yoast/Rank Math configured + sitemap submitted to GSC (if SEO service acquired). GA4 tag installed and verified (if marketing service acquired). Cookie consent banner active and GDPR-compliant. Caching plugin enabled. Image optimisation plugin active. 301 redirects mapped. Staging environment blocked from indexing in robots.txt."
+          }
+        ],
+        "tags": ["Website Development", "WordPress Developer"]
+      },
+      {
+        "title": "Phase 3 — Universal coding standards",
+        "description": "4 areas · All Developers",
+        "steps": [
+          {
+            "step_title": "Version control (Git)",
+            "step_description": "Branch strategy: main (production), develop (integration), feature/*, hotfix/*. Commit messages follow Conventional Commits: feat:, fix:, chore:, docs:, refactor:, test:. PRs require at least one peer review. No direct pushes to main or develop. Tag releases with semantic versioning (v1.0.0)."
+          },
+          {
+            "step_title": "Code quality",
+            "step_description": "HTML: valid HTML5, semantic elements, ARIA roles. CSS: BEM methodology, mobile-first, no !important without documentation. JS: ES6+, no var, prefer const, strict mode. PHP: PSR-12 standards, type declarations on all functions. Linting: ESLint, Stylelint, PHPCS on pre-commit hook. No commented-out dead code in production."
+          },
+          {
+            "step_title": "Performance targets",
+            "step_description": "Serve images in WebP with JPEG/PNG fallback. Lazy-load all below-fold images and iframes. Defer or async non-critical JavaScript. CLS < 0.1. LCP < 2.5 seconds. INP < 200 ms. Check Core Web Vitals weekly (if on monthly web management)."
+          },
+          {
+            "step_title": "SEO fundamentals",
+            "step_description": "One H1 per page, logical H1→H2→H3 hierarchy. Meta title 50 - 60 chars, meta description 150 - 160 chars. Canonical tags on all paginated/duplicate content. Open Graph and Twitter Card meta on all public pages. Structured data (JSON-LD) for Organisation, Product, BreadcrumbList, Article. All internal links use descriptive anchor text."
+          }
+        ],
+        "tags": ["Website Development", "All Developers"]
+      },
+      {
+        "title": "Phase 4 — QA & testing",
+        "description": "3 areas · Developer + QA",
+        "steps": [
+          {
+            "step_title": "Functional testing",
+            "step_description": "All user stories and acceptance criteria tested. Navigation, buttons, CTAs, and links verified. Forms: submission, validation, success/error messages. E-commerce: add to cart, checkout, payment, order confirmation. Search with known results, no results, and special characters. 404 page, user registration, login, password reset all tested."
+          },
+          {
+            "step_title": "Cross-browser & device testing",
+            "step_description": "Chrome (latest + latest-1, Android), Safari (latest macOS, iOS 15+), Firefox (latest desktop), Edge (latest desktop), Samsung Internet (latest). Test on real iOS and Android devices — not just browser emulation."
+          },
+          {
+            "step_title": "Performance testing targets",
+            "step_description": "Google Lighthouse on Homepage, Category, Product/Service, Contact, and Checkout pages. Target: Performance 80+, Accessibility 90+, Best Practices 90+, SEO 90+. GTmetrix: TTFB <600ms, Fully Loaded <4s. Spell-check all page content. Verify all images have alt text and are correctly sized."
+          }
+        ],
+        "tags": ["Website Development", "Developer + QA"]
+      },
+      {
+        "title": "Phase 5 — Launch & go-live",
+        "description": "3 steps · Developer + PM · Tue - Thu recommended",
+        "steps": [
+          {
+            "step_title": "Deployment procedure",
+            "step_description": "Notify client of maintenance window (recommend Tue - Thu, off-peak). Take full backup of production site and database. Deploy via CI/CD pipeline or documented manual process. Run post-deployment smoke test: homepage, checkout, forms. Verify SSL active and force HTTPS redirect. Submit sitemap in GSC. Monitor error logs and uptime tool for 24 hours post-launch."
+          },
+          {
+            "step_title": "DNS & domain checklist",
+            "step_description": "A record pointed to new server IP (up to 48hrs propagation). CNAME www pointed to root or CDN. MX records preserved — do not delete email DNS entries. SPF, DKIM, and DMARC records in place. Keep old hosting active minimum 72 hours post-DNS change."
+          },
+          {
+            "step_title": "Rollback plan",
+            "step_description": "If critical issue within 2 hours of launch: revert DNS to previous A record, restore from pre-deployment backup, notify client within 15 minutes of rollback decision, and document the issue in the project log before reattempting deployment."
+          }
+        ],
+        "tags": ["Website Development", "Developer + PM"]
+      },
+      {
+        "title": "Phase 6 — Post-launch maintenance & handover",
+        "description": "2 areas · Developer + PM",
+        "steps": [
+          {
+            "step_title": "Maintenance schedule",
+            "step_description": "Daily — backups verified, uptime alerts reviewed. Weekly — WP core/theme/plugin updates on staging, security scan, Shopify app updates reviewed. Monthly — Lighthouse + GTmetrix audit, GSC review, analytics review with client. Quarterly — security audit, accessibility re-check, plugin/app audit. Annually — tech stack review, SOP review, hosting and SSL renewal check."
+          },
+          {
+            "step_title": "Client handover deliverables",
+            "step_description": "Admin credentials (via secure password manager — never plain email). Hosting, domain, and repository access. Platform training video (recorded CMS walkthrough). Written user manual for content management. Plugin/app list with purpose, renewal dates, and costs. Redirect map spreadsheet. Analytics report with baseline metrics from first 30 days."
+          }
+        ],
+        "tags": ["Website Development", "Developer + PM"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Always follow mobile-first design and development approach",
+        "description": "Design and code for mobile first, then scale up to tablet, laptop, and desktop. Use CSS Grid and Flexbox for layout, relative units (rem, em, %, vw, vh) instead of fixed widths. Test on all 5 breakpoints: mobile (<767px), tablet (768 - 1023px), small laptop (1024 - 1279px), desktop (1280 - 1439px), large desktop (1440px+).",
+        "priority": "high"
+      },
+      {
+        "title": "Keep WordPress plugin count between 4 - 7 maximum",
+        "description": "Every additional plugin adds risk: conflicts, security vulnerabilities, and performance degradation. Keep active plugins between 4 - 7. If an additional plugin is required beyond this limit, discuss the requirement first and obtain approval before installation. Audit and remove all unused plugins before launch.",
+        "priority": "high"
+      },
+      {
+        "title": "Use reusable components and snippets throughout every build",
+        "description": "Build with reusable components from day one. In Shopify use sections and snippets; in WordPress use block patterns, template parts, and ACF field groups. Reusable components reduce development time on future changes, minimise inconsistencies, and make maintenance significantly faster.",
+        "priority": "high"
+      },
+      {
+        "title": "Never modify a parent theme directly — always use a child theme",
+        "description": "Modifying a parent theme directly means all customisations are wiped on every theme update. Always create and use a child theme for any WordPress project built on a premium parent. This preserves customisations through updates and is a non-negotiable standard on all WordPress projects.",
+        "priority": "high"
+      },
+      {
+        "title": "All custom WordPress functionality goes in a plugin — not functions.php",
+        "description": "functions.php is theme-dependent — if the theme changes, custom functionality is lost. All custom features must be in a dedicated plugin so they persist independently of theme changes. This is one of the most critical WordPress development standards and must never be compromised.",
+        "priority": "high"
+      },
+      {
+        "title": "Apply WordPress security patches within 48 hours of release",
+        "description": "Security vulnerabilities are actively exploited within hours of public disclosure. Apply all WordPress core, theme, and plugin security patches to production within 48 hours of release — after testing on staging first. Any delay beyond 48 hours must be documented with a reason and escalated to the project lead.",
+        "priority": "high"
+      },
+      {
+        "title": "Never push code directly to main or develop branches",
+        "description": "All code changes must go through a feature branch and a pull request with at least one peer review approval before merging. Direct pushes to main or develop are prohibited — branch protection rules must be enforced on all projects. This prevents untested code from reaching production.",
+        "priority": "high"
+      },
+      {
+        "title": "Test all plugin and theme updates on staging before production",
+        "description": "Never apply plugin, theme, or WordPress core updates directly to production. Always test on a staging environment first. Take a full snapshot backup before any WordPress core update. Keep a change log documenting every update: date, version, and who tested it.",
+        "priority": "high"
+      },
+      {
+        "title": "Use Dawn — never Debut — as Shopify base theme",
+        "description": "Debut is deprecated and no longer receives updates from Shopify. Always use Dawn or a performance-optimised modern theme as the starting point for Shopify builds. Prefer JSON templates over Liquid templates for all new sections to align with Online Store 2.0 standards.",
+        "priority": "high"
+      },
+      {
+        "title": "Prefer Shopify-native features over third-party apps",
+        "description": "Every third-party Shopify app adds monthly cost, performance overhead, and potential security risk. Always explore Shopify's native features before installing an app. When an app is unavoidable, evaluate its LCP and TBT impact, test on a development store, and document its purpose, cost, and permissions.",
+        "priority": "high"
+      },
+      {
+        "title": "All images must be WebP format with alt text",
+        "description": "Serve all images in WebP format with JPEG/PNG fallback. Every image — including decorative ones (use alt='') — must have an alt attribute. On Shopify: max 2048px, use img_url Liquid filter with srcset. Lazy-load all below-fold images. Image filenames must be descriptive and kebab-case.",
+        "priority": "high"
+      },
+      {
+        "title": "Designs require maximum 2 revision rounds per phase — get sign-off in writing",
+        "description": "Client design revisions are capped at 2 rounds per phase (wireframes, high-fidelity). Additional revision requests beyond this must be raised as formal change requests. Final design sign-off must be in writing (email or PM tool) before development starts — verbal approvals are not accepted.",
+        "priority": "high"
+      },
+      {
+        "title": "Deliver admin credentials via secure password manager — never plain email",
+        "description": "Sending passwords in plain email is a critical security risk. All admin credentials, hosting access, domain logins, and repository access must be delivered to the client via a secure password manager only. This applies without exception to every project handover.",
+        "priority": "high"
+      },
+      {
+        "title": "Scope changes must be formal change requests — never verbal agreements",
+        "description": "All scope changes must be raised as formal written change requests — never informally agreed verbally. All client communications are documented. Bug reports from clients must be acknowledged within 2 business hours. Weekly status updates are sent on all active projects.",
+        "priority": "high"
+      }
+    ],
+    "KPI": [
+      {
+        "title": "Projects Delivered On Time",
+        "description": "Percentage of projects or milestones delivered by agreed deadline. Core operational KPI reflecting project planning and execution discipline.",
+        "target_label": "≥ 90%",
+        "metadata": [
+          {
+            "tool": "Project Management Tool"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      },
+      {
+        "title": "Google PageSpeed Score",
+        "description": "PageSpeed Insights score for mobile on all delivered sites. Minimum score of 80 required. All sites must also pass full mobile responsiveness checks across common device sizes before handover.",
+        "target_label": "≥ 80 (Mobile)",
+        "metadata": [
+          {
+            "tool": "Google PageSpeed Insights"
+          },
+          {
+            "cadence": "Per delivery"
+          }
+        ]
+      },
+      {
+        "title": "Bug Rate Post-Launch",
+        "description": "Number of critical bugs reported by clients within 30 days of launch. Zero critical bugs is the standard — all issues must be caught in QA before handover.",
+        "target_label": "0 critical bugs",
+        "metadata": [
+          {
+            "tool": "Bug Tracking / Client Feedback"
+          },
+          {
+            "cadence": "Per project"
+          }
+        ]
+      },
+      {
+        "title": "Client Revision Rounds",
+        "description": "Average number of revision rounds per project phase. Exceeding 2 rounds per phase signals unclear briefs or insufficient sign-off checkpoints.",
+        "target_label": "≤ 2 per phase",
+        "metadata": [
+          {
+            "tool": "Project Management Tool"
+          },
+          {
+            "cadence": "Per project"
+          }
+        ]
+      },
+      {
+        "title": "Uptime / Availability Rate",
+        "description": "Website uptime percentage across all managed client sites. Any downtime below 99.9% triggers a root cause analysis and escalation protocol.",
+        "target_label": "99.9%",
+        "metadata": [
+          {
+            "tool": "UptimeRobot / Hosting Dashboard"
+          },
+          {
+            "cadence": "Monthly"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Email Marketing"
+    },
+    "SOP": [
+      {
+        "title": "Newsletter SOP",
+        "description": "Procedure extracted from the Newsletter SOP section of the Email Marketing SOP.",
+        "steps": [
+          {
+            "step_title": "Monitor Industry News Open Google Alerts. Maintain alerts for",
+            "step_description": "Amazon, AI, Ecommerce, eBay, Etsy, Walmart, and other industry topics. Review alerts regularly for relevant articles."
+          },
+          {
+            "step_title": "Select Newsletter Updates Choose 4 articles",
+            "step_description": "recent and relevant, valuable to subscribers, aligned with company services. Ensure all come from reliable, credible sources."
+          },
+          {
+            "step_title": "Gather Article Information For each article",
+            "step_description": "open, copy the URL and content/relevant text, save for processing."
+          },
+          {
+            "step_title": "Step 4",
+            "step_description": "Generate Newsletter Content via ChatGPT Paste article link + content into ChatGPT. Provide newsletter formatting instructions. Request a summarized rewrite in approved format (concise, informative, reader-friendly). Review for accuracy, grammar, clarity, and consistency."
+          },
+          {
+            "step_title": "Step 5",
+            "step_description": "Add Content to Newsletter Template Open the template provided by the automation team. Paste finalized summaries into the appropriate sections. Repeat for all four updates."
+          },
+          {
+            "step_title": "Step 6",
+            "step_description": "Add \"Read More\" Links Insert the original article URL in each \"Read More\" section. Verify all links are working correctly."
+          },
+          {
+            "step_title": "Update #1",
+            "step_description": "Add Images Add a relevant image to Update #1 and Update #4 . Images must be relevant to the topic, match branding guidelines, and be properly sized."
+          },
+          {
+            "step_title": "Content",
+            "step_description": "Quality Check Content: All 4 updates included, spelling/grammar, formatting consistency. Links: Test all \"Read More\" links — correct articles only. Visual: Images display correctly, proper placement and sizing."
+          },
+          {
+            "step_title": "Step 9",
+            "step_description": "Final Submission Save, perform final review, submit to designated supervisor or email marketing team for approval and distribution."
+          }
+        ],
+        "tags": ["Email Marketing", "Email Team"]
+      },
+      {
+        "title": "Industry Update Email SOP",
+        "description": "Procedure extracted from the Industry Update Email SOP section of the Email Marketing SOP.",
+        "steps": [
+          {
+            "step_title": "Research a significant and recent industry update. Focus on",
+            "step_description": "Amazon, AI, Meta, Walmart, Ecommerce, or other relevant platforms."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Evaluate whether the update is relevant, actionable, and beneficial for subscribers."
+          },
+          {
+            "step_title": "naturally connect the update to SPCTEK services",
+            "step_description": "Identify opportunities to naturally connect the update to SPCTEK services . Mention subtly — value delivery is primary, promotion is secondary."
+          },
+          {
+            "step_title": "Step 4",
+            "step_description": "Gather source article, supporting information, and key points."
+          },
+          {
+            "step_title": "Open Claude. Provide",
+            "step_description": "the industry update content, source article link, and a previous Industry Update Email as reference. Instruct Claude to generate new content matching the structure, style, and formatting of the approved reference email."
+          },
+          {
+            "step_title": "Step 1",
+            "step_description": "Prepare Email Design in Canva Use pre-approved Industry Update Email template. Clone a previous email if applicable. Insert approved content, images, and CTAs. Review for consistency, alignment, and branding."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Internal Design Review Download, submit to team review group. Implement all revisions before proceeding."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Slice Email Design Use the designated slicing tool. Divide design into email-compatible sections. Verify all slices are properly exported and organized."
+          },
+          {
+            "step_title": "Configure in Zoho Campaigns Upload sliced design. Verify",
+            "step_description": "alt text on all images, correct headings, all hyperlinks working, buttons and CTAs functional, images displaying correctly."
+          },
+          {
+            "step_title": "Test Email Send test to yourself. Check",
+            "step_description": "formatting, image display, link functionality, mobile and desktop responsiveness. Retest after any corrections."
+          },
+          {
+            "step_title": "Step 6",
+            "step_description": "Final Approval & Send Share test with marketing review group. Obtain all approvals. Confirm audience, subject line, and settings. Schedule or send."
+          }
+        ],
+        "tags": ["Email Marketing", "Email Team"]
+      },
+      {
+        "title": "Promotional Email SOP",
+        "description": "Procedure extracted from the Promotional Email SOP section of the Email Marketing SOP.",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Review the Marketing Calendar Identify the scheduled campaign, offer, or promotion. Review objectives, target audience, and planned send date."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Research & Draft Content Research the offer/promotion. Use AI tools (ChatGPT, Claude) to assist. If the offer was used before, update the existing email rather than starting from scratch."
+          },
+          {
+            "step_title": "Review & Refine Content Check",
+            "step_description": "Subject Line, Preview Text, CTA, Offer Details, General Content. Ensure all are accurate and compelling."
+          },
+          {
+            "step_title": "Step 4",
+            "step_description": "Design Email Assets in Canva Create or update the campaign banner. Align with campaign message and SPCTEK branding. Modify assets from previous campaigns where efficient."
+          },
+          {
+            "step_title": "Step 5",
+            "step_description": "Content Approval Submit content and banner to the content review group. Implement all revisions before proceeding."
+          },
+          {
+            "step_title": "Step 6",
+            "step_description": "Slice Email Design Prepare design for deployment using the designated slicing tool. Verify all slices are properly exported."
+          },
+          {
+            "step_title": "Step 7",
+            "step_description": "Configure & Test in Zoho Upload and assemble in Zoho Campaigns. Send test email to yourself. Check formatting, links, images, subject line, preview text, and mobile/desktop responsiveness."
+          },
+          {
+            "step_title": "Step 8",
+            "step_description": "Final Approval & Send Share test with review group and designated email review group. Obtain all approvals. Schedule or send to target audience."
+          }
+        ],
+        "tags": ["Email Marketing", "Email Team"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Subject Lines",
+        "description": "Most critical determinant of open rate. Use the Subject Line Wizard GPT for creation and validation. Lines combining a business outcome with urgency consistently outperform curiosity-only lines. Wins: \"Final Days Before Prime Day\" beats \"Something Big Is Coming\"",
+        "priority": "medium"
+      },
+      {
+        "title": "Preview Text",
+        "description": "35 - 90 characters. Must extend the subject line — never repeat it . Use action verbs and reference subscriber benefit. If left blank, email clients pull the first line of body, which often looks broken.",
+        "priority": "medium"
+      },
+      {
+        "title": "Email Copy — Promotional",
+        "description": "◆ 125 - 200 words max for service-based emails ◆ Structure: Problem → Impact → Solution → Proof → CTA ◆ Lead with problem or opportunity, not the service name ◆ Short sentences. Active voice. No jargon. Wins: \"Finding Profitable Products Shouldn't Take Months\" beats \"We Offer Product Hunting Services\"",
+        "priority": "medium"
+      },
+      {
+        "title": "CTA Best Practices",
+        "description": "✓ One primary CTA per email only ✓ Min 44×44px for mobile tappability (W3C/WCAG) ✓ Use styled buttons — outperform hyperlinked text ✕ Never use \"Click Here\" — fails accessibility & spam filters Wins: \"Book A Free Consultation\" consistently beats \"Learn More\"",
+        "priority": "medium"
+      },
+      {
+        "title": "Design Standards",
+        "description": "◆ Banner: 600×650px · Hero: 200 - 300px height ◆ 3 - 4 images per email (vectors, stock, GIFs) ◆ Alt text required on every image ◆ Mobile-first (375 - 390px). Test on Outlook, Gmail, iOS Mail ◆ Web-safe fonts only: Arial, Helvetica, Tahoma, Times New Roman ◆ CTA buttons: white text on #F36B31 or dark background ◆ Min 20px padding between sections",
+        "priority": "medium"
+      },
+      {
+        "title": "Deliverability Rules",
+        "description": "✓ SPF, DKIM, DMARC configured on sending domain ✓ Always send from spctek.com — never free email domains ✓ Min 60% text to 40% image ratio ✓ Physical address in every email footer (CAN-SPAM) ✕ No URL shorteners (bit.ly, tinyurl) — flagged by spam filters ✕ No ALL CAPS in subjects or body ✕ No spam trigger words: FREE, GUARANTEED, ACT NOW, 100% FREE",
+        "priority": "medium"
+      }
+    ],
+    "KPI": [
+      {
+        "title": "Open Rate",
+        "description": "Industry benchmark: 25% - 41%.",
+        "target_label": "30%+",
+        "metadata": [
+          {
+            "industry_benchmark": "25% - 41%"
+          },
+          {
+            "source": "Mailchimp 2025"
+          }
+        ]
+      },
+      {
+        "title": "Click Through Rate",
+        "description": "Industry benchmark: 2.5% - 3.5% avg.",
+        "target_label": "3% - 5%+",
+        "metadata": [
+          {
+            "industry_benchmark": "2.5% - 3.5% avg"
+          },
+          {
+            "source": "Mailchimp 2025"
+          }
+        ]
+      },
+      {
+        "title": "List Growth Rate",
+        "description": "Industry benchmark: 1% - 3% monthly.",
+        "target_label": "1,000 net/month",
+        "metadata": [
+          {
+            "industry_benchmark": "1% - 3% monthly"
+          },
+          {
+            "source": "Mailchimp"
+          }
+        ]
+      },
+      {
+        "title": "CTOR",
+        "description": "Industry benchmark: 10% - 20%.",
+        "target_label": "15%+",
+        "metadata": [
+          {
+            "industry_benchmark": "10% - 20%"
+          },
+          {
+            "source": "Campaign Monitor"
+          }
+        ]
+      },
+      {
+        "title": "Deliverability Rate",
+        "description": "Industry benchmark: 95% - 99%.",
+        "target_label": "98%+",
+        "metadata": [
+          {
+            "industry_benchmark": "95% - 99%"
+          },
+          {
+            "source": "Mailchimp & Campaign Monitor"
+          }
+        ]
+      },
+      {
+        "title": "Unsubscribe Rate",
+        "description": "Industry benchmark: Below 0.2% - 0.5%.",
+        "target_label": "Below 0.3%",
+        "metadata": [
+          {
+            "industry_benchmark": "Below 0.2% - 0.5%"
+          },
+          {
+            "source": "Mailchimp"
+          }
+        ]
+      },
+      {
+        "title": "Bounce Rate",
+        "description": "Industry benchmark: Below 2%.",
+        "target_label": "Below 1%",
+        "metadata": [
+          {
+            "industry_benchmark": "Below 2%"
+          },
+          {
+            "source": "Campaign Monitor"
+          }
+        ]
+      },
+      {
+        "title": "Spam Complaint Rate",
+        "description": "Industry benchmark: Below 0.1%.",
+        "target_label": "Below 0.1%",
+        "metadata": [
+          {
+            "industry_benchmark": "Below 0.1%"
+          },
+          {
+            "source": "Google & Yahoo 2024"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "global": {
+      "category": "marketing",
+      "subcategory": "Community Management"
+    },
+    "SOP": [
+      {
+        "title": "Quora Community Outreach SOP",
+        "description": "Platform-specific community management procedure for Quora.",
+        "steps": [
+          {
+            "step_title": "Step 1",
+            "step_description": "Search for questions using keywords relevant to your product/industry. Use Quora Spaces and main search bar."
+          },
+          {
+            "step_title": "500+ followers",
+            "step_description": "Prioritise questions with 500+ followers or recent activity (last 30 days)."
+          },
+          {
+            "step_title": "300 - 600 words",
+            "step_description": "Write a thorough answer ( 300 - 600 words ). Use examples, data, or personal experience."
+          },
+          {
+            "step_title": "only at the end",
+            "step_description": "Mention company/product only at the end if it directly solves the question. Format: \"Disclosure: I work at [Company]. We built [X] to solve exactly this…\""
+          },
+          {
+            "step_title": "48 hrs",
+            "step_description": "Follow up — check back in 48 hrs ; respond to comments on your answer."
+          }
+        ],
+        "tags": ["Community Management", "Quora"]
+      },
+      {
+        "title": "Reddit Community Outreach SOP",
+        "description": "Platform-specific community management procedure for Reddit.",
+        "steps": [
+          {
+            "step_title": "5 - 10 relevant subreddits",
+            "step_description": "Identify 5 - 10 relevant subreddits . Read the rules of each before posting anything — many ban self-promotion outright."
+          },
+          {
+            "step_title": "First 2 weeks: only comment helpfully, never promote.",
+            "step_description": "Build karma organically."
+          },
+          {
+            "step_title": "When mentioning your company, be transparent",
+            "step_description": "\"I'm part of the team at [X]...\""
+          },
+          {
+            "step_title": "Search before posting",
+            "step_description": "— Reddit hates duplicate questions."
+          },
+          {
+            "step_title": "F5Bot",
+            "step_description": "Monitor subreddits for brand/competitor mentions using Reddit search or F5Bot ."
+          }
+        ],
+        "tags": ["Community Management", "Reddit"]
+      },
+      {
+        "title": "Facebook Groups Community Outreach SOP",
+        "description": "Platform-specific community management procedure for Facebook Groups.",
+        "steps": [
+          {
+            "step_title": "8 - 15 groups",
+            "step_description": "Join 8 - 15 groups in your niche. Request membership and answer admin questions honestly."
+          },
+          {
+            "step_title": "First week: observe only.",
+            "step_description": "Understand the culture and what content gets engagement."
+          },
+          {
+            "step_title": "Step 3",
+            "step_description": "Engage with existing posts before posting your own — like, comment, add value first."
+          },
+          {
+            "step_title": "When posting",
+            "step_description": "ask questions or share useful resources. ✔ \"Here's a free template for [pain point] — hope it helps!\" ✘ \"Check out our tool → link\""
+          },
+          {
+            "step_title": "within 24 hours",
+            "step_description": "Respond to every comment on your posts within 24 hours ."
+          }
+        ],
+        "tags": ["Community Management", "Facebook Groups"]
+      },
+      {
+        "title": "LinkedIn Groups Community Outreach SOP",
+        "description": "Platform-specific community management procedure for LinkedIn Groups.",
+        "steps": [
+          {
+            "step_title": "5 - 8 active LinkedIn groups",
+            "step_description": "Join 5 - 8 active LinkedIn groups . Check last post date — avoid dead groups."
+          },
+          {
+            "step_title": "Step 2",
+            "step_description": "Start by commenting on existing discussions with substantive insights (not just \"Great post!\")."
+          },
+          {
+            "step_title": "150 - 300 words",
+            "step_description": "Post thought leadership: industry observations, lessons learned, data. Keep posts 150 - 300 words . End with a question."
+          },
+          {
+            "step_title": "after",
+            "step_description": "Connect with engaged members after genuine conversation — not before."
+          },
+          {
+            "step_title": "add your own perspective",
+            "step_description": "If sharing company content, add your own perspective — don't just repost the link."
+          }
+        ],
+        "tags": ["Community Management", "LinkedIn Groups"]
+      }
+    ],
+    "Best Practice": [
+      {
+        "title": "Lead with value.",
+        "description": "Lead with value. Answer first — mention us only if genuinely relevant.",
+        "priority": "high"
+      },
+      {
+        "title": "Never copy-paste the same reply across multiple threads — always personalise.",
+        "description": "Never copy-paste the same reply across multiple threads — always personalise.",
+        "priority": "high"
+      },
+      {
+        "title": "Use your real name and a complete profile.",
+        "description": "Use your real name and a complete profile. No fake or anonymous accounts.",
+        "priority": "high"
+      },
+      {
+        "title": "Disclose affiliation when relevant: \"I work at [Company] and we've seen this too…\"",
+        "description": "Disclose affiliation when relevant: \"I work at [Company] and we've seen this too…\"",
+        "priority": "high"
+      },
+      {
+        "title": "If unsure whether to post — don't.",
+        "description": "If unsure whether to post — don't. Ask your manager first.",
+        "priority": "high"
+      },
+      {
+        "title": "Log every outreach action in the tracking sheet the same day.",
+        "description": "Log every outreach action in the tracking sheet the same day.",
+        "priority": "high"
+      }
+    ],
+    "KPI": []
+  }
+]

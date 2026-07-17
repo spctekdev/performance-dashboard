@@ -43,7 +43,7 @@ export function MonthlyEntry({ employee, period, actor }: { employee: Employee; 
   return <section className="card monthly-card">
     <div className="card-header"><div><span className="section-eyebrow">PERFORMANCE UPDATE</span><h2>Monthly check-in</h2><p>Update KPI status and add journal entries independently.</p></div><span className="role-chip">{employee.roleTitle}</span></div>
     <div className="entry-layout">
-      <form className="entry-block" onSubmit={saveKpis}><div className="entry-panel-header"><div><h3>📊 KPI status</h3><p>{new Date(`${period}-02`).toLocaleDateString(undefined, { month: "long", year: "numeric" })}</p></div></div>
+      <form className="entry-block" onSubmit={saveKpis}><div className="entry-panel-header"><div><h3>📊 KPI status</h3><p>{new Date(`${period}-02T00:00:00Z`).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}</p></div></div>
         {rows.length ? <div className="entry-kpis">{rows.map((row) => <label key={row.kpiId}><span>{row.name}<small>Target {row.target.toLocaleString()} {row.unit}</small></span><input type="number" min="0" step="0.01" name={`kpi-${row.kpiId}`} defaultValue={row.current} placeholder="Actual" /></label>)}</div> : <div className="inline-empty">No KPIs are assigned to this role yet.</div>}
         <button className="btn-primary" disabled={kpiBusy}>{kpiBusy ? <LoaderCircle className="spin" size={17} /> : <Save size={17} />} Update KPI status</button>
       </form>

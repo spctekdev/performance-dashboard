@@ -31,15 +31,10 @@ export function JournalTimeline({
     <div className="timeline">
       {rows.map((entry) => {
         const impact = impactLabel(entry.impact);
-        const period = new Date(`${entry.period}T00:00:00`);
+        const period = new Date(`${entry.period}T00:00:00Z`);
         return (
           <article className={`timeline-item ${entry.category.toLowerCase()}`} key={entry.id}>
-            <div className="timeline-date">
-              <span>Journal</span>
-              <strong>{period.toLocaleDateString(undefined, { month: "short" })}</strong>
-              <b>{period.getFullYear()}</b>
-              <small>Monthly entry</small>
-            </div>
+            <div className="timeline-date"><time>{period.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" })}</time></div>
             <div className="timeline-content">
               <div className="timeline-meta">
                 <span className="entry-type-badge">{entry.category === "GOOD" ? "Achievement" : entry.category === "BAD" ? "Challenge" : "Note"}</span>

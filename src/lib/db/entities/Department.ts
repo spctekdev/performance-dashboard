@@ -10,7 +10,7 @@ import {
   type Relation,
 } from "typeorm";
 import { User } from "./User";
-import { Sop } from "./Sop";
+import { Category } from "./Category";
 
 @Entity("departments")
 export class Department {
@@ -24,7 +24,7 @@ export class Department {
     inverseJoinColumn: { name: "managerId", referencedColumnName: "id" },
   })
   managers!: Relation<User[]>;
-  @OneToMany(() => Sop, (sop) => sop.department) sops!: Relation<Sop[]>;
+  @OneToMany(() => Category, (category) => category.department) categories!: Relation<Category[]>;
   @CreateDateColumn({ type: "timestamptz" }) createdAt!: Date;
   @UpdateDateColumn({ type: "timestamptz" }) updatedAt!: Date;
 }

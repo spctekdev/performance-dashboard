@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { In } from "typeorm";
 import { apiUser, requireAccess } from "@/lib/auth/authorize";
 import { getDataSource } from "@/lib/db/data-source";
-import { AccessLevel, Department, Sop, User } from "@/lib/db/entities";
+import { AccessLevel, Department, Knowledge, User } from "@/lib/db/entities";
 import { assertSameOrigin, fail, HttpError, ok, parseBody } from "@/lib/http";
 import { updateDepartmentSchema } from "@/lib/validation";
 
@@ -53,12 +53,12 @@ export async function DELETE(request: NextRequest, context: Context) {
     const { id } = await context.params;
     const db = await getDataSource();
     if (!(await db.getRepository(Department).findOneBy({ id }))) throw new HttpError(404, "Department not found");
-    const [memberCount, sopCount] = await Promise.all([
+    const [memberCount, knowledgeCount] = await Promise.all([
       db.getRepository(User).countBy({ departmentId: id }),
-      db.getRepository(Sop).countBy({ departmentId: id }),
+      db.getRepository(Knowledge).createQueryBuilder("knowledge").innerJoin("knowledge.category", "category").where('category."departmentId" = :id', { id }).getCount(),
     ]);
-    if (memberCount || sopCount)
-      throw new HttpError(409, "Reassign all department members and remove its SOPs before deleting this department");
+    if (memberCount || knowledgeCount)
+      throw new HttpError(409, "Reassign all department members and remove its knowledge entries before deleting this department");
     await db.getRepository(Department).delete(id);
     return ok({ message: "Department deleted" });
   } catch (error) {

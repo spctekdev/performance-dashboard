@@ -18,18 +18,20 @@ import { PerformanceChart, KpiBarChart } from "./PerformanceChart";
 import { KPICard } from "./KPICard";
 import { JournalTimeline } from "./JournalTimeline";
 import { JournalPanel } from "./JournalPanel";
-import { GoalsPanel } from "./GoalsPanel";
+import { GoalCard, GoalsPanel } from "./GoalsPanel";
 import { MonthlyEntry } from "./MonthlyEntry";
 import { TeamOverview } from "./TeamOverview";
 import { AdminPanel } from "./AdminPanel";
-import { SopPanel } from "./SopPanel";
+import { KnowledgePanel } from "./KnowledgePanel";
+import { RoleProgressionTree } from "./RoleProgressionTree";
 
-type Tab = "overview" | "entry" | "journal" | "goals" | "sops" | "kpis" | "team" | "management";
+type Tab = "overview" | "entry" | "journal" | "goals" | "knowledge" | "kpis" | "team" | "management" | "hierarchy";
 export function DashboardShell({ data }: { data: DashboardData }) {
   const initialId = data.users.find((u) => u.id === data.actor.id)?.id || data.users[0]?.id;
   const [selectedId, setSelectedId] = useState(initialId);
   const [period, setPeriod] = useState(new Date().toISOString().slice(0, 7));
   const [tab, setTab] = useState<Tab>("overview");
+  const [overviewRenderedAt] = useState(() => Date.now());
   const employee = data.users.find((u) => u.id === selectedId) || data.users[0];
   const selectableUsers = data.users;
   const stats = useMemo(() => (employee ? getStats(employee) : null), [employee]);
@@ -50,10 +52,11 @@ export function DashboardShell({ data }: { data: DashboardData }) {
     { id: "entry", label: "Performance Update", icon: ClipboardEdit, visible: data.actor.accessLevel !== "EMPLOYEE" },
     { id: "journal", label: "Journal", icon: ClipboardEdit, visible: true },
     { id: "goals", label: "Goals", icon: Target, visible: true },
-    { id: "sops", label: "SOPs", icon: BookOpen, visible: true },
+    { id: "knowledge", label: "Knowledge", icon: BookOpen, visible: true },
     { id: "kpis", label: "KPI Tracking", icon: Target, visible: true },
     { id: "team", label: "Team Overview", icon: Users, visible: data.actor.accessLevel !== "EMPLOYEE" },
     { id: "management", label: "Management", icon: Settings2, visible: data.actor.accessLevel !== "EMPLOYEE" },
+    { id: "hierarchy", label: "Hierarchy", icon: Users, visible: data.actor.accessLevel !== "EMPLOYEE" },
   ];
   return (
     <div className="dashboard-page">
@@ -152,7 +155,7 @@ export function DashboardShell({ data }: { data: DashboardData }) {
               </article>
             </section>
             <section className="dash-bottom-row">
-              <article className="card">
+              <article className="card overview-kpi-card">
                 <div className="card-header compact">
                   <div>
                     <span className="section-eyebrow">LATEST MONTH</span>
@@ -165,7 +168,28 @@ export function DashboardShell({ data }: { data: DashboardData }) {
                 ))}
                 {!stats.latest.length && <div className="inline-empty">No performance has been recorded yet.</div>}
               </article>
-              <article className="card">
+              {employee.nextRole && (
+                <article className="card next-role-panel overview-next-role-card">
+                  <div className="card-header compact">
+                    <div>
+                      <span className="section-eyebrow">ROLE PROGRESSION</span>
+                      <h2>Next role: {employee.nextRole.title}</h2>
+                    </div>
+                  </div>
+                  {employee.nextRole.kpis.length ? (
+                    <div className="next-role-kpi-grid">
+                      {employee.nextRole.kpis.map((kpi) => (
+                        <article className="next-role-kpi" key={kpi.id}>
+                          <span>{kpi.name}</span>
+                          <strong>{kpi.target.toLocaleString()}</strong>
+                          <small>{kpi.unit || "Target"}</small>
+                        </article>
+                      ))}
+                    </div>
+                  ) : <div className="inline-empty">No KPI targets have been assigned to this role yet.</div>}
+                </article>
+              )}
+              <article className="card overview-journal-card">
                 <div className="card-header compact">
                   <div>
                     <span className="section-eyebrow">RECENT ACTIVITY</span>
@@ -175,29 +199,21 @@ export function DashboardShell({ data }: { data: DashboardData }) {
                 </div>
                 <JournalTimeline entries={employee.journals.slice(0, 3)} />
               </article>
-            </section>
-            {data.nextRole && (
-              <section className="card next-role-panel">
+              <article className="card overview-goals-card">
                 <div className="card-header compact">
                   <div>
-                    <span className="section-eyebrow">ROLE PROGRESSION</span>
-                    <h2>Next role: {data.nextRole.title}</h2>
-                    <p>Target KPIs for the next step in your role path.</p>
+                    <span className="section-eyebrow">PLANNING & DELIVERY</span>
+                    <h2>Goals</h2>
                   </div>
+                  <button onClick={() => setTab("goals")}>View all â†’</button>
                 </div>
-                {data.nextRole.kpis.length ? (
-                  <div className="next-role-kpi-grid">
-                    {data.nextRole.kpis.map((kpi) => (
-                      <article className="next-role-kpi" key={kpi.id}>
-                        <span>{kpi.name}</span>
-                        <strong>{kpi.target.toLocaleString()}</strong>
-                        <small>{kpi.unit || "Target"}</small>
-                      </article>
-                    ))}
+                {employee.goals.length ? (
+                  <div className="timeline">
+                    {employee.goals.slice(0, 3).map((goal) => <GoalCard key={goal.id} goal={goal} renderedAt={overviewRenderedAt} canManage={false} />)}
                   </div>
-                ) : <div className="inline-empty">No KPI targets have been assigned to this role yet.</div>}
-              </section>
-            )}
+                ) : <div className="inline-empty">No goals have been added yet.</div>}
+              </article>
+            </section>
           </>
         )}
         {tab === "entry" && <MonthlyEntry employee={employee} period={period} actor={data.actor} />}{" "}
@@ -213,7 +229,7 @@ export function DashboardShell({ data }: { data: DashboardData }) {
             canManage={data.actor.accessLevel !== "EMPLOYEE" && data.actor.id !== employee.id}
           />
         )}{" "}
-        {tab === "sops" && <SopPanel data={data} />}{" "}
+        {tab === "knowledge" && <KnowledgePanel data={data} />}{" "}
         {tab === "kpis" && (
           <section className="card">
             <div className="card-header">
@@ -234,6 +250,7 @@ export function DashboardShell({ data }: { data: DashboardData }) {
         )}{" "}
         {tab === "team" && <TeamOverview users={data.users} actorId={data.actor.id} />}{" "}
         {tab === "management" && <AdminPanel data={data} />}
+        {tab === "hierarchy" && <RoleProgressionTree roles={data.roles} />}
       </main>
     </div>
   );
@@ -251,7 +268,7 @@ function getStats(employee: DashboardData["users"][number]) {
   const overall = average(latest);
   const previous = average(rows(previousPeriod));
   const trend = periods.map((period) => ({
-    period: new Date(`${period}T00:00:00`).toLocaleDateString(undefined, { month: "short" }),
+    period: new Date(`${period}T00:00:00Z`).toLocaleDateString("en-US", { month: "short", timeZone: "UTC" }),
     score: average(rows(period)),
     target: 100,
   }));

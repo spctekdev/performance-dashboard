@@ -9,4 +9,5 @@ export * from "./Session";
 export * from "./AuthToken";
 export * from "./AuthRateLimit";
 export * from "./Department";
-export * from "./Sop";
+export * from "./Category";
+export * from "./Knowledge";
