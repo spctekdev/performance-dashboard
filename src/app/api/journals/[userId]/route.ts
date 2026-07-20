@@ -9,9 +9,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     const { userId } = await params;
     await assertCanAccessUser(actor, userId);
     const db = await getDataSource();
-    return ok(
-      await db.getRepository(Journal).find({ where: { userId }, order: { createdAt: "DESC" } }),
-    );
+    return ok(await db.getRepository(Journal).find({ where: { userId }, order: { createdAt: "DESC" } }));
   } catch (error) {
     return fail(error);
   }

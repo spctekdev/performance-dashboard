@@ -12,16 +12,21 @@ export async function GET(request: NextRequest) {
     requireAccess(actor, AccessLevel.ADMIN, AccessLevel.MANAGER);
     const db = await getDataSource();
     const ids = actor.accessLevel === AccessLevel.MANAGER ? await getManagedDepartmentIds(actor.id) : [];
-    const departments = actor.accessLevel === AccessLevel.ADMIN
-      ? await db.getRepository(Department).find({ relations: { managers: true }, order: { name: "ASC" } })
-      : ids.length
-        ? await db.getRepository(Department).find({ where: { id: In(ids) }, relations: { managers: true }, order: { name: "ASC" } })
-        : [];
-    return ok(departments.map((department) => ({
-      id: department.id,
-      name: department.name,
-      managers: department.managers.map((manager) => ({ id: manager.id, name: manager.name })),
-    })));
+    const departments =
+      actor.accessLevel === AccessLevel.ADMIN
+        ? await db.getRepository(Department).find({ relations: { managers: true }, order: { name: "ASC" } })
+        : ids.length
+          ? await db
+              .getRepository(Department)
+              .find({ where: { id: In(ids) }, relations: { managers: true }, order: { name: "ASC" } })
+          : [];
+    return ok(
+      departments.map((department) => ({
+        id: department.id,
+        name: department.name,
+        managers: department.managers.map((manager) => ({ id: manager.id, name: manager.name })),
+      })),
+    );
   } catch (error) {
     return fail(error);
   }

@@ -103,7 +103,9 @@ export function JournalPanel({ employee, canManage }: { employee: Employee; canM
               <label>
                 Impact
                 <select name="impact" defaultValue={String(editing.impact)}>
-                  <option value="99">High</option><option value="66">Medium</option><option value="33">Low</option>
+                  <option value="99">High</option>
+                  <option value="66">Medium</option>
+                  <option value="33">Low</option>
                 </select>
               </label>
             </div>
@@ -124,12 +126,31 @@ export function JournalPanel({ employee, canManage }: { employee: Employee; canM
       )}
       {message && <div className="form-alert success">{message}</div>}
       <div className="list-toolbar">
-        <label>Filter <select value={filter} onChange={(event) => setFilter(event.target.value as typeof filter)}><option value="ALL">All entries</option><option value="GOOD">Achievements</option><option value="BAD">Challenges</option><option value="NOTE">Notes</option></select></label>
+        <label>
+          Filter{" "}
+          <select value={filter} onChange={(event) => setFilter(event.target.value as typeof filter)}>
+            <option value="ALL">All entries</option>
+            <option value="GOOD">Achievements</option>
+            <option value="BAD">Challenges</option>
+            <option value="NOTE">Notes</option>
+          </select>
+        </label>
       </div>
       <JournalTimeline
         entries={entries}
-        onEdit={canManage ? (entry) => setEditing(employee.journals.find((journal) => journal.id === entry.id) ?? null) : undefined}
-        onDelete={canManage ? (entry) => { const journal = employee.journals.find((item) => item.id === entry.id); if (journal) void remove(journal); } : undefined}
+        onEdit={
+          canManage
+            ? (entry) => setEditing(employee.journals.find((journal) => journal.id === entry.id) ?? null)
+            : undefined
+        }
+        onDelete={
+          canManage
+            ? (entry) => {
+                const journal = employee.journals.find((item) => item.id === entry.id);
+                if (journal) void remove(journal);
+              }
+            : undefined
+        }
       />
     </section>
   );

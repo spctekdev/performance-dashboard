@@ -13,7 +13,9 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
     const { id } = await params;
     const db = await getDataSource();
     if (input.title) {
-      const duplicate = await db.getRepository(Role).createQueryBuilder("role")
+      const duplicate = await db
+        .getRepository(Role)
+        .createQueryBuilder("role")
         .where("LOWER(role.title) = LOWER(:title)", { title: input.title })
         .andWhere("role.id <> :id", { id })
         .getOne();

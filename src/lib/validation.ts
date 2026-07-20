@@ -51,20 +51,26 @@ export const goalSchema = z.object({
   remarks: z.string().trim().max(5000).default(""),
 });
 export const updateGoalSchema = goalSchema.omit({ userId: true });
-export const createUserSchema = registerSchema.extend({
-  roleId: uuid,
-  departmentId: uuid.optional(),
-  departmentIds: z.array(uuid).min(1).max(50).optional(),
-  accessLevel: z.enum(["EMPLOYEE", "MANAGER", "ADMIN"]).default("EMPLOYEE"),
-  status: z.enum(["active", "inactive"]).default("active"),
-}).superRefine((input, context) => {
-  if (input.accessLevel === "MANAGER") {
-    if (!input.departmentIds?.length)
-      context.addIssue({ code: z.ZodIssueCode.custom, path: ["departmentIds"], message: "Select at least one department" });
-  } else if (!input.departmentId) {
-    context.addIssue({ code: z.ZodIssueCode.custom, path: ["departmentId"], message: "Select a department" });
-  }
-});
+export const createUserSchema = registerSchema
+  .extend({
+    roleId: uuid,
+    departmentId: uuid.optional(),
+    departmentIds: z.array(uuid).min(1).max(50).optional(),
+    accessLevel: z.enum(["EMPLOYEE", "MANAGER", "ADMIN"]).default("EMPLOYEE"),
+    status: z.enum(["active", "inactive"]).default("active"),
+  })
+  .superRefine((input, context) => {
+    if (input.accessLevel === "MANAGER") {
+      if (!input.departmentIds?.length)
+        context.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["departmentIds"],
+          message: "Select at least one department",
+        });
+    } else if (!input.departmentId) {
+      context.addIssue({ code: z.ZodIssueCode.custom, path: ["departmentId"], message: "Select a department" });
+    }
+  });
 export const updateUserSchema = z.object({
   name: z.string().trim().min(2).max(120).optional(),
   roleId: uuid.optional(),
@@ -77,11 +83,37 @@ export const departmentSchema = z.object({ name: z.string().trim().min(2).max(12
 export const updateDepartmentSchema = departmentSchema.extend({ managerIds: z.array(uuid).max(100).optional() });
 export const departmentManagerSchema = z.object({ managerId: uuid });
 export const categorySchema = z.object({ name: z.string().trim().min(2).max(120), departmentId: uuid });
-const knowledgeBase = z.object({ title: z.string().trim().min(2).max(160), description: z.string().trim().min(3).max(10000) });
+const knowledgeBase = z.object({
+  title: z.string().trim().min(2).max(160),
+  description: z.string().trim().min(3).max(10000),
+});
 export const knowledgeSchema = z.discriminatedUnion("type", [
-  z.object({ type: z.literal("SOP"), categoryId: uuid, content: knowledgeBase.extend({ steps: z.array(z.object({ step_title: z.string().trim().min(1).max(160), step_description: z.string().trim().min(1).max(5000) })), tags: z.array(z.string().trim().min(1).max(80)).max(50) }) }),
-  z.object({ type: z.literal("BEST_PRACTICE"), categoryId: uuid, content: knowledgeBase.extend({ priority: z.enum(["low", "medium", "high"]) }) }),
-  z.object({ type: z.literal("KPI"), categoryId: uuid, content: knowledgeBase.extend({ target_label: z.union([z.coerce.number().finite(), z.string().trim().min(1).max(120)]), metadata: z.array(z.record(z.string(), z.string())).max(50) }) }),
+  z.object({
+    type: z.literal("SOP"),
+    categoryId: uuid,
+    content: knowledgeBase.extend({
+      steps: z.array(
+        z.object({
+          step_title: z.string().trim().min(1).max(160),
+          step_description: z.string().trim().min(1).max(5000),
+        }),
+      ),
+      tags: z.array(z.string().trim().min(1).max(80)).max(50),
+    }),
+  }),
+  z.object({
+    type: z.literal("BEST_PRACTICE"),
+    categoryId: uuid,
+    content: knowledgeBase.extend({ priority: z.enum(["low", "medium", "high"]) }),
+  }),
+  z.object({
+    type: z.literal("KPI"),
+    categoryId: uuid,
+    content: knowledgeBase.extend({
+      target_label: z.union([z.coerce.number().finite(), z.string().trim().min(1).max(120)]),
+      metadata: z.array(z.record(z.string(), z.string())).max(50),
+    }),
+  }),
 ]);
 
 export function firstZodError(error: z.ZodError) {

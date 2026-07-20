@@ -10,6 +10,7 @@ import {
   ClipboardEdit,
   Target,
   BookOpen,
+  BarChart3,
 } from "lucide-react";
 import type { DashboardData } from "@/lib/dashboard";
 import { Header } from "./Header";
@@ -24,8 +25,19 @@ import { TeamOverview } from "./TeamOverview";
 import { AdminPanel } from "./AdminPanel";
 import { KnowledgePanel } from "./KnowledgePanel";
 import { RoleProgressionTree } from "./RoleProgressionTree";
+import { PerformanceComparison } from "./PerformanceComparison";
 
-type Tab = "overview" | "entry" | "journal" | "goals" | "knowledge" | "kpis" | "team" | "management" | "hierarchy";
+type Tab =
+  | "overview"
+  | "entry"
+  | "journal"
+  | "goals"
+  | "knowledge"
+  | "kpis"
+  | "comparison"
+  | "team"
+  | "management"
+  | "hierarchy";
 export function DashboardShell({ data }: { data: DashboardData }) {
   const initialId = data.users.find((u) => u.id === data.actor.id)?.id || data.users[0]?.id;
   const [selectedId, setSelectedId] = useState(initialId);
@@ -54,6 +66,7 @@ export function DashboardShell({ data }: { data: DashboardData }) {
     { id: "goals", label: "Goals", icon: Target, visible: true },
     { id: "knowledge", label: "Knowledge", icon: BookOpen, visible: true },
     { id: "kpis", label: "KPI Tracking", icon: Target, visible: true },
+    { id: "comparison", label: "Comparison", icon: BarChart3, visible: data.actor.accessLevel !== "EMPLOYEE" },
     { id: "team", label: "Team Overview", icon: Users, visible: data.actor.accessLevel !== "EMPLOYEE" },
     { id: "management", label: "Management", icon: Settings2, visible: data.actor.accessLevel !== "EMPLOYEE" },
     { id: "hierarchy", label: "Hierarchy", icon: Users, visible: data.actor.accessLevel !== "EMPLOYEE" },
@@ -186,7 +199,9 @@ export function DashboardShell({ data }: { data: DashboardData }) {
                         </article>
                       ))}
                     </div>
-                  ) : <div className="inline-empty">No KPI targets have been assigned to this role yet.</div>}
+                  ) : (
+                    <div className="inline-empty">No KPI targets have been assigned to this role yet.</div>
+                  )}
                 </article>
               )}
               <article className="card overview-journal-card">
@@ -205,13 +220,17 @@ export function DashboardShell({ data }: { data: DashboardData }) {
                     <span className="section-eyebrow">PLANNING & DELIVERY</span>
                     <h2>Goals</h2>
                   </div>
-                  <button onClick={() => setTab("goals")}>View all â†’</button>
+                  <button onClick={() => setTab("goals")}>View all →</button>
                 </div>
                 {employee.goals.length ? (
                   <div className="timeline">
-                    {employee.goals.slice(0, 3).map((goal) => <GoalCard key={goal.id} goal={goal} renderedAt={overviewRenderedAt} canManage={false} />)}
+                    {employee.goals.slice(0, 3).map((goal) => (
+                      <GoalCard key={goal.id} goal={goal} renderedAt={overviewRenderedAt} canManage={false} />
+                    ))}
                   </div>
-                ) : <div className="inline-empty">No goals have been added yet.</div>}
+                ) : (
+                  <div className="inline-empty">No goals have been added yet.</div>
+                )}
               </article>
             </section>
           </>
@@ -248,6 +267,7 @@ export function DashboardShell({ data }: { data: DashboardData }) {
             </div>
           </section>
         )}{" "}
+        {tab === "comparison" && <PerformanceComparison users={data.users} initialEmployeeId={employee.id} />}{" "}
         {tab === "team" && <TeamOverview users={data.users} actorId={data.actor.id} />}{" "}
         {tab === "management" && <AdminPanel data={data} />}
         {tab === "hierarchy" && <RoleProgressionTree roles={data.roles} />}

@@ -5,7 +5,9 @@ export class GoalsAndJournalNotes1760100000000 implements MigrationInterface {
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`ALTER TYPE "journal_category_enum" ADD VALUE IF NOT EXISTS 'NOTE'`);
-    await queryRunner.query(`CREATE TYPE "goal_status_enum" AS ENUM ('BACKLOG', 'IN_PROGRESS', 'BLOCKED', 'UNDER_REVIEW', 'FINISHED')`);
+    await queryRunner.query(
+      `CREATE TYPE "goal_status_enum" AS ENUM ('BACKLOG', 'IN_PROGRESS', 'BLOCKED', 'UNDER_REVIEW', 'FINISHED')`,
+    );
     await queryRunner.query(`CREATE TABLE "goals" (
       "id" uuid NOT NULL DEFAULT gen_random_uuid(), "userId" uuid NOT NULL, "description" text NOT NULL,
       "deadline" timestamptz NOT NULL, "status" "goal_status_enum" NOT NULL DEFAULT 'BACKLOG', "remarks" text NOT NULL DEFAULT '',

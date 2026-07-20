@@ -35,7 +35,5 @@ export function buildRoleProgressionForest(roles: RoleProgressionInput[]): RoleP
     return { id: role.id, title: role.title, children };
   };
 
-  return roles
-    .filter((role) => linkedIds.has(role.id) && !role.nextRoleId)
-    .map((role) => buildNode(role, new Set()));
+  return roles.filter((role) => linkedIds.has(role.id) && !role.nextRoleId).map((role) => buildNode(role, new Set()));
 }

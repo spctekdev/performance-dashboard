@@ -2,6 +2,41 @@
 
 All notable changes to the Performance Tracking Dashboard are documented here.
 
+## Version 3
+
+### Knowledge library
+
+- Reworked the Knowledge tab into a department and category-based library for SOPs, Best Practices, and Key Performance Indicators.
+- Added compact department/category filters and a clearer visual hierarchy for all knowledge sections.
+- Display SOP steps as numbered, titled instructions with compact number tiles.
+- Improved KPI metadata presentation with readable inline label/value pairs and consistent orange accents across all knowledge types.
+- Added permission-aware knowledge management:
+  - Department managers can add, edit, and delete SOPs, Best Practices, and KPI references for their assigned departments.
+  - Administrators can manage knowledge entries across all departments.
+  - Other users retain read-only access.
+- Added protected Knowledge API endpoints for creating, updating, and deleting entries, with server-side department authorization.
+
+### Performance comparison
+
+- Added a dedicated Comparison tab for managers and administrators.
+- Added employee-versus-team KPI performance summaries, team ranking, and per-KPI breakdowns.
+- Added selectable reporting windows:
+  - Choose any recorded month for monthly reporting.
+  - Choose a specific quarter for quarterly reporting.
+  - Choose a specific year for annual reporting.
+- Added a KPI performance trend graph that compares the selected employee's monthly score with the team average across the selected period.
+
+### Dashboard experience
+
+- Redesigned the Monthly Performance Update workspace into a unified split form with equal-width KPI and journal panels.
+- Kept panel heights and action buttons aligned while making the KPI list independently scrollable as more KPIs are added.
+- Refined form controls, spacing, panel styling, and responsive behavior for a cleaner management workflow.
+- Rebuilt Role Progression connectors using dynamic SVG measurements:
+  - Lines connect card bottom-centers to child top-centers.
+  - Single-child relationships use straight connectors.
+  - Multi-child relationships use smooth curved connectors.
+  - Connectors resize dynamically and remain behind role cards.
+
 ## Version 2
 
 ### Major changes

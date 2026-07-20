@@ -43,10 +43,7 @@ async function send(to: string, subject: string, action: string, url: string, fo
       recipient: to,
       subject,
     });
-    throw new EmailDeliveryError(
-      "The email could not be delivered. Check SMTP configuration and server logs.",
-      error,
-    );
+    throw new EmailDeliveryError("The email could not be delivered. Check SMTP configuration and server logs.", error);
   }
 }
 export const sendVerificationEmail = (email: string, token: string) =>

@@ -13,11 +13,12 @@ export async function GET(request: NextRequest) {
     const db = await getDataSource();
     const repo = db.getRepository(User);
     const departmentIds = actor.accessLevel === AccessLevel.MANAGER ? await getManagedDepartmentIds(actor.id) : [];
-    const where = actor.accessLevel === AccessLevel.ADMIN
-      ? {}
-      : actor.accessLevel === AccessLevel.MANAGER && departmentIds.length
-        ? [{ id: actor.id }, { departmentId: In(departmentIds) }]
-        : { id: actor.id };
+    const where =
+      actor.accessLevel === AccessLevel.ADMIN
+        ? {}
+        : actor.accessLevel === AccessLevel.MANAGER && departmentIds.length
+          ? [{ id: actor.id }, { departmentId: In(departmentIds) }]
+          : { id: actor.id };
     const users = await repo.find({ where, relations: { role: true, department: true }, order: { name: "ASC" } });
     return ok(
       users.map((u) => ({
@@ -52,7 +53,7 @@ export async function POST(request: NextRequest) {
     if (!isAdmin && input.accessLevel !== AccessLevel.EMPLOYEE)
       throw new HttpError(403, "Managers can only create employee accounts");
     const accessLevel = isAdmin ? (input.accessLevel as AccessLevel) : AccessLevel.EMPLOYEE;
-    const departmentIds = accessLevel === AccessLevel.MANAGER ? input.departmentIds ?? [] : [input.departmentId!];
+    const departmentIds = accessLevel === AccessLevel.MANAGER ? (input.departmentIds ?? []) : [input.departmentId!];
     const departments = await db.getRepository(Department).findBy({ id: In(departmentIds) });
     if (departments.length !== departmentIds.length) throw new HttpError(422, "Select valid departments");
     if (!isAdmin) {
@@ -72,12 +73,19 @@ export async function POST(request: NextRequest) {
         status: input.status as UserStatus,
       });
       if (accessLevel === AccessLevel.MANAGER)
-        await tx.createQueryBuilder().insert().into("department_managers")
-          .values(departmentIds.map((departmentId) => ({ departmentId, managerId: created.id }))).execute();
+        await tx
+          .createQueryBuilder()
+          .insert()
+          .into("department_managers")
+          .values(departmentIds.map((departmentId) => ({ departmentId, managerId: created.id })))
+          .execute();
       return created;
     });
     await sendDashboardInvitationEmail(user.email);
-    return ok({ id: user.id, name: user.name, email: user.email, message: "Employee created and login invitation sent." }, 201);
+    return ok(
+      { id: user.id, name: user.name, email: user.email, message: "Employee created and login invitation sent." },
+      201,
+    );
   } catch (error) {
     return fail(error);
   }

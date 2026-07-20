@@ -67,11 +67,14 @@ export async function PATCH(request: NextRequest, context: Context) {
       const managerDepartmentIds = departmentIds ? [...new Set(departmentIds)] : undefined;
       if (nextAccessLevel === AccessLevel.MANAGER && managerDepartmentIds && !managerDepartmentIds.length)
         throw new HttpError(422, "Select at least one managed department");
-      if (nextAccessLevel === AccessLevel.MANAGER && current.accessLevel !== AccessLevel.MANAGER && !managerDepartmentIds)
+      if (
+        nextAccessLevel === AccessLevel.MANAGER &&
+        current.accessLevel !== AccessLevel.MANAGER &&
+        !managerDepartmentIds
+      )
         throw new HttpError(422, "Select at least one managed department");
       const nextDepartmentId = input.departmentId === undefined ? current.departmentId : input.departmentId;
-      if (nextAccessLevel !== AccessLevel.MANAGER && !nextDepartmentId)
-        throw new HttpError(422, "Select a department");
+      if (nextAccessLevel !== AccessLevel.MANAGER && !nextDepartmentId) throw new HttpError(422, "Select a department");
       if (managerDepartmentIds) {
         const departments = managerDepartmentIds.length
           ? await tx.getRepository(Department).findBy({ id: In(managerDepartmentIds) })
@@ -87,8 +90,12 @@ export async function PATCH(request: NextRequest, context: Context) {
       } else if (managerDepartmentIds) {
         await tx.query(`DELETE FROM "department_managers" WHERE "managerId" = $1`, [id]);
         if (managerDepartmentIds.length) {
-          await tx.createQueryBuilder().insert().into("department_managers")
-            .values(managerDepartmentIds.map((departmentId) => ({ departmentId, managerId: id }))).execute();
+          await tx
+            .createQueryBuilder()
+            .insert()
+            .into("department_managers")
+            .values(managerDepartmentIds.map((departmentId) => ({ departmentId, managerId: id })))
+            .execute();
         }
       }
     });

@@ -27,7 +27,7 @@ export function KpiBarChart({ data }: { data: { name: string; score: number }[] 
     <ResponsiveContainer width="100%" height={240}>
       <BarChart data={data} margin={{ top: 10, right: 5, left: -25, bottom: 24 }}>
         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eef0f6" />
-        <XAxis dataKey="name" tick={{ fontSize: 10 }} angle={-20} textAnchor="end" interval={0} />
+        <XAxis dataKey="name" tick={{ fontSize: 10 }} textAnchor="middle" interval={0} />
         <YAxis domain={[0, 120]} tick={{ fontSize: 11 }} />
         <Tooltip cursor={{ fill: "#f8f9fc" }} contentStyle={{ borderRadius: 10 }} />
         <Bar dataKey="score" fill="#4f46e5" radius={[7, 7, 0, 0]} />

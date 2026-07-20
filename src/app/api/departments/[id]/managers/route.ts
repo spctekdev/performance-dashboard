@@ -23,8 +23,13 @@ async function authorizeAndParse(request: NextRequest, context: Context) {
 export async function POST(request: NextRequest, context: Context) {
   try {
     const { db, id, managerId } = await authorizeAndParse(request, context);
-    await db.createQueryBuilder().insert().into("department_managers")
-      .values({ departmentId: id, managerId }).orIgnore().execute();
+    await db
+      .createQueryBuilder()
+      .insert()
+      .into("department_managers")
+      .values({ departmentId: id, managerId })
+      .orIgnore()
+      .execute();
     return ok({ message: "Manager assigned to department" });
   } catch (error) {
     return fail(error);
@@ -34,8 +39,12 @@ export async function POST(request: NextRequest, context: Context) {
 export async function DELETE(request: NextRequest, context: Context) {
   try {
     const { db, id, managerId } = await authorizeAndParse(request, context);
-    await db.createQueryBuilder().delete().from("department_managers")
-      .where('"departmentId" = :id AND "managerId" = :managerId', { id, managerId }).execute();
+    await db
+      .createQueryBuilder()
+      .delete()
+      .from("department_managers")
+      .where('"departmentId" = :id AND "managerId" = :managerId', { id, managerId })
+      .execute();
     return ok({ message: "Manager removed from department" });
   } catch (error) {
     return fail(error);

@@ -16,7 +16,9 @@ export async function PATCH(request: NextRequest, context: Context) {
     const { id } = await context.params;
     const input = await parseBody(request, updateDepartmentSchema);
     const db = await getDataSource();
-    const duplicate = await db.getRepository(Department).createQueryBuilder("department")
+    const duplicate = await db
+      .getRepository(Department)
+      .createQueryBuilder("department")
       .where("LOWER(department.name) = LOWER(:name)", { name: input.name })
       .andWhere("department.id <> :id", { id })
       .getOne();
@@ -34,8 +36,12 @@ export async function PATCH(request: NextRequest, context: Context) {
       if (managerIds) {
         await tx.query(`DELETE FROM "department_managers" WHERE "departmentId" = $1`, [id]);
         if (managerIds.length) {
-          await tx.createQueryBuilder().insert().into("department_managers")
-            .values(managerIds.map((managerId) => ({ departmentId: id, managerId }))).execute();
+          await tx
+            .createQueryBuilder()
+            .insert()
+            .into("department_managers")
+            .values(managerIds.map((managerId) => ({ departmentId: id, managerId })))
+            .execute();
         }
       }
     });
@@ -55,10 +61,18 @@ export async function DELETE(request: NextRequest, context: Context) {
     if (!(await db.getRepository(Department).findOneBy({ id }))) throw new HttpError(404, "Department not found");
     const [memberCount, knowledgeCount] = await Promise.all([
       db.getRepository(User).countBy({ departmentId: id }),
-      db.getRepository(Knowledge).createQueryBuilder("knowledge").innerJoin("knowledge.category", "category").where('category."departmentId" = :id', { id }).getCount(),
+      db
+        .getRepository(Knowledge)
+        .createQueryBuilder("knowledge")
+        .innerJoin("knowledge.category", "category")
+        .where('category."departmentId" = :id', { id })
+        .getCount(),
     ]);
     if (memberCount || knowledgeCount)
-      throw new HttpError(409, "Reassign all department members and remove its knowledge entries before deleting this department");
+      throw new HttpError(
+        409,
+        "Reassign all department members and remove its knowledge entries before deleting this department",
+      );
     await db.getRepository(Department).delete(id);
     return ok({ message: "Department deleted" });
   } catch (error) {

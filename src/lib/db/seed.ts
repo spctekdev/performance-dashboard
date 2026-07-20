@@ -126,15 +126,58 @@ async function seed() {
     return user;
   }
 
-  const admin = await saveUser("Faizan Ali", "f.ali@spctek.com", "Chief Operating Officer", AccessLevel.ADMIN, null, adminPassword);
-  const affan = await saveUser("Affan Waseem", "awaseem@spctek.com", "Operations Manager", AccessLevel.MANAGER, null, teamPassword);
-  const yasir = await saveUser("Yasir Shoaib", "yasir@spctek.com", "Marketing Manager", AccessLevel.MANAGER, null, teamPassword);
-  const kevin = await saveUser("Kevin Paul", "kpaul@spctek.com", "Operations Specialist", AccessLevel.EMPLOYEE, departments.Operations, teamPassword);
-  const kashan = await saveUser("Muhammad Kashan", "mkashan@spctek.com", "Marketing Specialist", AccessLevel.EMPLOYEE, departments.Marketing, teamPassword);
+  const admin = await saveUser(
+    "Faizan Ali",
+    "f.ali@spctek.com",
+    "Chief Operating Officer",
+    AccessLevel.ADMIN,
+    null,
+    adminPassword,
+  );
+  const affan = await saveUser(
+    "Affan Waseem",
+    "awaseem@spctek.com",
+    "Operations Manager",
+    AccessLevel.MANAGER,
+    null,
+    teamPassword,
+  );
+  const yasir = await saveUser(
+    "Yasir Shoaib",
+    "yasir@spctek.com",
+    "Marketing Manager",
+    AccessLevel.MANAGER,
+    null,
+    teamPassword,
+  );
+  const kevin = await saveUser(
+    "Kevin Paul",
+    "kpaul@spctek.com",
+    "Operations Specialist",
+    AccessLevel.EMPLOYEE,
+    departments.Operations,
+    teamPassword,
+  );
+  const kashan = await saveUser(
+    "Muhammad Kashan",
+    "mkashan@spctek.com",
+    "Marketing Specialist",
+    AccessLevel.EMPLOYEE,
+    departments.Marketing,
+    teamPassword,
+  );
 
-  for (const [department, manager] of [[departments.Operations, affan], [departments.Marketing, yasir]] as const) {
-    await db.createQueryBuilder().insert().into("department_managers")
-      .values({ departmentId: department.id, managerId: manager.id }).orIgnore().execute();
+  for (const [department, manager] of [
+    [departments.Operations, affan],
+    [departments.Marketing, yasir],
+  ] as const) {
+    await db
+      .createQueryBuilder()
+      .insert()
+      .into("department_managers")
+      .values({ departmentId: department.id, managerId: manager.id })
+      .orIgnore()
+      .execute();
   }
 
   const kpis: Record<string, KpiDefinition> = {};
@@ -148,10 +191,10 @@ async function seed() {
   }
   for (const [roleTitle, definitions] of Object.entries(roleKpis)) {
     for (const [name, , , target] of definitions) {
-      await assignmentRepo.upsert(
-        { roleId: roles[roleTitle].id, kpiId: kpis[name].id, target: String(target) },
-        ["roleId", "kpiId"],
-      );
+      await assignmentRepo.upsert({ roleId: roles[roleTitle].id, kpiId: kpis[name].id, target: String(target) }, [
+        "roleId",
+        "kpiId",
+      ]);
     }
   }
 
@@ -178,22 +221,55 @@ async function seed() {
   }
 
   const journalSubjects = [
-    "executive operating review", "operations delivery plan", "marketing campaign plan", "operations workflow", "marketing optimization plan",
+    "executive operating review",
+    "operations delivery plan",
+    "marketing campaign plan",
+    "operations workflow",
+    "marketing optimization plan",
   ];
-  await journalRepo.save(people.flatMap((person, personIndex) => months.map((period, monthIndex) => ({
-    userId: person.id,
-    description: `${journalSubjects[personIndex]} ${monthIndex + 1} completed with ${monthIndex % 4 === 2 ? "a dependency noted" : "measurable progress"}.`,
-    category: monthIndex % 4 === 2 ? JournalCategory.NOTE : monthIndex % 5 === 4 ? JournalCategory.BAD : JournalCategory.GOOD,
-    impact: String(monthIndex % 3 === 0 ? 99 : monthIndex % 3 === 1 ? 66 : 33),
-    period,
-  }))));
+  await journalRepo.save(
+    people.flatMap((person, personIndex) =>
+      months.map((period, monthIndex) => ({
+        userId: person.id,
+        description: `${journalSubjects[personIndex]} ${monthIndex + 1} completed with ${monthIndex % 4 === 2 ? "a dependency noted" : "measurable progress"}.`,
+        category:
+          monthIndex % 4 === 2
+            ? JournalCategory.NOTE
+            : monthIndex % 5 === 4
+              ? JournalCategory.BAD
+              : JournalCategory.GOOD,
+        impact: String(monthIndex % 3 === 0 ? 99 : monthIndex % 3 === 1 ? 66 : 33),
+        period,
+      })),
+    ),
+  );
 
   const now = new Date();
-  await goalRepo.save(people.flatMap((person, personIndex) => [
-    { userId: person.id, description: `Complete Q${((personIndex % 4) + 1)} role objectives`, deadline: new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 15)), status: GoalStatus.IN_PROGRESS, remarks: "On track with monthly KPI checkpoints." },
-    { userId: person.id, description: "Deliver the annual improvement initiative", deadline: new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 4, 1)), status: GoalStatus.BACKLOG, remarks: "Plan and milestones have been documented." },
-    { userId: person.id, description: "Review previous-quarter performance", deadline: new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 1, 28)), status: GoalStatus.FINISHED, remarks: "Review completed and follow-up actions recorded." },
-  ]));
+  await goalRepo.save(
+    people.flatMap((person, personIndex) => [
+      {
+        userId: person.id,
+        description: `Complete Q${(personIndex % 4) + 1} role objectives`,
+        deadline: new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 15)),
+        status: GoalStatus.IN_PROGRESS,
+        remarks: "On track with monthly KPI checkpoints.",
+      },
+      {
+        userId: person.id,
+        description: "Deliver the annual improvement initiative",
+        deadline: new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 4, 1)),
+        status: GoalStatus.BACKLOG,
+        remarks: "Plan and milestones have been documented.",
+      },
+      {
+        userId: person.id,
+        description: "Review previous-quarter performance",
+        deadline: new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 1, 28)),
+        status: GoalStatus.FINISHED,
+        remarks: "Review completed and follow-up actions recorded.",
+      },
+    ]),
+  );
 
   console.log(`Seed complete. Admin: ${admin.email}; team password: ${TEAM_PASSWORD}`);
   await db.destroy();

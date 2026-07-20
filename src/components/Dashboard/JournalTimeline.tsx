@@ -34,13 +34,19 @@ export function JournalTimeline({
         const period = new Date(`${entry.period}T00:00:00Z`);
         return (
           <article className={`timeline-item ${entry.category.toLowerCase()}`} key={entry.id}>
-            <div className="timeline-date"><time>{period.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" })}</time></div>
+            <div className="timeline-date">
+              <time>{period.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" })}</time>
+            </div>
             <div className="timeline-content">
               <div className="timeline-meta">
-                <span className="entry-type-badge">{entry.category === "GOOD" ? "Achievement" : entry.category === "BAD" ? "Challenge" : "Note"}</span>
+                <span className="entry-type-badge">
+                  {entry.category === "GOOD" ? "Achievement" : entry.category === "BAD" ? "Challenge" : "Note"}
+                </span>
               </div>
               <p>{entry.description}</p>
-              <div className="entry-badges"><span className={`impact-badge ${impact.toLowerCase()}`}>Impact: {impact}</span></div>
+              <div className="entry-badges">
+                <span className={`impact-badge ${impact.toLowerCase()}`}>Impact: {impact}</span>
+              </div>
             </div>
             {onEdit && onDelete && (
               <div className="timeline-actions">

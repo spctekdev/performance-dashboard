@@ -1,20 +1,32 @@
 import "server-only";
 import { In } from "typeorm";
 import { getDataSource } from "./db/data-source";
-import { AccessLevel, Category, Department, Goal, Journal, Knowledge, KpiDefinition, Role, RoleKpiAssignment, User, UserKpiPerformance } from "./db/entities";
+import {
+  AccessLevel,
+  Category,
+  Department,
+  Goal,
+  Journal,
+  Knowledge,
+  KpiDefinition,
+  Role,
+  RoleKpiAssignment,
+  User,
+  UserKpiPerformance,
+} from "./db/entities";
 import type { SessionUser } from "@/types/domain";
 import { getManagedDepartmentIds } from "./auth/authorize";
 
 export async function getDashboardData(actor: SessionUser) {
   const db = await getDataSource();
   const userRepo = db.getRepository(User);
-  const managedDepartmentIds =
-    actor.accessLevel === AccessLevel.MANAGER ? await getManagedDepartmentIds(actor.id) : [];
-  const where = actor.accessLevel === AccessLevel.ADMIN
-    ? {}
-    : actor.accessLevel === AccessLevel.MANAGER && managedDepartmentIds.length
-      ? [{ id: actor.id }, { departmentId: In(managedDepartmentIds) }]
-      : { id: actor.id };
+  const managedDepartmentIds = actor.accessLevel === AccessLevel.MANAGER ? await getManagedDepartmentIds(actor.id) : [];
+  const where =
+    actor.accessLevel === AccessLevel.ADMIN
+      ? {}
+      : actor.accessLevel === AccessLevel.MANAGER && managedDepartmentIds.length
+        ? [{ id: actor.id }, { departmentId: In(managedDepartmentIds) }]
+        : { id: actor.id };
   const users = await userRepo.find({
     where,
     relations: { role: { nextRole: true }, department: true, managedDepartments: true },
@@ -27,12 +39,12 @@ export async function getDashboardData(actor: SessionUser) {
         .find({ where: { userId: In(userIds) }, relations: { kpi: true }, order: { period: "ASC" } })
     : [];
   const journals = userIds.length
-    ? await db
-        .getRepository(Journal)
-        .find({ where: { userId: In(userIds) }, order: { createdAt: "DESC" } })
+    ? await db.getRepository(Journal).find({ where: { userId: In(userIds) }, order: { createdAt: "DESC" } })
     : [];
   const goals = userIds.length
-    ? await db.getRepository(Goal).find({ where: { userId: In(userIds) }, order: { deadline: "ASC", createdAt: "DESC" } })
+    ? await db
+        .getRepository(Goal)
+        .find({ where: { userId: In(userIds) }, order: { deadline: "ASC", createdAt: "DESC" } })
     : [];
   const canManage = actor.accessLevel === AccessLevel.ADMIN || actor.accessLevel === AccessLevel.MANAGER;
   const assignmentRoleIds = [...new Set(users.flatMap((user) => [user.roleId, user.role.nextRoleId].filter(Boolean)))];
@@ -72,7 +84,11 @@ export async function getDashboardData(actor: SessionUser) {
       })
     : [];
   const categories = accessibleDepartmentIds.length
-    ? await db.getRepository(Category).find({ where: { departmentId: In(accessibleDepartmentIds) }, relations: { department: true }, order: { name: "ASC" } })
+    ? await db.getRepository(Category).find({
+        where: { departmentId: In(accessibleDepartmentIds) },
+        relations: { department: true },
+        order: { name: "ASC" },
+      })
     : [];
 
   return {
@@ -185,7 +201,12 @@ export async function getDashboardData(actor: SessionUser) {
       createdAt: department.createdAt.toISOString(),
       updatedAt: department.updatedAt.toISOString(),
     })),
-    categories: categories.map((category) => ({ id: category.id, name: category.name, departmentId: category.departmentId, departmentName: category.department.name })),
+    categories: categories.map((category) => ({
+      id: category.id,
+      name: category.name,
+      departmentId: category.departmentId,
+      departmentName: category.department.name,
+    })),
     knowledge: knowledge.map((entry) => ({
       id: entry.id,
       type: entry.type,
