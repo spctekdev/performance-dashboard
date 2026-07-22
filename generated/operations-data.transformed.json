@@ -1,0 +1,1558 @@
+[
+  {
+    "global": {
+      "category": "Advertising & PPC",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "PPC Management SOP",
+      "description": "Amazon Ads — keyword research, campaign structuring, bid & budget optimization, reporting.",
+      "steps": [
+        {
+          "step_title": "Keyword Research",
+          "step_description": "Identify high-converting, relevant keywords from tools and competitor ASINs."
+        },
+        {
+          "step_title": "Competitor Analysis",
+          "step_description": "Analyze competitors to understand their content approach, pricing, reviews, and keyword targeting for better positioning."
+        },
+        {
+          "step_title": "Objectives of Campaigns",
+          "step_description": "Decide the campaign goal — ranking, sales velocity, or profitability."
+        },
+        {
+          "step_title": "Budget Planning",
+          "step_description": "Allocate budget across campaigns."
+        },
+        {
+          "step_title": "Match Type Strategy",
+          "step_description": "Decide the use of Broad, Phrase, and Exact match based on the launch or scale phase."
+        },
+        {
+          "step_title": "Campaign Structuring",
+          "step_description": "Define naming conventions, ad groups, budgets, and targeting type."
+        },
+        {
+          "step_title": "Sponsored Campaigns Setup",
+          "step_description": "Create Sponsored Products campaigns — manual and auto."
+        },
+        {
+          "step_title": "Negative Keyword Management",
+          "step_description": "Block poor-performing search terms."
+        },
+        {
+          "step_title": "Bid Optimization",
+          "step_description": "Adjust bids based on performance — ACOS, CVR, CPC."
+        },
+        {
+          "step_title": "Placement Adjustments",
+          "step_description": "Adjust Top-of-Search or Product Page placement multipliers."
+        },
+        {
+          "step_title": "Budget Reallocation",
+          "step_description": "Shift budgets toward high-performing campaigns."
+        },
+        {
+          "step_title": "Daily Monitoring",
+          "step_description": "Monitor performance metrics like spend, ACOS, CTR, and CVR."
+        },
+        {
+          "step_title": "Weekly Report Creation",
+          "step_description": "Create performance reports for internal and client review."
+        },
+        {
+          "step_title": "Dayparting (optional)",
+          "step_description": "Set time-based bid adjustments."
+        },
+        {
+          "step_title": "Weekly Account Audit",
+          "step_description": "Analyze overall PPC performance to find gaps, wasted spend, or scaling opportunities."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Manage to TACOS, not just ACOS",
+      "description": "Campaign-level ACOS shows whether one campaign is efficient, but TACOS (ad spend ÷ total revenue) shows whether advertising is actually growing the business or just renting sales. Track both weekly, and treat a rising TACOS against flat total sales as the trigger for a full account audit.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "ACOS by lifecycle phase",
+      "description": "Industry-benchmark advertising cost of sale, indexed to campaign phase. A healthy blended TACOS sits well below ACOS once organic rank is established.",
+      "target_label": "25 percent",
+      "metadata": [
+        {
+          "source": "Industry benchmark aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Account Health & Reinstatement",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Assessment SOP",
+      "description": "Read the notification, isolate the root cause, and size up the odds before any documents are requested.",
+      "steps": [
+        {
+          "step_title": "Review Notification from Amazon",
+          "step_description": "Understand the reason for the account suspension."
+        },
+        {
+          "step_title": "Extract Account Health Metrics",
+          "step_description": "Get details on performance notifications and violations."
+        },
+        {
+          "step_title": "Identify Root Cause",
+          "step_description": "Determine whether the issue is IP, related accounts, authenticity, etc. by checking the specific violation type."
+        },
+        {
+          "step_title": "Preliminary Risk Analysis",
+          "step_description": "Evaluate the likelihood of reinstatement."
+        },
+        {
+          "step_title": "Required Documents Checklist",
+          "step_description": "Define what documents are needed."
+        },
+        {
+          "step_title": "Assign Priority Level",
+          "step_description": "High, Medium, or Low, based on urgency and risk."
+        },
+        {
+          "step_title": "Create Assessment Report",
+          "step_description": "Written using ChatGPT suggestions."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Treat Account Health as a weekly operations function, not incident response",
+      "description": "Reviewing Account Health only after a notification arrives means the damage is already done. Check the dashboard weekly, and answer every warning within 24-48 hours with a Plan of Action that names root cause, corrective action, and prevention.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Account Health Rating (AHR)",
+      "description": "Amazon's 0-1,000 composite compliance score. 200+ is Healthy; below 100 carries high deactivation risk.",
+      "target_label": "200 score (0-1000 scale)",
+      "metadata": [
+        {
+          "source": "Amazon Seller Central, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Account Health & Reinstatement",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Reinstatement SOP",
+      "description": "Account-level appeal: document collection through Amazon follow-up, to a closed case.",
+      "steps": [
+        {
+          "step_title": "Collect Documents from Client",
+          "step_description": "Request invoices, utility bills, ID, and other supporting documents."
+        },
+        {
+          "step_title": "Review Document Quality",
+          "step_description": "Check completeness, authenticity, and match with the ASIN."
+        },
+        {
+          "step_title": "Draft Appeal Letter",
+          "step_description": "Write the appeal based on the violation type and available documents."
+        },
+        {
+          "step_title": "Review & Finalize Appeal",
+          "step_description": "Proofreading and policy compliance check."
+        },
+        {
+          "step_title": "Submit to Amazon",
+          "step_description": "Submit via the account interface."
+        },
+        {
+          "step_title": "Track Case Response",
+          "step_description": "Monitor for Amazon's reply."
+        },
+        {
+          "step_title": "Respond to Amazon Follow-up",
+          "step_description": "Provide extra documents or a revised appeal."
+        },
+        {
+          "step_title": "Final Status Update",
+          "step_description": "Notify the client of success or next steps."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Mirror Amazon's own POA structure exactly",
+      "description": "Appeals that clearly separate root cause, corrective action, and preventive action move faster through review than narrative appeals. Never submit a revised appeal without directly addressing the specific reason for the prior rejection.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Appeal response SLA",
+      "description": "Typical Amazon turnaround per submission round; track actual case time against it to flag stalled cases for escalation.",
+      "target_label": "48 hours",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Account Health & Reinstatement",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "ASIN Assessment SOP",
+      "description": "The listing-level counterpart to Assessment — isolate why a specific ASIN was suppressed.",
+      "steps": [
+        {
+          "step_title": "Identify ASIN(s) Affected",
+          "step_description": "Review the Amazon Performance Notification for ASIN codes."
+        },
+        {
+          "step_title": "Identify Violation Type",
+          "step_description": "IP, restricted product, authenticity, etc."
+        },
+        {
+          "step_title": "Check Product Listing Details",
+          "step_description": "Review title, images, and backend fields."
+        },
+        {
+          "step_title": "Review Customer Feedback",
+          "step_description": "Analyze reviews for complaints."
+        },
+        {
+          "step_title": "Review Customer Experience / VOC",
+          "step_description": "Review Voice of the Customer for the flagged ASIN and FBA/FBM returns."
+        },
+        {
+          "step_title": "Analyze Documents for ASIN",
+          "step_description": "Review documents to establish authenticity."
+        },
+        {
+          "step_title": "Determine Root Cause",
+          "step_description": "Assess the root violation source."
+        },
+        {
+          "step_title": "Create ASIN Assessment Report",
+          "step_description": "Report with findings and suggestions."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Read the suppression notice line by line before touching the listing",
+      "description": "Amazon's ASIN notifications are frequently vague about the exact trigger. Cross-check listing history, VOC, and returns data against the stated violation type before assuming what needs to change.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "ASIN reactivation time",
+      "description": "Time from suppression notice to a reinstated, sellable ASIN; the tighter this window, the less lost sales velocity and ranking.",
+      "target_label": "5 business days (target)",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Account Health & Reinstatement",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "ASIN Reinstatement SOP",
+      "description": "Listing-level appeal: document validation through resubmission, to a closed client update.",
+      "steps": [
+        {
+          "step_title": "Request Supporting Documents",
+          "step_description": "Ask for invoice, Certificate of Authenticity, brand authorization, etc."
+        },
+        {
+          "step_title": "Validate Documents",
+          "step_description": "Check supplier info and matching product details."
+        },
+        {
+          "step_title": "Draft Plan of Action (POA)",
+          "step_description": "Detail the root cause plus corrective and preventive actions."
+        },
+        {
+          "step_title": "Write ASIN Appeal Letter",
+          "step_description": "Based on the POA and violation type."
+        },
+        {
+          "step_title": "Submit via Account Portal",
+          "step_description": "Upload documents and the appeal."
+        },
+        {
+          "step_title": "Monitor Amazon Response",
+          "step_description": "Track case updates."
+        },
+        {
+          "step_title": "Resubmit if Rejected",
+          "step_description": "Modify and resend the appeal."
+        },
+        {
+          "step_title": "Final Client Update",
+          "step_description": "Inform the client of the resolution or next steps."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Route document requests through one channel per case",
+      "description": "Centralize every document request through a single shared drive folder or cdocs@spctek.com thread per case, so nothing is lost across email chains and the appeal draft always references the latest version.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Amazon response window",
+      "description": "Time Amazon typically takes to respond to a submitted ASIN appeal before a follow-up is warranted.",
+      "target_label": "48 hours",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Account Health & Reinstatement",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "SPN Escalation SOP",
+      "description": "When a case outgrows standard appeal channels — escalating through the Solution Provider Network.",
+      "steps": [
+        {
+          "step_title": "Escalation Procedure",
+          "step_description": "Move a complex, stalled, or high-impact case into the SPN escalation channel."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Escalate with a complete internal file, not a summary",
+      "description": "SPN reps move faster when the full assessment report, all prior submissions, and a clear ask are attached at first contact, rather than triaging a case in stages.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Escalation resolution time",
+      "description": "Time from SPN log to a substantive response from the assigned Amazon rep.",
+      "target_label": "5 business days (target)",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Creative & Brand Content",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "A+ Content SOP",
+      "description": "A+ Content, storefronts, listing imagery, and brand story — the visual and narrative layer of the listing.",
+      "steps": [
+        {
+          "step_title": "Design Layout",
+          "step_description": "Create a sample design to align with the client's goals and brand theme."
+        },
+        {
+          "step_title": "ALT Tags",
+          "step_description": "Backend tags for SEO and better visibility."
+        },
+        {
+          "step_title": "Text Content Draft",
+          "step_description": "Preparing the content draft."
+        },
+        {
+          "step_title": "Photography",
+          "step_description": "Develop a comprehensive shot list — hero shot, scale images, in-use lifestyle photos, close-ups, and compatibility shots"
+        },
+        {
+          "step_title": "Graphic Designing",
+          "step_description": "Establish visual hierarchy with consistent typography, font sizes, and bolding"
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Front-load the first 2-3 modules for mobile",
+      "description": "Most shoppers never scroll past the third module on mobile. Put the highest-impact visual and the strongest differentiator there, not the brand story.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "A+ Content conversion lift",
+      "description": "Typical conversion-rate lift attributable to well-built A+ Content versus no A+ Content at all.",
+      "target_label": "8 percent lift",
+      "metadata": [
+        {
+          "source": "Amazon-published + agency aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Creative & Brand Content",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Storefront Creation SOP",
+      "description": "A+ Content, storefronts, listing imagery, and brand story — the visual and narrative layer of the listing.",
+      "steps": [
+        {
+          "step_title": "Design Layout",
+          "step_description": "Menu and page selection."
+        },
+        {
+          "step_title": "Product Grid Selection",
+          "step_description": "Choose the best products to showcase on the homepage and category pages."
+        },
+        {
+          "step_title": "ALT Tags",
+          "step_description": "Backend tags for SEO and better visibility."
+        },
+        {
+          "step_title": "Text Content Draft",
+          "step_description": "Keyword research and content drafting; the designer builds the layout for approval."
+        },
+        {
+          "step_title": "Photography",
+          "step_description": "Keep a consistent aesthetic across all images and banners"
+        },
+        {
+          "step_title": "Graphic Designing",
+          "step_description": "Creative designing, posting, and publishing; once approved, content is posted on Amazon."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Map the page hierarchy to one storefront goal",
+      "description": "A storefront trying to do brand discovery, launches, and cross-sell all on the homepage dilutes all three. Pick one primary goal and build the navigation and grid around it.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Storefront session conversion rate",
+      "description": "No official Amazon-published storefront benchmark exists; track against your own listing-level CVR band as the baseline.",
+      "target_label": "10 percent",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Creative & Brand Content",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Listing Images SOP",
+      "description": "A+ Content, storefronts, listing imagery, and brand story — the visual and narrative layer of the listing.",
+      "steps": [
+        {
+          "step_title": "Creative Ideas Gen.",
+          "step_description": "Competitor research and market analysis."
+        },
+        {
+          "step_title": "Text Content Draft",
+          "step_description": "Keyword research and content draft."
+        },
+        {
+          "step_title": "Photography",
+          "step_description": "Idea generation, reference, and guidance for images."
+        },
+        {
+          "step_title": "Graphic Designing",
+          "step_description": "Creative designing, posting, and publishing."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Map every image to one customer question",
+      "description": "Each of the seven image slots should answer a specific question a shopper has — scale, in-use, what's included — rather than repeating the hero shot from a different angle.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Main image compliance & CTR contribution",
+      "description": "Main image must meet Amazon's pure-white-background and 85%-of-frame rule; well-optimized image sets are consistently linked to the top of the category CVR band.",
+      "target_label": "85 percent of frame (main image)",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Creative & Brand Content",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Brand Story SOP",
+      "description": "A+ Content, storefronts, listing imagery, and brand story — the visual and narrative layer of the listing.",
+      "steps": [
+        {
+          "step_title": "Creative Ideas Gen.",
+          "step_description": "Competitor research and market analysis."
+        },
+        {
+          "step_title": "Text Content Draft",
+          "step_description": "Keyword research and content draft; keywords are reused in the content draft."
+        },
+        {
+          "step_title": "Graphic Designing",
+          "step_description": "Creative designing, posting, and publishing; once approved, content is posted on Amazon."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Use brand story for context the listing can't carry",
+      "description": "Don't repeat product benefits already in the bullets or A+ Content — use brand story space for founder story, mission, and credibility cues that build trust rather than restating features.",
+      "priority": "low"
+    },
+    "KPI": {
+      "title": "New, non-duplicated visual assets",
+      "description": "Share of brand story imagery that does not reuse any asset from the main listing images or A+ Content.",
+      "target_label": "100 percent",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Listing & Catalog Management",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Listing Creation SOP",
+      "description": "Building a listing from keyword research to flat file, then auditing it against the standard.",
+      "steps": [
+        {
+          "step_title": "Keyword Research",
+          "step_description": "Find high-volume, relevant search terms to use in the listing."
+        },
+        {
+          "step_title": "Competitor Analysis",
+          "step_description": "Analyze top listings for strategy, content, reviews, etc."
+        },
+        {
+          "step_title": "Feature Extraction",
+          "step_description": "Identify key selling features from product catalogs, competitor reviews, or factory sheets."
+        },
+        {
+          "step_title": "Title Copywriting",
+          "step_description": "Create keyword-rich, readable product titles."
+        },
+        {
+          "step_title": "Bullet Points",
+          "step_description": "Write clear, benefit-driven bullets with keywords."
+        },
+        {
+          "step_title": "Description Writing",
+          "step_description": "Write the HTML or plain description with branding, features, and story."
+        },
+        {
+          "step_title": "Backend Keywords",
+          "step_description": "Fill out the backend search terms."
+        },
+        {
+          "step_title": "Backend Attributes",
+          "step_description": "Fill out backend attributes such as item form."
+        },
+        {
+          "step_title": "Category Mapping",
+          "step_description": "Assign the most accurate category / item type."
+        },
+        {
+          "step_title": "Flat File Creation",
+          "step_description": "Populate and submit Amazon flat files."
+        },
+        {
+          "step_title": "QA & Upload",
+          "step_description": "Review, troubleshoot errors, and submit the listing."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Backend keywords: bytes, not characters",
+      "description": "The backend search-terms field is measured in UTF-8 bytes, not characters — accented characters and symbols cost more than one byte each. Go one byte over and Amazon silently drops the entire field from indexing, with no warning.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Backend search terms byte limit",
+      "description": "Maximum backend keyword field size before Amazon stops indexing the field entirely.",
+      "target_label": "249 bytes (US/UK/EU)",
+      "metadata": [
+        {
+          "source": "Amazon Seller Central, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Listing & Catalog Management",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Listing Audit SOP",
+      "description": "Building a listing from keyword research to flat file, then auditing it against the standard.",
+      "steps": [
+        {
+          "step_title": "Review Images & Video",
+          "step_description": "Analysis performed per SOP."
+        },
+        {
+          "step_title": "Review Title",
+          "step_description": "Title length 80–150 characters, mobile-optimized, per internal SOP"
+        },
+        {
+          "step_title": "Review Bullet Points",
+          "step_description": "All 5 bullets should use close to 200 characters each"
+        },
+        {
+          "step_title": "Review A+ Content",
+          "step_description": "Modular layout with a balanced mix of image and text modules"
+        },
+        {
+          "step_title": "Reviews and Rating Analysis",
+          "step_description": "Analyze good and bad reviews to improve product description and quality."
+        },
+        {
+          "step_title": "Category Analysis",
+          "step_description": "Check whether the listing is in the right category."
+        },
+        {
+          "step_title": "Pricing Overview",
+          "step_description": "Review pricing of similar products in the market."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Audit against the current standard, not last year's listing",
+      "description": "Amazon's image, title, and A+ policies tighten regularly — a listing that passed audit a year ago can silently drift out of compliance. Re-check every listing against the current character limits and image rules, not the version on file.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Review rating & volume floor",
+      "description": "Minimum rating and review count the internal SOP treats as healthy before flagging a listing for improvement work.",
+      "target_label": "4.2 star rating (of 5)",
+      "metadata": [
+        {
+          "source": "Internal SOP"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Testing & Experimentation",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "A/B Testing SOP",
+      "description": "Amazon's native Manage Your Experiments tool, plus a manual protocol for products that don't qualify.",
+      "steps": [
+        {
+          "step_title": "Content Variations — A+ Content, Bullets, Title, Images",
+          "step_description": "Create listing content per previous listing practices, with multiple variations built to highlight specific product features based on market analysis and demand."
+        },
+        {
+          "step_title": "Multi-Pack Variations",
+          "step_description": "Create multiple variations by pack size, color, or combination to offer in the market."
+        },
+        {
+          "step_title": "Create 2 Versions",
+          "step_description": "Test both versions of the content above to compare outcomes."
+        },
+        {
+          "step_title": "Select Duration",
+          "step_description": "Define the number of weeks for the testing phase."
+        },
+        {
+          "step_title": "Define Objective to Test",
+          "step_description": "Set the objective — high clicks, sessions, conversions, or seasonal offering."
+        },
+        {
+          "step_title": "Track KPI",
+          "step_description": "Analyze sales, conversions, and sessions against the different offerings."
+        },
+        {
+          "step_title": "Decision Making",
+          "step_description": "Review top-performing content and implement it; where there's a tie, decide which is more relevant."
+        },
+        {
+          "step_title": "Manual Testing Criteria",
+          "step_description": "For generic products, apply testing manually and sequentially over a defined duration."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "One variable per test, never stop early",
+      "description": "Changing the title and the main image in the same experiment makes the result unreadable. Let Amazon's Manage Your Experiments tool run to its full duration even if one variant looks ahead early — early leads regularly reverse.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Statistical significance & test duration",
+      "description": "Confidence level and minimum run time Amazon's Manage Your Experiments tool needs before a result is trustworthy.",
+      "target_label": "95 percent confidence",
+      "metadata": [
+        {
+          "source": "Amazon Seller Central + agency aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Product Strategy",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Product Hunting SOP",
+      "description": "Opportunity research across Amazon's own tools, Helium 10, Alibaba, and the existing supplier network.",
+      "steps": [
+        {
+          "step_title": "Define Product Selection Criteria",
+          "step_description": "Prepare a checklist covering source price, categories, sizes, manual vs. electric, budget, and marketplace."
+        },
+        {
+          "step_title": "Research on Product Opportunity Explorer",
+          "step_description": "Collect data to analyze product niches and ideation from Amazon's own tool — growing demand, sales, pricing, and return rate."
+        },
+        {
+          "step_title": "Research on Amazon Best Sellers",
+          "step_description": "Collect product data from Amazon's top-selling products to find opportunities and product ideas."
+        },
+        {
+          "step_title": "Research from Helium 10 Black Box",
+          "step_description": "Gather a list of products per the product criteria."
+        },
+        {
+          "step_title": "Get Product Catalog from Suppliers",
+          "step_description": "Connect with the current supplier network and review their catalogs for new product ideas and demand."
+        },
+        {
+          "step_title": "Review Trends",
+          "step_description": "See product trends on Google Trends and Opportunity Explorer; correlate yearly trends with future demand."
+        },
+        {
+          "step_title": "Sourcing Websites",
+          "step_description": "Alibaba, Made-in-China, 1688, Tradewheel."
+        },
+        {
+          "step_title": "Research on Alibaba",
+          "step_description": "Review new product releases and niches on Alibaba, compiling stats and pricing estimates."
+        },
+        {
+          "step_title": "Market Segmentation",
+          "step_description": "Develop product market segmentation of the top 20 sellers to identify demand, dominance, prices, materials, and variations."
+        },
+        {
+          "step_title": "Conclusion of Product Selection",
+          "step_description": "Compile a complete product report summarizing the selection"
+        },
+        {
+          "step_title": "Sourcing Price Estimates",
+          "step_description": "Get initial product estimates for a minimum of 500 units with tentative landing costs to derive launch profitability."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Cap sourcing price at 20% of intended sale price",
+      "description": "Before committing to a product, confirm unit sourcing cost — before FBA fees, referral fees, and ad spend — leaves enough margin. Sourcing above roughly a fifth of the intended Amazon sale price rarely survives the full fee stack.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Sourcing cost ceiling",
+      "description": "Maximum unit sourcing cost as a share of the intended Amazon sale price, before FBA/referral/ad fees are layered on.",
+      "target_label": "20 percent of sale price",
+      "metadata": [
+        {
+          "source": "Internal SOP"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Product Strategy",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Product Sourcing SOP",
+      "description": "Vetting suppliers, gathering quotes, testing samples, and locking in the contract.",
+      "steps": [
+        {
+          "step_title": "Define Requirements of Products",
+          "step_description": "List specific needs for the product to be sourced — material, MOQ, target price, design, packaging, colors, size, etc."
+        },
+        {
+          "step_title": "Define Location to Source From",
+          "step_description": "Identify the best sourcing location for the finalized product."
+        },
+        {
+          "step_title": "Vet Supplier Profile",
+          "step_description": "Identify supplier trustworthiness, communication, and capability."
+        },
+        {
+          "step_title": "Get Multiple Quotes (at least 5)",
+          "step_description": "Get the best quotes at or below the target price from manufacturers and factories."
+        },
+        {
+          "step_title": "Get Samples",
+          "step_description": "Get physical samples of the product before placing the order."
+        },
+        {
+          "step_title": "Make Contract",
+          "step_description": "Draft a contract between supplier and buyer to define accurate, timely outcomes."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Verified, Trade Assurance suppliers only on Alibaba",
+      "description": "Confirm Verified Supplier status and Trade Assurance coverage before sending deposits — it's the difference between a recoverable dispute and a lost payment if the supplier doesn't deliver to spec.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Minimum competing quotes",
+      "description": "Minimum number of supplier quotes gathered before selecting a manufacturing partner.",
+      "target_label": "5 quotes",
+      "metadata": [
+        {
+          "source": "Internal SOP"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Pricing & Revenue",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Price Optimization SOP",
+      "description": "Competitor benchmarking, margin math, automated repricing, and impact analysis.",
+      "steps": [
+        {
+          "step_title": "Competitor Analysis",
+          "step_description": "Understand competitor pricing benchmarks, floor and ceiling pricing, seasonal fluctuations, and pricing trends."
+        },
+        {
+          "step_title": "Profit Margin",
+          "step_description": "Calculate profit margin based on COGS, platform fees, etc."
+        },
+        {
+          "step_title": "Breakeven Calculation",
+          "step_description": "Calculate breakeven based on COGS and the roadmap."
+        },
+        {
+          "step_title": "B2B Discounts Setup",
+          "step_description": "Set up volume/quantity discounts for B2B while remaining profitable."
+        },
+        {
+          "step_title": "Price Automation",
+          "step_description": "Based on competitor analysis, define pricing logic per goal — undercut competitor, maximize margin, or maintain Buy Box."
+        },
+        {
+          "step_title": "Bulk Price Update",
+          "step_description": "Structure and upload price updates via flat file or template."
+        },
+        {
+          "step_title": "Price Alerts Fix",
+          "step_description": "Fix suppressed listings due to pricing violations — floor or ceiling."
+        },
+        {
+          "step_title": "Price Change Impact Analysis",
+          "step_description": "Measure the impact of price changes on sales velocity, Buy Box win %, and conversions."
+        },
+        {
+          "step_title": "Sales Velocity Analysis",
+          "step_description": "Use sales data to determine average daily sell-through per SKU."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Set a profit floor before turning on automation",
+      "description": "Automated repricing without a hard profit-margin floor will chase the Buy Box straight through your margin. Set the floor and ceiling first, then let the rule set compete within them.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Buy Box win rate",
+      "description": "Healthy Buy Box win rate depends heavily on competitive density; private-label/exclusive listings should sit far above resale or wholesale listings.",
+      "target_label": "95 percent",
+      "metadata": [
+        {
+          "source": "Industry benchmark aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Inventory Management",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Inventory Management SOP",
+      "description": "Forecasting, safety stock, IPI health, and reimbursement — keeping FBA inventory efficient.",
+      "steps": [
+        {
+          "step_title": "Forecast Restock Needs",
+          "step_description": "Based on velocity and lead time, forecast restock dates and quantity per SKU."
+        },
+        {
+          "step_title": "Stock Safe Keeping",
+          "step_description": "Set safe inventory levels per product based on seasonality and risk."
+        },
+        {
+          "step_title": "Low Inventory Fee Risk Detection",
+          "step_description": "Identify SKUs that may incur fees due to low fulfillment-center availability."
+        },
+        {
+          "step_title": "Excess Inventory Reporting",
+          "step_description": "Flag ASINs with stagnant or overstocked inventory that needs action."
+        },
+        {
+          "step_title": "IPI Score Monitoring",
+          "step_description": "Track Amazon's Inventory Performance Index and proactively act on alerts — stranded, excess, removals."
+        },
+        {
+          "step_title": "Removal Order Creation",
+          "step_description": "Select SKUs for removal and create removal orders before fees apply."
+        },
+        {
+          "step_title": "Reimbursement Eligibility Audit",
+          "step_description": "Identify lost, damaged, or uncredited inventory and raise cases."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Resolve red-flag IPI issues weekly, don't wait for the monthly score",
+      "description": "IPI is a lagging indicator — by the time the monthly score drops, the excess or stranded inventory driving it has been accruing storage fees for weeks. Check the dashboard weekly and clear flags as they appear.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Inventory Performance Index (IPI)",
+      "description": "Amazon's inventory health score; scores below 400 put storage limits and restock caps at risk.",
+      "target_label": "400",
+      "metadata": [
+        {
+          "source": "Internal SOP, cross-checked 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Creator Connection",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Creator Connection SOP",
+      "description": "Influencer and UGC campaigns end-to-end — goal, commission, outreach, samples, and ROI.",
+      "steps": [
+        {
+          "step_title": "Define a Goal of Campaign",
+          "step_description": "Establish the purpose — brand awareness, sales push, UGC, etc."
+        },
+        {
+          "step_title": "Finalize the Commission to Be Offered",
+          "step_description": "Determine and document the percentage or fixed rate to offer."
+        },
+        {
+          "step_title": "Selection of Products to Be Enrolled",
+          "step_description": "Pick products that are visually appealing or seasonally relevant."
+        },
+        {
+          "step_title": "Defining the Key Talking Points",
+          "step_description": "Draft 3–5 key selling points or storylines for the influencer to follow."
+        },
+        {
+          "step_title": "Setting Up the Campaign",
+          "step_description": "Set up the campaign inside Amazon's Creator Connection dashboard."
+        },
+        {
+          "step_title": "Connect and Discuss with the Influencers",
+          "step_description": "Message influencers, agree on terms, and confirm participation."
+        },
+        {
+          "step_title": "Sending Samples to Influencers",
+          "step_description": "Package and ship products with tracking and delivery confirmation."
+        },
+        {
+          "step_title": "Monitoring & Extension",
+          "step_description": "Track progress and extend duration if needed to meet KPIs."
+        },
+        {
+          "step_title": "Content Collection & Reuse Strategy",
+          "step_description": "Save influencer videos for ads, PDPs, or social proof."
+        },
+        {
+          "step_title": "Performance & ROI Report",
+          "step_description": "Report total sales, impressions, cost per sale, ROI, etc."
+        }
+      ],
+      "tags": [
+        "Amazon"
+      ]
+    },
+    "Best Practice": {
+      "title": "Price commission by category tier, not a flat rate",
+      "description": "A flat commission across the catalog either overpays commodity SKUs or underpays the lifestyle/premium products that actually need creator storytelling. Tier the rate to category and content complexity.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Creator commission rate",
+      "description": "Typical commission range paid to creators through Amazon's managed Creator Connections program, by category tier.",
+      "target_label": "10 percent",
+      "metadata": [
+        {
+          "source": "Industry benchmark aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Walmart Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Walmart Connect Advertising SOP",
+      "description": "Sponsored Search, Sponsored Video, and Onsite Display campaigns run through Walmart Connect.",
+      "steps": [
+        {
+          "step_title": "Keyword & Item Research",
+          "step_description": "Use Walmart's search term reports and category browsing to build branded, generic, and competitor keyword clusters before launch."
+        },
+        {
+          "step_title": "Campaign Setup",
+          "step_description": "Structure Sponsored Products campaigns by match type and objective, mirroring the Amazon ranking/scale/profit phase model."
+        },
+        {
+          "step_title": "Bid & Budget Optimization",
+          "step_description": "Set bids toward a target ROAS (1 / target ACOS) and shift budget toward SKUs converting above the category average."
+        },
+        {
+          "step_title": "Performance Reporting",
+          "step_description": "Export Walmart Connect reports weekly and track ROAS, ACOS, and attributed sales share against the account goal."
+        }
+      ],
+      "tags": [
+        "Walmart"
+      ]
+    },
+    "Best Practice": {
+      "title": "Budget for a longer ramp than Amazon",
+      "description": "Walmart Connect campaigns typically need 45-90 days to accumulate enough data to optimize meaningfully, versus Amazon's faster feedback loop — don't judge a campaign's viability before day 30.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Sponsored Products ROAS",
+      "description": "Healthy return-on-ad-spend range for Walmart Connect Sponsored Products, which typically runs more efficient than Amazon per dollar for CPG/grocery categories.",
+      "target_label": "4 x (return per $1 spent)",
+      "metadata": [
+        {
+          "source": "Pacvue / SellTru benchmark aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Walmart Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Seller Performance & Account Health SOP",
+      "description": "Monitoring and defending the eight Walmart Seller Performance Standards.",
+      "steps": [
+        {
+          "step_title": "Weekly Performance Review",
+          "step_description": "Check Cancellation Rate, On-Time Delivery, Valid Tracking Rate, Seller Response Rate, Negative Feedback, Return Rate, Item Not Received, and Late Shipment Rate from the Seller Center dashboard."
+        },
+        {
+          "step_title": "Respond to Performance Alarms",
+          "step_description": "Action every performance notification immediately — Walmart does not allow unsubscribing from these, and unresolved alerts risk suppression."
+        },
+        {
+          "step_title": "Root-Cause & Corrective Action",
+          "step_description": "Classify each miss as seller-accountable or non-accountable, and fix the underlying driver (carrier scan, ship location mismatch, etc.) rather than the symptom."
+        },
+        {
+          "step_title": "Appeal Suspension or Suppression",
+          "step_description": "Submit a business plan of action for appealable suspensions; termination decisions cannot be appealed, so prevention is the only lever."
+        }
+      ],
+      "tags": [
+        "Walmart"
+      ]
+    },
+    "Best Practice": {
+      "title": "WFS removes most metrics except Negative Feedback",
+      "description": "Sellers using Walmart Fulfillment Services automatically satisfy most performance standards — Negative Feedback Rate is the one metric WFS does not cover, so it deserves disproportionate attention.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "On-Time Delivery Rate",
+      "description": "Share of orders delivered on or before the Expected Delivery Date; the anchor metric for Walmart seller standing.",
+      "target_label": "90 percent, minimum",
+      "metadata": [
+        {
+          "source": "Walmart Marketplace Learn, updated Apr 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Walmart Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Listing & Content Optimization SOP",
+      "description": "Item Setup content quality — titles, descriptions, images, and specs — for Walmart's search and Content Quality Score.",
+      "steps": [
+        {
+          "step_title": "Keyword & Category Research",
+          "step_description": "Map high-intent search terms to the correct Walmart category and item type before building content."
+        },
+        {
+          "step_title": "Title & Description Optimization",
+          "step_description": "Lead titles with brand and primary keyword, and write descriptions that cover use case and differentiators in scannable form."
+        },
+        {
+          "step_title": "Image & Spec Compliance",
+          "step_description": "Meet Walmart's main image and swatch requirements, and complete every relevant spec field to strengthen content quality scoring."
+        },
+        {
+          "step_title": "Content Quality Review",
+          "step_description": "Audit listings against Walmart's Item Spec Health Check output and fix any flagged gaps."
+        }
+      ],
+      "tags": [
+        "Walmart"
+      ]
+    },
+    "Best Practice": {
+      "title": "Complete every spec field, not just the required ones",
+      "description": "Walmart's content quality scoring rewards completeness beyond the minimum required fields — more attributes populated means more ways for the listing to match a search query.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Item Spec / Content completeness",
+      "description": "Share of applicable spec fields completed on the listing, a driver of both search relevance and content quality score.",
+      "target_label": "90 percent of applicable fields",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Walmart Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Pricing & Promotions SOP",
+      "description": "Competitive pricing and promotional setup on Walmart Marketplace.",
+      "steps": [
+        {
+          "step_title": "Competitive Price Analysis",
+          "step_description": "Benchmark price against the Buy-Box-equivalent featured offer for the same item on Walmart.com."
+        },
+        {
+          "step_title": "Pricing Rules & Automation",
+          "step_description": "Set price floors and ceilings before enabling repricing rules, mirroring the Amazon pricing-automation safeguard."
+        },
+        {
+          "step_title": "Promotions & Rollbacks",
+          "step_description": "Plan promotional pricing and Rollback events around inventory depth and margin floor."
+        }
+      ],
+      "tags": [
+        "Walmart"
+      ]
+    },
+    "Best Practice": {
+      "title": "Set the margin floor before repricing, not after",
+      "description": "The same rule that protects Amazon pricing automation applies on Walmart — automated rules will chase the featured offer to the bottom without a hard floor set first.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Featured Offer win rate",
+      "description": "Walmart's equivalent to Amazon's Buy Box — the share of page views where your offer is the one buyers can add to cart directly.",
+      "target_label": "80 percent (directional)",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "eBay Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Promoted Listings & Advertising SOP",
+      "description": "Standard and Advanced Promoted Listings campaigns inside eBay's ad platform.",
+      "steps": [
+        {
+          "step_title": "Ad Rate Strategy",
+          "step_description": "Set the Promoted Listings Standard ad rate based on category margin — thin-margin categories start at 2-4%, not eBay's default suggestion."
+        },
+        {
+          "step_title": "Campaign Setup",
+          "step_description": "Choose Standard (percentage-of-sale, pay-on-conversion) or Advanced (cost-per-click) based on volume and margin."
+        },
+        {
+          "step_title": "Search Term Optimization",
+          "step_description": "Align titles and item specifics to Cassini's ranking signals so promoted and organic placement reinforce each other."
+        },
+        {
+          "step_title": "Performance Monitoring",
+          "step_description": "Track ad rate against post-fee margin weekly, and pause promotion on listings where it erases profit."
+        }
+      ],
+      "tags": [
+        "eBay"
+      ]
+    },
+    "Best Practice": {
+      "title": "Only promote listings with margin to spare",
+      "description": "A 15% ad rate — eBay's frequent default suggestion — erases profit on most thin-margin resale and flip inventory; reserve Promoted Listings for items with enough margin headroom to absorb it.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Promoted Listings ad rate",
+      "description": "Percentage-of-sale-price fee range for Promoted Listings Standard campaigns.",
+      "target_label": "5 percent of sale price",
+      "metadata": [
+        {
+          "source": "eBay seller community + agency aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "eBay Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Seller Performance & Top Rated Status SOP",
+      "description": "Maintaining Top Rated Seller standing on eBay's monthly performance evaluation.",
+      "steps": [
+        {
+          "step_title": "Monitor Core Metrics",
+          "step_description": "Track transaction defect rate, late shipment rate, and cases closed without seller resolution against Top Rated thresholds monthly."
+        },
+        {
+          "step_title": "Tracking Discipline",
+          "step_description": "Upload valid, carrier-scanned tracking within the stated handling time on every order to protect the late shipment metric."
+        },
+        {
+          "step_title": "Case Resolution",
+          "step_description": "Resolve buyer cases directly and quickly — unresolved cases count against the defect rate even when the seller isn't at fault for the underlying issue."
+        },
+        {
+          "step_title": "Appeal Incorrect Defects",
+          "step_description": "Dispute any defect or late mark through Seller Help where valid tracking or carrier data supports an appeal."
+        }
+      ],
+      "tags": [
+        "eBay"
+      ]
+    },
+    "Best Practice": {
+      "title": "Ship on time and track everything — it protects every metric at once",
+      "description": "Late shipment rate, defect rate, and case rate are all downstream of the same root behaviors: ship inside handling time and always upload valid tracking. Fixing those two habits resolves most Top Rated risk before it starts.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Transaction defect rate",
+      "description": "Share of transactions with a defect (late shipment, unresolved case, low rating); Top Rated Seller status requires this well below the baseline eBay standard.",
+      "target_label": "0.5 percent, maximum for Top Rated",
+      "metadata": [
+        {
+          "source": "eBay Seller Center, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "eBay Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Listing Optimization (Cassini SEO) SOP",
+      "description": "Title, item specifics, and pricing strategy tuned to eBay's Cassini search algorithm.",
+      "steps": [
+        {
+          "step_title": "Title & Item Specifics",
+          "step_description": "Front-load titles with the terms buyers actually search, and complete every relevant item specific — Cassini weighs specifics heavily in relevance matching."
+        },
+        {
+          "step_title": "Photos & Description",
+          "step_description": "Use multiple high-resolution photos and a scannable description structure to support both conversion and dwell-time signals."
+        },
+        {
+          "step_title": "Pricing & Best Offer Strategy",
+          "step_description": "Set Best Offer thresholds and auto-decline/accept rules that protect margin while keeping listings competitive on price-sensitive searches."
+        }
+      ],
+      "tags": [
+        "eBay"
+      ]
+    },
+    "Best Practice": {
+      "title": "Treat Top Rated status as an SEO lever, not just a badge",
+      "description": "Top Rated listings can rank 5-15 positions higher than an otherwise-identical non-Top-Rated competitor when other listing factors are equal — the badge is a ranking input, not just trust signaling.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Top Rated ranking lift",
+      "description": "Typical Best Match ranking improvement attributable to Top Rated Seller status, all else equal.",
+      "target_label": "10 search positions (typical range 5-15)",
+      "metadata": [
+        {
+          "source": "agency benchmark aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "eBay Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Feedback & Returns Management SOP",
+      "description": "Buyer feedback, Money Back Guarantee cases, and returns handling.",
+      "steps": [
+        {
+          "step_title": "Monitor Feedback",
+          "step_description": "Track feedback score and recent comments weekly, and respond professionally to any negative feedback."
+        },
+        {
+          "step_title": "Manage Returns & Cases",
+          "step_description": "Process return requests and Money Back Guarantee cases inside eBay's stated windows to avoid a case closing without seller resolution."
+        },
+        {
+          "step_title": "Buyer Communication",
+          "step_description": "Respond to buyer messages within 24 hours — faster response is one of the most reliable levers across every performance metric."
+        }
+      ],
+      "tags": [
+        "eBay"
+      ]
+    },
+    "Best Practice": {
+      "title": "Resolve cases before eBay decides them for you",
+      "description": "A case that closes without seller resolution counts against Top Rated status even when eBay ultimately sides with the seller on the underlying issue — resolving proactively protects the metric regardless of fault.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Cases closed without seller resolution",
+      "description": "Share of Money Back Guarantee cases that close without the seller's involvement; a core Top Rated Seller input.",
+      "target_label": "0.3 percent, maximum for Top Rated",
+      "metadata": []
+    }
+  },
+  {
+    "global": {
+      "category": "Etsy Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Etsy Ads SOP",
+      "description": "Etsy's onsite auto-bid advertising for individual listings.",
+      "steps": [
+        {
+          "step_title": "Listing Selection",
+          "step_description": "Advertise only listings with existing organic sales and a conversion rate above roughly 2% — Etsy Ads amplifies proven listings, it doesn't fix weak ones."
+        },
+        {
+          "step_title": "Budget & Bid Setup",
+          "step_description": "Start at $1-5/day per listing using Etsy's auto-bidding, and let the campaign run a full 30 days before judging performance."
+        },
+        {
+          "step_title": "Performance Review",
+          "step_description": "Review ROAS after 30 days; pause listings below roughly 2x and scale budget on listings consistently above 3-4x."
+        }
+      ],
+      "tags": [
+        "Etsy"
+      ]
+    },
+    "Best Practice": {
+      "title": "Fix the listing before you fund the ad",
+      "description": "Etsy Ads amplifies whatever conversion rate a listing already has — weak photos or pricing will just burn budget faster with ads on. Optimize the listing first, then advertise.",
+      "priority": "high"
+    },
+    "KPI": {
+      "title": "Etsy Ads ROAS",
+      "description": "Return-on-ad-spend benchmark for Etsy's onsite advertising; below the low end is a reliable signal to pause.",
+      "target_label": "3 x (return per $1 spent)",
+      "metadata": [
+        {
+          "source": "Etsy Seller Handbook + agency aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Etsy Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Star Seller & Shop Health SOP",
+      "description": "Maintaining the Star Seller badge and underlying shop-quality metrics.",
+      "steps": [
+        {
+          "step_title": "Message Response Management",
+          "step_description": "Reply to the first message in every new conversation thread within 24 hours, including weekends — this is the metric most sellers miss."
+        },
+        {
+          "step_title": "On-Time Shipping & Tracking",
+          "step_description": "Ship within the stated processing time and upload valid tracking (or buy the label on Etsy) on every physical order."
+        },
+        {
+          "step_title": "Review Rating Management",
+          "step_description": "Monitor the rolling 3-month average rating, and address product or fulfillment issues quickly — a single low review can swing the average when volume is low."
+        }
+      ],
+      "tags": [
+        "Etsy"
+      ]
+    },
+    "Best Practice": {
+      "title": "Set processing times you can actually hit",
+      "description": "The badge is calculated against the processing time you set, not a fixed industry standard — an honest, slightly longer processing time you consistently beat protects the shipping metric better than an aggressive one you often miss.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Star Seller composite thresholds",
+      "description": "The four rolling 3-month metrics Etsy evaluates for the Star Seller badge.",
+      "target_label": "95",
+      "metadata": [
+        {
+          "source": "Etsy Seller Handbook, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Etsy Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Listing & SEO Optimization SOP",
+      "description": "Titles, tags, and photography tuned to Etsy search.",
+      "steps": [
+        {
+          "step_title": "Keyword & Tag Research",
+          "step_description": "Fill all 13 available tags with distinct long-tail phrases buyers actually search, avoiding duplication with title terms."
+        },
+        {
+          "step_title": "Titles & Descriptions",
+          "step_description": "Front-load titles with the primary keyword phrase, and write descriptions that cover materials, dimensions, and use case."
+        },
+        {
+          "step_title": "Photography",
+          "step_description": "Use 5-10 photos including scale, in-use, and detail shots — listing photo quality is one of the strongest levers on Etsy click-through rate."
+        }
+      ],
+      "tags": [
+        "Etsy"
+      ]
+    },
+    "Best Practice": {
+      "title": "Use every tag slot with a distinct phrase",
+      "description": "Etsy indexes on all 13 tags — leaving slots empty or duplicating title keywords wastes searchable surface area that could be catching different buyer phrasing.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Ad-click conversion rate",
+      "description": "Conversion rate benchmark for Etsy listings, most commonly cited for ad-driven traffic.",
+      "target_label": "3 percent",
+      "metadata": [
+        {
+          "source": "Etsy Seller Handbook + agency aggregates, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "global": {
+      "category": "Etsy Marketplace",
+      "department": "operations"
+    },
+    "SOP": {
+      "title": "Shop Policies & Pricing SOP",
+      "description": "Fee-aware pricing, shipping profiles, and shop policy setup.",
+      "steps": [
+        {
+          "step_title": "Pricing & Fee Calculation",
+          "step_description": "Price to a target margin after listing fees, transaction fees, payment processing, and offsite ads fee where applicable."
+        },
+        {
+          "step_title": "Shipping Profiles",
+          "step_description": "Build shipping profiles with realistic processing times that support the Star Seller on-time shipping metric."
+        },
+        {
+          "step_title": "Shop Policies",
+          "step_description": "Set clear return, exchange, and custom-order policies to reduce case volume and support the review rating."
+        }
+      ],
+      "tags": [
+        "Etsy"
+      ]
+    },
+    "Best Practice": {
+      "title": "Model the full fee stack before setting price",
+      "description": "Etsy's listing fee, transaction fee, payment processing fee, and (if enrolled) offsite ads fee compound — pricing off list price alone routinely overstates margin.",
+      "priority": "medium"
+    },
+    "KPI": {
+      "title": "Target margin after full fee stack",
+      "description": "Minimum margin the internal SOP treats as sustainable once all Etsy fees are modeled in.",
+      "target_label": "40 percent",
+      "metadata": []
+    }
+  }
+]

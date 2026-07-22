@@ -16,13 +16,12 @@ export function KPICard({
       <div className="kpi-top">
         <div>
           <span className="kpi-name">{name}</span>
-          <span className="kpi-unit">{unit || "score"}</span>
         </div>
         <span className={`status-pill ${progress >= 100 ? "great" : progress >= 75 ? "good" : "low"}`}>{status}</span>
       </div>
       <div className="kpi-numbers">
         <strong>{current.toLocaleString()}</strong>
-        <span>/ {target.toLocaleString()}</span>
+        <span>/ {target.toLocaleString() + " " + unit}</span>
       </div>
       <div className="progress-bar">
         <span style={{ width: `${Math.min(100, progress)}%` }} />

@@ -2,6 +2,29 @@
 
 All notable changes to the Performance Tracking Dashboard are documented here.
 
+## Version 4 — Planned
+
+### Pulse assistant
+
+- Add Pulse, a streaming, department-aware dashboard assistant with its own tab.
+- Give Pulse a strict system prompt, scoped tool access, and conversational guardrails so it only assists with the employee's dashboard, role progression, and approved departmental knowledge.
+- Support multiple tool calls in a single response, with server-side authorization and validation for every tool invocation.
+- Add persistent chat sessions and messages, retaining the latest five user/assistant exchanges as conversation context.
+- Allow Pulse to retrieve an employee's role, KPIs, performance entries, goals, and next-role KPI targets.
+- Allow Pulse to identify the most relevant category in the employee's department, then use its SOPs, best practices, and knowledge KPIs to answer process-related questions.
+
+### Category descriptions
+
+- Add a short description to every knowledge category, including data migration and brief initial content for existing categories.
+- Surface and manage category descriptions in the department knowledge experience.
+
+### Employee inquiries
+
+- Add employee inquiries that can be addressed to all managers of the employee's department and optionally reference a dashboard record such as an entry, goal, KPI, SOP, or knowledge item.
+- Notify addressed managers by email when a new inquiry is submitted.
+- Store inquiry threads in the database so employees can review sent inquiries and managers can review and reply to those assigned to them.
+- Add inquiry workspaces for employees, managers, and administrators; administrators can view all inquiries.
+
 ## Version 3
 
 ### Knowledge library

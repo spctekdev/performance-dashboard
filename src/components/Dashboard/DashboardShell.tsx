@@ -194,8 +194,7 @@ export function DashboardShell({ data }: { data: DashboardData }) {
                       {employee.nextRole.kpis.map((kpi) => (
                         <article className="next-role-kpi" key={kpi.id}>
                           <span>{kpi.name}</span>
-                          <strong>{kpi.target.toLocaleString()}</strong>
-                          <small>{kpi.unit || "Target"}</small>
+                          <strong>{kpi.target.toLocaleString() + " " + kpi.unit}</strong>
                         </article>
                       ))}
                     </div>

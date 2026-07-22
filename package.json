@@ -14,7 +14,6 @@
     "db:show": "tsx node_modules/typeorm/cli.js migration:show -d src/lib/db/data-source.ts",
     "db:generate": "tsx node_modules/typeorm/cli.js migration:generate -d src/lib/db/data-source.ts",
     "db:seed": "tsx src/lib/db/seed.ts",
-    "db:import-knowledge": "tsx src/lib/db/import-knowledge.ts",
     "db:clear": "tsx src/lib/db/clear.ts"
   },
   "dependencies": {
