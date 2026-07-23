@@ -15,6 +15,11 @@ import {
   Session,
   User,
   UserKpiPerformance,
+  ChatSession,
+  ChatMessage,
+  Inquiry,
+  InquiryRecipient,
+  InquiryMessage,
 } from "./entities";
 import { InitialSchema1760000000000 } from "./migrations/1760000000000-InitialSchema";
 import { GoalsAndJournalNotes1760100000000 } from "./migrations/1760100000000-GoalsAndJournalNotes";
@@ -22,6 +27,7 @@ import { Departments1760200000000 } from "./migrations/1760200000000-Departments
 import { Sops1760300000000 } from "./migrations/1760300000000-Sops";
 import { RoleProgression1760400000000 } from "./migrations/1760400000000-RoleProgression";
 import { Knowledge1760500000000 } from "./migrations/1760500000000-Knowledge";
+import { Version4Support1760600000000 } from "./migrations/1760600000000-Version4Support";
 
 const configuredUrl = process.env.DATABASE_URL;
 if (!configuredUrl) throw new Error("DATABASE_URL is required");
@@ -61,6 +67,11 @@ export const AppDataSource = new DataSource({
     Session,
     AuthToken,
     AuthRateLimit,
+    ChatSession,
+    ChatMessage,
+    Inquiry,
+    InquiryRecipient,
+    InquiryMessage,
   ],
   migrations: [
     InitialSchema1760000000000,
@@ -69,6 +80,7 @@ export const AppDataSource = new DataSource({
     Sops1760300000000,
     RoleProgression1760400000000,
     Knowledge1760500000000,
+    Version4Support1760600000000,
   ],
 });
 
@@ -88,7 +100,9 @@ export async function getDataSource() {
       dataSource.hasMetadata(Session) &&
       dataSource.hasMetadata(Role) &&
       dataSource.hasMetadata(Department) &&
-      dataSource.hasMetadata(Knowledge),
+      dataSource.hasMetadata(Knowledge) &&
+      dataSource.hasMetadata(ChatSession) &&
+      dataSource.hasMetadata(Inquiry),
   );
   if (compatible) return compatible;
   const initialized = await AppDataSource.initialize();

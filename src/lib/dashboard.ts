@@ -195,15 +195,25 @@ export async function getDashboardData(actor: SessionUser) {
     departments: departments.map((department) => ({
       id: department.id,
       name: department.name,
-      managers: department.managers.map((manager) => ({ id: manager.id, name: manager.name, email: manager.email })),
+      managers: department.managers.map((manager) => ({
+        id: manager.id,
+        name: manager.name,
+        email: manager.email,
+        status: manager.status,
+      })),
       members: department.members.map((member) => ({ id: member.id, name: member.name, email: member.email })),
-      categories: department.categories.map((category) => ({ id: category.id, name: category.name })),
+      categories: department.categories.map((category) => ({
+        id: category.id,
+        name: category.name,
+        description: category.description,
+      })),
       createdAt: department.createdAt.toISOString(),
       updatedAt: department.updatedAt.toISOString(),
     })),
     categories: categories.map((category) => ({
       id: category.id,
       name: category.name,
+      description: category.description,
       departmentId: category.departmentId,
       departmentName: category.department.name,
     })),

@@ -82,7 +82,33 @@ export const updateUserSchema = z.object({
 export const departmentSchema = z.object({ name: z.string().trim().min(2).max(120) });
 export const updateDepartmentSchema = departmentSchema.extend({ managerIds: z.array(uuid).max(100).optional() });
 export const departmentManagerSchema = z.object({ managerId: uuid });
-export const categorySchema = z.object({ name: z.string().trim().min(2).max(120), departmentId: uuid });
+export const categorySchema = z.object({
+  name: z.string().trim().min(2).max(120),
+  description: z.string().trim().min(3).max(500),
+  departmentId: uuid,
+});
+export const updateCategorySchema = categorySchema.partial().omit({ departmentId: true });
+export const createChatSessionSchema = z.object({ title: z.string().trim().min(1).max(120).optional() });
+export const updateChatSessionSchema = z.object({
+  title: z.string().trim().min(1).max(120).optional(),
+  archived: z.boolean().optional(),
+});
+export const chatMessageSchema = z.object({ message: z.string().trim().min(1).max(4000) });
+export const inquiryReferenceSchema = z.object({
+  type: z.enum(["GOAL", "JOURNAL_ENTRY", "KPI_DEFINITION", "KPI_PERFORMANCE", "KNOWLEDGE"]),
+  id: uuid,
+});
+export const createInquirySchema = z.object({
+  subject: z.string().trim().min(3).max(180),
+  message: z.string().trim().min(3).max(10000),
+  reference: inquiryReferenceSchema.nullable().optional(),
+  managerIds: z.array(uuid).min(1).max(100).optional(),
+});
+export const inquiryMessageSchema = z.object({ body: z.string().trim().min(1).max(10000) });
+export const updateInquirySchema = z.object({
+  status: z.enum(["OPEN", "ANSWERED", "CLOSED"]).optional(),
+  read: z.boolean().optional(),
+});
 const knowledgeBase = z.object({
   title: z.string().trim().min(2).max(160),
   description: z.string().trim().min(3).max(10000),
@@ -92,12 +118,15 @@ export const knowledgeSchema = z.discriminatedUnion("type", [
     type: z.literal("SOP"),
     categoryId: uuid,
     content: knowledgeBase.extend({
-      steps: z.array(
-        z.object({
-          step_title: z.string().trim().min(1).max(160),
-          step_description: z.string().trim().min(1).max(5000),
-        }),
-      ),
+      steps: z
+        .array(
+          z.object({
+            step_title: z.string().trim().min(1).max(160),
+            step_description: z.string().trim().min(1).max(5000),
+          }),
+        )
+        .min(1)
+        .max(100),
       tags: z.array(z.string().trim().min(1).max(80)).max(50),
     }),
   }),

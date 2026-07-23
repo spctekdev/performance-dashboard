@@ -12,6 +12,9 @@ const schema = z.object({
   SMTP_PASSWORD: z.string().optional().default(""),
   SMTP_SECURE: z.enum(["true", "false"]).default("false"),
   EMAIL_FROM: z.string().min(1),
+  LLM_API_KEY: z.string().optional().default(""),
+  LLM_BASE_URL: z.string().url().default("https://api.groq.com/openai/v1"),
+  LLM_MODEL: z.string().min(1).default("llama-3.3-70b-versatile"),
 });
 
 let cached: z.infer<typeof schema> | undefined;

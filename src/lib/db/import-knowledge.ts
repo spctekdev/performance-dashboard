@@ -69,7 +69,9 @@ export async function importOperationsKnowledge(db: DataSource): Promise<{ impor
 async function runImport() {
   const db = await AppDataSource.initialize();
   const result = await importOperationsKnowledge(db);
-  console.log(`Operations knowledge import complete: ${result.imported} entries across ${result.categories} categories.`);
+  console.log(
+    `Operations knowledge import complete: ${result.imported} entries across ${result.categories} categories.`,
+  );
   await db.destroy();
 }
 

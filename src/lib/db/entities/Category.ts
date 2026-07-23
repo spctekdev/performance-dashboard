@@ -18,6 +18,7 @@ import { Knowledge } from "./Knowledge";
 export class Category {
   @PrimaryGeneratedColumn("uuid") id!: string;
   @Column({ type: "varchar", length: 120 }) name!: string;
+  @Column({ type: "varchar", length: 500, default: "Place Holder" }) description!: string;
   @Column({ type: "uuid" }) departmentId!: string;
   @ManyToOne(() => Department, (department) => department.categories, { onDelete: "CASCADE" })
   @JoinColumn({ name: "departmentId" })

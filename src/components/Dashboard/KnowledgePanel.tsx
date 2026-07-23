@@ -1,26 +1,40 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Edit3, Plus, Trash2, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import type { DashboardData } from "@/lib/dashboard";
+import { InquiryButton, type InquiryReference } from "./InquiryButton";
+import { SopEditor } from "./SopEditor";
 
 type Entry = DashboardData["knowledge"][number];
 type KnowledgeType = "SOP" | "BEST_PRACTICE" | "KPI";
 type BestPractice = Extract<Entry["content"], { priority: string }>;
 type Kpi = { title: string; description: string; target_label: string | number; metadata: Record<string, string>[] };
 
-export function KnowledgePanel({ data }: { data: DashboardData }) {
+export function KnowledgePanel({
+  data,
+  onInquire,
+  initialKnowledgeId,
+}: {
+  data: DashboardData;
+  onInquire?: (reference: InquiryReference) => void;
+  initialKnowledgeId?: string;
+}) {
   const router = useRouter();
-  const firstDepartmentId = data.departments[0]?.id ?? "";
+  const initialEntry = data.knowledge.find((entry) => entry.id === initialKnowledgeId);
+  const initialCategory = data.categories.find((category) => category.id === initialEntry?.categoryId);
+  const firstDepartmentId = initialCategory?.departmentId ?? data.departments[0]?.id ?? "";
   const [departmentId, setDepartmentId] = useState(firstDepartmentId);
   const categories = useMemo(
     () => data.categories.filter((category) => category.departmentId === departmentId),
     [data.categories, departmentId],
   );
   const [categoryId, setCategoryId] = useState(
-    () => data.categories.find((category) => category.departmentId === firstDepartmentId)?.id ?? "",
+    () =>
+      initialCategory?.id ?? data.categories.find((category) => category.departmentId === firstDepartmentId)?.id ?? "",
   );
+  const [highlightedKnowledgeId, setHighlightedKnowledgeId] = useState(initialEntry?.id ?? "");
   const [editor, setEditor] = useState<{ type: KnowledgeType; entry?: Entry } | null>(null);
   const activeCategoryId = categories.some((category) => category.id === categoryId)
     ? categoryId
@@ -38,6 +52,21 @@ export function KnowledgePanel({ data }: { data: DashboardData }) {
   const bestPractices = entries.filter((entry) => entry.type === "BEST_PRACTICE");
   const kpis = entries.filter((entry) => entry.type === "KPI");
 
+  useEffect(() => {
+    if (!highlightedKnowledgeId || !entries.some((entry) => entry.id === highlightedKnowledgeId)) return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(`knowledge-${highlightedKnowledgeId}`)?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    });
+    const timeout = window.setTimeout(() => setHighlightedKnowledgeId(""), 2_800);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timeout);
+    };
+  }, [entries, highlightedKnowledgeId]);
+
   function selectDepartment(nextDepartmentId: string) {
     const nextCategories = data.categories.filter((category) => category.departmentId === nextDepartmentId);
     setDepartmentId(nextDepartmentId);
@@ -51,12 +80,55 @@ export function KnowledgePanel({ data }: { data: DashboardData }) {
     router.refresh();
   }
 
+  async function editCategory() {
+    if (!selectedCategory) return;
+    const name = window.prompt("Category name", selectedCategory.name);
+    if (name === null) return;
+    const description = window.prompt("Category description", selectedCategory.description);
+    if (description === null) return;
+    if (name.trim() === selectedCategory.name && description.trim() === selectedCategory.description) return;
+    const response = await fetch(`/api/categories/${selectedCategory.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, description }),
+    });
+    if (!response.ok) return window.alert((await response.json()).error ?? "Could not update the category.");
+    router.refresh();
+  }
+  async function addCategory() {
+    if (!selectedDepartment) return;
+    const name = window.prompt("New category name");
+    if (!name) return;
+    const description = window.prompt("Category description");
+    if (!description) return;
+    const response = await fetch("/api/categories", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, description, departmentId: selectedDepartment.id }),
+    });
+    if (!response.ok) return window.alert((await response.json()).error ?? "Could not create the category.");
+    router.refresh();
+  }
+
   return (
     <section className="knowledge-library">
       <div className="knowledge-library-toolbar">
         <div className="knowledge-library-heading">
           <h2>{selectedDepartment?.name ?? "Knowledge library"}</h2>
           <span>{selectedCategory?.name ?? "Select a category"}</span>
+          {selectedCategory && <p>{selectedCategory.description}</p>}
+          <div className="knowledge-category-actions">
+            {canManage && selectedCategory && (
+              <button type="button" className="knowledge-description-edit" onClick={editCategory}>
+                <Edit3 size={12} /> Edit category
+              </button>
+            )}
+            {canManage && selectedDepartment && (
+              <button type="button" className="knowledge-description-edit" onClick={addCategory}>
+                <Plus size={12} /> Add category
+              </button>
+            )}
+          </div>
         </div>
         <div className="knowledge-filter-stack">
           <label>
@@ -100,9 +172,11 @@ export function KnowledgePanel({ data }: { data: DashboardData }) {
                   <SopCard
                     entry={entry}
                     key={entry.id}
+                    focused={entry.id === highlightedKnowledgeId}
                     canManage={canManage}
                     onEdit={() => setEditor({ type: "SOP", entry })}
                     onDelete={() => remove(entry)}
+                    onInquire={onInquire ? () => onInquire({ type: "KNOWLEDGE", id: entry.id }) : undefined}
                   />
                 ))}
               </div>
@@ -124,9 +198,11 @@ export function KnowledgePanel({ data }: { data: DashboardData }) {
                   <BestPracticeCard
                     entry={entry}
                     key={entry.id}
+                    focused={entry.id === highlightedKnowledgeId}
                     canManage={canManage}
                     onEdit={() => setEditor({ type: "BEST_PRACTICE", entry })}
                     onDelete={() => remove(entry)}
+                    onInquire={onInquire ? () => onInquire({ type: "KNOWLEDGE", id: entry.id }) : undefined}
                   />
                 ))}
               </div>
@@ -144,9 +220,11 @@ export function KnowledgePanel({ data }: { data: DashboardData }) {
                   <KpiCard
                     entry={entry}
                     key={entry.id}
+                    focused={entry.id === highlightedKnowledgeId}
                     canManage={canManage}
                     onEdit={() => setEditor({ type: "KPI", entry })}
                     onDelete={() => remove(entry)}
+                    onInquire={onInquire ? () => onInquire({ type: "KNOWLEDGE", id: entry.id }) : undefined}
                   />
                 ))}
               </div>
@@ -156,15 +234,24 @@ export function KnowledgePanel({ data }: { data: DashboardData }) {
           </KnowledgeSection>
         </div>
       )}
-      {editor && (
-        <KnowledgeEditor
-          key={editor.entry?.id ?? editor.type}
-          type={editor.type}
-          entry={editor.entry}
-          categoryId={activeCategoryId}
-          onClose={() => setEditor(null)}
-        />
-      )}
+      {editor ? (
+        editor.type === "SOP" ? (
+          <SopEditor
+            key={editor.entry?.id ?? editor.type}
+            entry={editor.entry}
+            categoryId={activeCategoryId}
+            onClose={() => setEditor(null)}
+          />
+        ) : (
+          <KnowledgeEditor
+            key={editor.entry?.id ?? editor.type}
+            type={editor.type}
+            entry={editor.entry}
+            categoryId={activeCategoryId}
+            onClose={() => setEditor(null)}
+          />
+        )
+      ) : null}
     </section>
   );
 }
@@ -189,11 +276,11 @@ function KnowledgeSection({
   );
 }
 
-function SopCard({ entry, canManage, onEdit, onDelete }: CardProps) {
+function SopCard({ entry, focused, canManage, onEdit, onDelete, onInquire }: CardProps) {
   const content = entry.content as Extract<Entry["content"], { steps: unknown[] }>;
   return (
-    <article className="knowledge-sop-card">
-      <CardActions canManage={canManage} onEdit={onEdit} onDelete={onDelete} />
+    <article id={`knowledge-${entry.id}`} className={`knowledge-sop-card${focused ? " knowledge-focus" : ""}`}>
+      <CardActions canManage={canManage} onEdit={onEdit} onDelete={onDelete} onInquire={onInquire} />
       <h4>{content.title}</h4>
       <p>{content.description}</p>
       <ol className="knowledge-sop-steps">
@@ -211,11 +298,11 @@ function SopCard({ entry, canManage, onEdit, onDelete }: CardProps) {
   );
 }
 
-function BestPracticeCard({ entry, canManage, onEdit, onDelete }: CardProps) {
+function BestPracticeCard({ entry, focused, canManage, onEdit, onDelete, onInquire }: CardProps) {
   const content = entry.content as BestPractice & { source?: string };
   return (
-    <article className="knowledge-bp-card">
-      <CardActions canManage={canManage} onEdit={onEdit} onDelete={onDelete} />
+    <article id={`knowledge-${entry.id}`} className={`knowledge-bp-card${focused ? " knowledge-focus" : ""}`}>
+      <CardActions canManage={canManage} onEdit={onEdit} onDelete={onDelete} onInquire={onInquire} />
       <div className="knowledge-card-top">
         <h4>
           <span>◆</span>
@@ -229,12 +316,12 @@ function BestPracticeCard({ entry, canManage, onEdit, onDelete }: CardProps) {
   );
 }
 
-function KpiCard({ entry, canManage, onEdit, onDelete }: CardProps) {
+function KpiCard({ entry, focused, canManage, onEdit, onDelete, onInquire }: CardProps) {
   const content = entry.content as Kpi;
   const metadata = content.metadata.flatMap((item) => Object.entries(item));
   return (
-    <article className="knowledge-kpi-card">
-      <CardActions canManage={canManage} onEdit={onEdit} onDelete={onDelete} />
+    <article id={`knowledge-${entry.id}`} className={`knowledge-kpi-card${focused ? " knowledge-focus" : ""}`}>
+      <CardActions canManage={canManage} onEdit={onEdit} onDelete={onDelete} onInquire={onInquire} />
       <div className="knowledge-card-top">
         <h4>
           <span>◆</span>
@@ -257,7 +344,14 @@ function KpiCard({ entry, canManage, onEdit, onDelete }: CardProps) {
   );
 }
 
-type CardProps = { entry: Entry; canManage: boolean; onEdit: () => void; onDelete: () => void };
+type CardProps = {
+  entry: Entry;
+  focused: boolean;
+  canManage: boolean;
+  onEdit: () => void;
+  onDelete: () => void;
+  onInquire?: () => void;
+};
 function AddButton({ label, onClick }: { label: string; onClick: () => void }) {
   return (
     <button className="knowledge-add-button" type="button" onClick={onClick}>
@@ -266,15 +360,20 @@ function AddButton({ label, onClick }: { label: string; onClick: () => void }) {
     </button>
   );
 }
-function CardActions({ canManage, onEdit, onDelete }: Omit<CardProps, "entry">) {
-  return canManage ? (
+function CardActions({ canManage, onEdit, onDelete, onInquire }: Omit<CardProps, "entry" | "focused">) {
+  return canManage || onInquire ? (
     <div className="knowledge-card-actions">
-      <button type="button" aria-label="Edit entry" onClick={onEdit}>
-        <Edit3 size={13} />
-      </button>
-      <button type="button" aria-label="Delete entry" className="delete" onClick={onDelete}>
-        <Trash2 size={13} />
-      </button>
+      {onInquire && <InquiryButton label="this knowledge entry" onClick={onInquire} />}
+      {canManage && (
+        <>
+          <button type="button" aria-label="Edit entry" onClick={onEdit}>
+            <Edit3 size={13} />
+          </button>
+          <button type="button" aria-label="Delete entry" className="delete" onClick={onDelete}>
+            <Trash2 size={13} />
+          </button>
+        </>
+      )}
     </div>
   ) : null;
 }

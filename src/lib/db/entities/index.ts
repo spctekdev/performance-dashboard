@@ -11,3 +11,8 @@ export * from "./AuthRateLimit";
 export * from "./Department";
 export * from "./Category";
 export * from "./Knowledge";
+export * from "./ChatSession";
+export * from "./ChatMessage";
+export * from "./Inquiry";
+export * from "./InquiryRecipient";
+export * from "./InquiryMessage";

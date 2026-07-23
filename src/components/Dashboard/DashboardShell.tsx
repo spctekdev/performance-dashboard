@@ -11,6 +11,8 @@ import {
   Target,
   BookOpen,
   BarChart3,
+  Bot,
+  Inbox,
 } from "lucide-react";
 import type { DashboardData } from "@/lib/dashboard";
 import { Header } from "./Header";
@@ -26,6 +28,9 @@ import { AdminPanel } from "./AdminPanel";
 import { KnowledgePanel } from "./KnowledgePanel";
 import { RoleProgressionTree } from "./RoleProgressionTree";
 import { PerformanceComparison } from "./PerformanceComparison";
+import { PulsePanel } from "./PulsePanel";
+import { InquiriesPanel } from "./InquiriesPanel";
+import type { InquiryReference } from "./InquiryButton";
 
 type Tab =
   | "overview"
@@ -37,12 +42,25 @@ type Tab =
   | "comparison"
   | "team"
   | "management"
-  | "hierarchy";
-export function DashboardShell({ data }: { data: DashboardData }) {
+  | "hierarchy"
+  | "pulse"
+  | "inquiries";
+export function DashboardShell({
+  data,
+  initialTab = "overview",
+  initialInquiryId,
+  initialKnowledgeId,
+}: {
+  data: DashboardData;
+  initialTab?: Tab;
+  initialInquiryId?: string;
+  initialKnowledgeId?: string;
+}) {
   const initialId = data.users.find((u) => u.id === data.actor.id)?.id || data.users[0]?.id;
   const [selectedId, setSelectedId] = useState(initialId);
   const [period, setPeriod] = useState(new Date().toISOString().slice(0, 7));
-  const [tab, setTab] = useState<Tab>("overview");
+  const [tab, setTab] = useState<Tab>(initialTab);
+  const [inquiryReference, setInquiryReference] = useState<InquiryReference | undefined>();
   const [overviewRenderedAt] = useState(() => Date.now());
   const employee = data.users.find((u) => u.id === selectedId) || data.users[0];
   const selectableUsers = data.users;
@@ -65,12 +83,19 @@ export function DashboardShell({ data }: { data: DashboardData }) {
     { id: "journal", label: "Journal", icon: ClipboardEdit, visible: true },
     { id: "goals", label: "Goals", icon: Target, visible: true },
     { id: "knowledge", label: "Knowledge", icon: BookOpen, visible: true },
+    { id: "pulse", label: "Pulse", icon: Bot, visible: true },
+    { id: "inquiries", label: "Inquiries", icon: Inbox, visible: true },
     { id: "kpis", label: "KPI Tracking", icon: Target, visible: true },
     { id: "comparison", label: "Comparison", icon: BarChart3, visible: data.actor.accessLevel !== "EMPLOYEE" },
     { id: "team", label: "Team Overview", icon: Users, visible: data.actor.accessLevel !== "EMPLOYEE" },
     { id: "management", label: "Management", icon: Settings2, visible: data.actor.accessLevel !== "EMPLOYEE" },
     { id: "hierarchy", label: "Hierarchy", icon: Users, visible: data.actor.accessLevel !== "EMPLOYEE" },
   ];
+  const canInquire = data.actor.accessLevel === "EMPLOYEE" && employee.id === data.actor.id;
+  function openInquiry(reference: InquiryReference) {
+    setInquiryReference(reference);
+    setTab("inquiries");
+  }
   return (
     <div className="dashboard-page">
       <Header user={data.actor} />
@@ -102,7 +127,14 @@ export function DashboardShell({ data }: { data: DashboardData }) {
           {tabs
             .filter((t) => t.visible)
             .map((item) => (
-              <button key={item.id} className={tab === item.id ? "active" : ""} onClick={() => setTab(item.id)}>
+              <button
+                key={item.id}
+                className={tab === item.id ? "active" : ""}
+                onClick={() => {
+                  if (item.id === "inquiries") setInquiryReference(undefined);
+                  setTab(item.id);
+                }}
+              >
                 <item.icon size={16} />
                 {item.label}
               </button>
@@ -177,7 +209,11 @@ export function DashboardShell({ data }: { data: DashboardData }) {
                   <button onClick={() => setTab("kpis")}>View all →</button>
                 </div>
                 {stats.latest.slice(0, 3).map((k) => (
-                  <KPICard key={k.id} {...k} />
+                  <KPICard
+                    key={k.id}
+                    {...k}
+                    onInquire={canInquire ? () => openInquiry({ type: "KPI_PERFORMANCE", id: k.id }) : undefined}
+                  />
                 ))}
                 {!stats.latest.length && <div className="inline-empty">No performance has been recorded yet.</div>}
               </article>
@@ -211,7 +247,10 @@ export function DashboardShell({ data }: { data: DashboardData }) {
                   </div>
                   <button onClick={() => setTab("journal")}>View all →</button>
                 </div>
-                <JournalTimeline entries={employee.journals.slice(0, 3)} />
+                <JournalTimeline
+                  entries={employee.journals.slice(0, 3)}
+                  onInquire={canInquire ? (entry) => openInquiry({ type: "JOURNAL_ENTRY", id: entry.id }) : undefined}
+                />
               </article>
               <article className="card overview-goals-card">
                 <div className="card-header compact">
@@ -224,7 +263,13 @@ export function DashboardShell({ data }: { data: DashboardData }) {
                 {employee.goals.length ? (
                   <div className="timeline">
                     {employee.goals.slice(0, 3).map((goal) => (
-                      <GoalCard key={goal.id} goal={goal} renderedAt={overviewRenderedAt} canManage={false} />
+                      <GoalCard
+                        key={goal.id}
+                        goal={goal}
+                        renderedAt={overviewRenderedAt}
+                        canManage={false}
+                        onInquire={canInquire ? () => openInquiry({ type: "GOAL", id: goal.id }) : undefined}
+                      />
                     ))}
                   </div>
                 ) : (
@@ -239,15 +284,39 @@ export function DashboardShell({ data }: { data: DashboardData }) {
           <JournalPanel
             employee={employee}
             canManage={data.actor.accessLevel !== "EMPLOYEE" && data.actor.id !== employee.id}
+            onInquire={canInquire ? openInquiry : undefined}
           />
         )}{" "}
         {tab === "goals" && (
           <GoalsPanel
             employee={employee}
             canManage={data.actor.accessLevel !== "EMPLOYEE" && data.actor.id !== employee.id}
+            onInquire={canInquire ? openInquiry : undefined}
           />
         )}{" "}
-        {tab === "knowledge" && <KnowledgePanel data={data} />}{" "}
+        {tab === "knowledge" && (
+          <KnowledgePanel
+            data={data}
+            initialKnowledgeId={initialKnowledgeId}
+            onInquire={canInquire ? openInquiry : undefined}
+          />
+        )}{" "}
+        {tab === "pulse" && (
+          <PulsePanel
+            onStartInquiry={() => {
+              setInquiryReference(undefined);
+              setTab("inquiries");
+            }}
+          />
+        )}{" "}
+        {tab === "inquiries" && (
+          <InquiriesPanel
+            key={inquiryReference ? `${inquiryReference.type}:${inquiryReference.id}` : "inquiries"}
+            data={data}
+            initialInquiryId={initialInquiryId}
+            initialReference={inquiryReference}
+          />
+        )}{" "}
         {tab === "kpis" && (
           <section className="card">
             <div className="card-header">
@@ -259,9 +328,22 @@ export function DashboardShell({ data }: { data: DashboardData }) {
             </div>
             <div className="kpi-grid">
               {stats?.latest.length
-                ? stats.latest.map((k) => <KPICard key={k.id} {...k} />)
+                ? stats.latest.map((k) => (
+                    <KPICard
+                      key={k.id}
+                      {...k}
+                      onInquire={canInquire ? () => openInquiry({ type: "KPI_PERFORMANCE", id: k.id }) : undefined}
+                    />
+                  ))
                 : employee.assignments.map((a) => (
-                    <KPICard key={a.id} name={a.name} unit={a.unit} current={0} target={a.target} />
+                    <KPICard
+                      key={a.id}
+                      name={a.name}
+                      unit={a.unit}
+                      current={0}
+                      target={a.target}
+                      onInquire={canInquire ? () => openInquiry({ type: "KPI_DEFINITION", id: a.kpiId }) : undefined}
+                    />
                   ))}
             </div>
           </section>

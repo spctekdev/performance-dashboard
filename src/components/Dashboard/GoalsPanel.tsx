@@ -3,13 +3,22 @@ import { FormEvent, useMemo, useState } from "react";
 import { CalendarDays, LoaderCircle, Pencil, Plus, Save, Trash2, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import type { DashboardData } from "@/lib/dashboard";
+import { InquiryButton, type InquiryReference } from "./InquiryButton";
 
 type Employee = DashboardData["users"][number];
 type Goal = Employee["goals"][number];
 const statuses = ["BACKLOG", "IN_PROGRESS", "BLOCKED", "UNDER_REVIEW", "FINISHED"] as const;
 const label = (status: string) => status.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 
-export function GoalsPanel({ employee, canManage }: { employee: Employee; canManage: boolean }) {
+export function GoalsPanel({
+  employee,
+  canManage,
+  onInquire,
+}: {
+  employee: Employee;
+  canManage: boolean;
+  onInquire?: (reference: InquiryReference) => void;
+}) {
   const router = useRouter();
   const [editing, setEditing] = useState<Goal | null>(null);
   const [isAdding, setIsAdding] = useState(false);
@@ -102,6 +111,7 @@ export function GoalsPanel({ employee, canManage }: { employee: Employee; canMan
               canManage={canManage}
               onEdit={() => setEditing(goal)}
               onDelete={() => void remove(goal)}
+              onInquire={onInquire ? () => onInquire({ type: "GOAL", id: goal.id }) : undefined}
             />
           ))
         ) : (
@@ -198,12 +208,14 @@ export function GoalCard({
   canManage,
   onEdit,
   onDelete,
+  onInquire,
 }: {
   goal: Goal;
   renderedAt: number;
   canManage: boolean;
   onEdit?: () => void;
   onDelete?: () => void;
+  onInquire?: () => void;
 }) {
   const deadline = new Date(goal.deadline);
   const hoursRemaining = Math.ceil((deadline.getTime() - renderedAt) / 3_600_000);
@@ -236,14 +248,19 @@ export function GoalCard({
           </span>
         </div>
       </div>
-      {canManage && onEdit && onDelete && (
+      {(onInquire || (canManage && onEdit && onDelete)) && (
         <div className="timeline-actions">
-          <button type="button" onClick={onEdit}>
-            <Pencil size={13} /> Edit
-          </button>
-          <button type="button" onClick={onDelete}>
-            <Trash2 size={13} /> Delete
-          </button>
+          {onInquire && <InquiryButton label="this goal" onClick={onInquire} />}
+          {canManage && onEdit && onDelete && (
+            <>
+              <button type="button" onClick={onEdit}>
+                <Pencil size={13} /> Edit
+              </button>
+              <button type="button" onClick={onDelete}>
+                <Trash2 size={13} /> Delete
+              </button>
+            </>
+          )}
         </div>
       )}
     </article>

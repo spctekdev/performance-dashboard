@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BriefcaseBusiness, Building2, Gauge, LoaderCircle, Plus, UserPlus } from "lucide-react";
+import { BriefcaseBusiness, Building2, Check, ChevronDown, Gauge, LoaderCircle, Plus, UserPlus } from "lucide-react";
 import type { DashboardData } from "@/lib/dashboard";
 import { ManagementDirectory } from "./ManagementDirectory";
 
@@ -13,6 +13,7 @@ export function AdminPanel({ data }: { data: DashboardData }) {
   const isAdmin = data.actor.accessLevel === "ADMIN";
   const managers = data.users.filter((user) => user.accessLevel === "MANAGER");
   const [newUserAccessLevel, setNewUserAccessLevel] = useState<"EMPLOYEE" | "MANAGER">("EMPLOYEE");
+  const [selectedDepartmentIds, setSelectedDepartmentIds] = useState<string[]>([]);
 
   async function submit(event: FormEvent<HTMLFormElement>, url: string, action: string, method = "POST") {
     event.preventDefault();
@@ -34,6 +35,7 @@ export function AdminPanel({ data }: { data: DashboardData }) {
       if (!response.ok) throw new Error(result.error);
       setMessage(result.data.message || "Saved successfully");
       formElement.reset();
+      if (action === "employee") setSelectedDepartmentIds([]);
       router.refresh();
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to save");
@@ -264,7 +266,7 @@ export function AdminPanel({ data }: { data: DashboardData }) {
           <div className="admin-icon blue">
             <UserPlus />
           </div>
-          <h3>Add an employee</h3>
+          <h3>{newUserAccessLevel === "MANAGER" ? "Add a manager" : "Add an employee"}</h3>
           <p>
             {isAdmin
               ? "Create an account and set its department access."
@@ -320,7 +322,10 @@ export function AdminPanel({ data }: { data: DashboardData }) {
               <select
                 name="accessLevel"
                 value={newUserAccessLevel}
-                onChange={(event) => setNewUserAccessLevel(event.target.value as "EMPLOYEE" | "MANAGER")}
+                onChange={(event) => {
+                  setNewUserAccessLevel(event.target.value as "EMPLOYEE" | "MANAGER");
+                  setSelectedDepartmentIds([]);
+                }}
               >
                 <option>EMPLOYEE</option>
                 <option>MANAGER</option>
@@ -328,23 +333,70 @@ export function AdminPanel({ data }: { data: DashboardData }) {
             </label>
           )}
           {isAdmin && newUserAccessLevel === "MANAGER" && (
-            <label>
-              Managed departments
-              <select name="departmentIds" multiple required size={Math.min(Math.max(data.departments.length, 2), 6)}>
-                {data.departments.map((department) => (
-                  <option key={department.id} value={department.id}>
-                    {department.name}
-                  </option>
-                ))}
-              </select>
-              <small>Hold Ctrl or Cmd to select multiple departments.</small>
-            </label>
+            <div className="department-multiselect-field">
+              <span className="department-multiselect-label">Managed departments</span>
+              <details className="department-multiselect">
+                <summary>
+                  <span>
+                    {selectedDepartmentIds.length
+                      ? `${selectedDepartmentIds.length} department${selectedDepartmentIds.length === 1 ? "" : "s"} selected`
+                      : "Select departments"}
+                  </span>
+                  <ChevronDown size={16} />
+                </summary>
+                <div className="department-multiselect-menu">
+                  {data.departments.map((department) => {
+                    const checked = selectedDepartmentIds.includes(department.id);
+                    return (
+                      <label key={department.id} className={checked ? "selected" : ""}>
+                        <input
+                          type="checkbox"
+                          name="departmentIds"
+                          value={department.id}
+                          checked={checked}
+                          onChange={() =>
+                            setSelectedDepartmentIds((current) =>
+                              checked ? current.filter((id) => id !== department.id) : [...current, department.id],
+                            )
+                          }
+                        />
+                        <span>{department.name}</span>
+                        {checked && <Check size={15} />}
+                      </label>
+                    );
+                  })}
+                </div>
+              </details>
+              {selectedDepartmentIds.length > 0 && (
+                <div className="department-selection-chips">
+                  {data.departments
+                    .filter((department) => selectedDepartmentIds.includes(department.id))
+                    .map((department) => (
+                      <button
+                        key={department.id}
+                        type="button"
+                        onClick={() =>
+                          setSelectedDepartmentIds((current) => current.filter((id) => id !== department.id))
+                        }
+                        aria-label={`Remove ${department.name}`}
+                      >
+                        {department.name} <span aria-hidden="true">×</span>
+                      </button>
+                    ))}
+                </div>
+              )}
+              {!selectedDepartmentIds.length && <small>Select at least one department.</small>}
+            </div>
           )}
           <input type="hidden" name="status" value="active" />
           <ActionButton
             active={pendingAction === "employee"}
-            disabled={pendingAction !== null || !data.departments.length}
-            label="Create employee"
+            disabled={
+              pendingAction !== null ||
+              !data.departments.length ||
+              (newUserAccessLevel === "MANAGER" && !selectedDepartmentIds.length)
+            }
+            label={newUserAccessLevel === "MANAGER" ? "Create manager" : "Create employee"}
             icon="user"
           />
         </form>

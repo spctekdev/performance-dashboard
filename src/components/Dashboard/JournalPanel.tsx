@@ -5,11 +5,20 @@ import { LoaderCircle, Save, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { JournalTimeline } from "./JournalTimeline";
 import type { DashboardData } from "@/lib/dashboard";
+import type { InquiryReference } from "./InquiryButton";
 
 type Employee = DashboardData["users"][number];
 type Entry = Employee["journals"][number];
 
-export function JournalPanel({ employee, canManage }: { employee: Employee; canManage: boolean }) {
+export function JournalPanel({
+  employee,
+  canManage,
+  onInquire,
+}: {
+  employee: Employee;
+  canManage: boolean;
+  onInquire?: (reference: InquiryReference) => void;
+}) {
   const router = useRouter();
   const [editing, setEditing] = useState<Entry | null>(null);
   const [busy, setBusy] = useState(false);
@@ -151,6 +160,7 @@ export function JournalPanel({ employee, canManage }: { employee: Employee; canM
               }
             : undefined
         }
+        onInquire={onInquire ? (entry) => onInquire({ type: "JOURNAL_ENTRY", id: entry.id }) : undefined}
       />
     </section>
   );

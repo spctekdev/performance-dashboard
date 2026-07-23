@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "tsx --test src/lib/validation.test.ts src/lib/pulse/prompt.test.ts src/lib/pulse/tools.test.ts src/lib/pulse/grounding.test.ts src/components/Dashboard/PulseMarkdown.test.tsx src/lib/inquiries/status.test.ts src/lib/db/migrations/1760600000000-Version4Support.test.ts",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"*.{json,md,mjs,ts}\"",
     "typecheck": "tsc --noEmit",
     "db:migrate": "tsx node_modules/typeorm/cli.js migration:run -d src/lib/db/data-source.ts",
@@ -14,6 +15,8 @@
     "db:show": "tsx node_modules/typeorm/cli.js migration:show -d src/lib/db/data-source.ts",
     "db:generate": "tsx node_modules/typeorm/cli.js migration:generate -d src/lib/db/data-source.ts",
     "db:seed": "tsx src/lib/db/seed.ts",
+    "db:import-knowledge": "tsx src/lib/db/import-knowledge.ts",
+    "db:update-category-descriptions": "tsx src/lib/db/update-category-descriptions.ts",
     "db:clear": "tsx src/lib/db/clear.ts"
   },
   "dependencies": {

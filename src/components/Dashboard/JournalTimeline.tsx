@@ -1,4 +1,5 @@
 import { Pencil, Trash2 } from "lucide-react";
+import { InquiryButton } from "./InquiryButton";
 type Entry = {
   id: string;
   description: string;
@@ -12,11 +13,13 @@ export function JournalTimeline({
   category,
   onEdit,
   onDelete,
+  onInquire,
 }: {
   entries: Entry[];
   category?: "GOOD" | "BAD" | "NOTE";
   onEdit?: (entry: Entry) => void;
   onDelete?: (entry: Entry) => void;
+  onInquire?: (entry: Entry) => void;
 }) {
   const rows = category ? entries.filter((e) => e.category === category) : entries;
   if (!rows.length)
@@ -48,14 +51,19 @@ export function JournalTimeline({
                 <span className={`impact-badge ${impact.toLowerCase()}`}>Impact: {impact}</span>
               </div>
             </div>
-            {onEdit && onDelete && (
+            {(onInquire || (onEdit && onDelete)) && (
               <div className="timeline-actions">
-                <button type="button" onClick={() => onEdit(entry)}>
-                  <Pencil size={13} /> Edit
-                </button>
-                <button type="button" onClick={() => onDelete(entry)}>
-                  <Trash2 size={13} /> Delete
-                </button>
+                {onInquire && <InquiryButton label="this journal entry" onClick={() => onInquire(entry)} />}
+                {onEdit && onDelete && (
+                  <>
+                    <button type="button" onClick={() => onEdit(entry)}>
+                      <Pencil size={13} /> Edit
+                    </button>
+                    <button type="button" onClick={() => onDelete(entry)}>
+                      <Trash2 size={13} /> Delete
+                    </button>
+                  </>
+                )}
               </div>
             )}
           </article>
